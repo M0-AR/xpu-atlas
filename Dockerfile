@@ -3,7 +3,7 @@ FROM python:3.12-slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     MPLBACKEND=Agg \
-    PYTHONPATH=/app/src
+    PYTHONPATH=/app/src:/app
 
 WORKDIR /app
 
@@ -22,6 +22,7 @@ COPY data ./data
 COPY tests ./tests
 COPY docs ./docs
 COPY scripts ./scripts
+COPY sim ./sim
 COPY Makefile ./
 COPY figures ./figures
 COPY results ./results

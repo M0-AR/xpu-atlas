@@ -23,6 +23,12 @@ jobs:
           make analyze
           make figures
           make report
+      - name: Run design-space screen
+        run: |
+          make sim
+          test -s results/simulation.json
+          test -s docs/SIMULATION.md
+          test -s figures/fig7_design_space.png
       - name: Build interactive preview
         run: |
           make preview

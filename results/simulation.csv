@@ -1,0 +1,40 @@
+workload_id,architecture_id,family,pareto,latency_ms,throughput_tops,energy_j,average_power_w,area_mm2,cost_usd,perf_per_w_tops,perf_per_dollar_tops,peak_utilization,bottleneck
+sparse_event_inference,cpu_simd,CPU baseline,False,1066.671683,0.00192,0.004124,0.003866,120.0,50.0,0.496605,3.8e-05,0.03,compute
+sparse_event_inference,gpu_simt,GPU baseline,False,8.340016,0.245563,0.002062,0.247242,600.0,218.0,0.99321,0.001126,0.061391,compute
+sparse_event_inference,npu_systolic,NPU baseline,False,1.455016,1.407545,0.0010352,0.71147,300.0,113.0,1.978362,0.012456,0.087972,memory
+sparse_event_inference,sparse_event_mesh,Sparse event,False,2.758016,0.742563,0.0003128,0.113415,150.0,60.5,6.547315,0.012274,0.618802,interconnect
+sparse_event_inference,sparse_near_memory,Memory-centric,True,1.340216,1.528112,0.00024716,0.184418,280.0,106.0,8.28613,0.014416,0.611245,compute
+sparse_event_inference,stochastic_pbit,Stochastic,False,19.210016,0.106611,0.00012688,0.006605,220.0,85.0,16.141236,0.001254,0.053306,compute
+sparse_event_inference,event_stochastic,Stochastic,True,4.041955,0.506685,8.592e-05,0.021257,240.0,92.0,23.836127,0.005507,0.422238,compute
+sparse_event_inference,stochastic_photonic,Photonic,True,36.870016,0.055546,6.222e-05,0.001688,300.0,113.0,32.915461,0.000492,0.055546,compute
+sparse_event_inference,attention_near_memory,Memory-centric,False,11.532016,0.177593,0.0005148,0.044641,380.0,141.0,3.978244,0.00126,0.022199,compute
+sparse_event_inference,photonic_interconnect,Photonic,False,32.774016,0.062489,0.0002061,0.006289,260.0,99.0,9.936924,0.000631,0.124977,compute
+sparse_event_inference,in_memory_compute,In-memory,True,2.910349,0.703696,0.0001031,0.035425,450.0,165.5,19.86421,0.004252,0.175924,compute
+sparse_event_inference,hybrid_chiplet,Hybrid,False,1.468683,1.394447,0.0004134,0.281477,500.0,183.0,4.95404,0.00762,0.232408,compute
+sparse_event_inference,sparse_photonic,Photonic,False,2.919727,0.701435,0.00012392,0.042442,320.0,120.0,16.526791,0.005845,0.467624,compute
+stochastic_sampling,cpu_simd,CPU baseline,False,58.725384,0.009142,0.001074413,0.018296,120.0,50.0,0.499688,0.000183,0.142845,compute
+stochastic_sampling,gpu_simt,GPU baseline,False,0.71806,0.747668,0.000537206,0.748136,600.0,218.0,0.999375,0.00343,0.186917,compute
+stochastic_sampling,npu_systolic,NPU baseline,True,0.216455,2.480293,0.000268704,1.241387,300.0,113.0,1.998002,0.021949,0.155018,compute
+stochastic_sampling,sparse_event_mesh,Sparse event,False,12.535116,0.042829,8.0665e-05,0.006435,150.0,60.5,6.655574,0.000708,0.035691,compute
+stochastic_sampling,sparse_near_memory,Memory-centric,False,1.619741,0.331455,6.4458e-05,0.039795,280.0,106.0,8.328995,0.003127,0.132582,compute
+stochastic_sampling,stochastic_pbit,Stochastic,True,0.345672,1.553121,3.2296e-05,0.09343,220.0,85.0,16.623377,0.018272,0.77656,compute
+stochastic_sampling,event_stochastic,Stochastic,True,0.639741,0.839201,2.1559e-05,0.033699,240.0,92.0,24.902724,0.009122,0.699334,compute
+stochastic_sampling,stochastic_photonic,Photonic,True,0.945652,0.567726,1.6121e-05,0.017048,300.0,113.0,33.302113,0.005024,0.567726,compute
+stochastic_sampling,attention_near_memory,Memory-centric,False,0.727956,0.737505,0.000134285,0.184468,380.0,141.0,3.998001,0.005231,0.092188,compute
+stochastic_sampling,photonic_interconnect,Photonic,False,19.333481,0.027769,5.3712e-05,0.002778,260.0,99.0,9.995315,0.00028,0.055538,compute
+stochastic_sampling,in_memory_compute,In-memory,True,0.545999,0.983282,2.686e-05,0.049195,450.0,165.5,19.987508,0.005941,0.245821,compute
+stochastic_sampling,hybrid_chiplet,Hybrid,True,0.322355,1.665466,0.000107441,0.333301,500.0,183.0,4.996877,0.009101,0.277578,compute
+stochastic_sampling,sparse_photonic,Photonic,False,3.228353,0.166299,3.2232e-05,0.009984,320.0,120.0,16.656257,0.001386,0.110866,compute
+memory_bound_attention,cpu_simd,CPU baseline,False,7381.980072,0.004655,0.068732899,0.009311,120.0,50.0,0.499902,9.3e-05,0.072727,compute
+memory_bound_attention,gpu_simt,GPU baseline,False,22.926524,1.498689,0.034366449,1.498982,600.0,218.0,0.999805,0.006875,0.374672,compute
+memory_bound_attention,npu_systolic,NPU baseline,True,4.700451,7.309881,0.017185238,3.656083,300.0,113.0,1.999375,0.064689,0.456868,compute
+memory_bound_attention,sparse_event_mesh,Sparse event,False,1527.107515,0.0225,0.005156645,0.003377,150.0,60.5,6.663196,0.000372,0.01875,compute
+memory_bound_attention,sparse_near_memory,Memory-centric,False,109.960195,0.312474,0.00412384,0.037503,280.0,106.0,8.331977,0.002948,0.12499,compute
+memory_bound_attention,stochastic_pbit,Stochastic,False,1717.99695,0.02,0.00206353,0.001201,220.0,85.0,16.650948,0.000235,0.01,compute
+memory_bound_attention,event_stochastic,Stochastic,False,2863.319563,0.012,0.001376336,0.000481,240.0,92.0,24.96465,0.00013,0.01,compute
+memory_bound_attention,stochastic_photonic,Photonic,True,1374.395567,0.025,0.001031175,0.00075,300.0,113.0,33.320968,0.000221,0.025,compute
+memory_bound_attention,attention_near_memory,Memory-centric,True,6.112838,5.620914,0.008591277,1.405448,380.0,141.0,3.999375,0.039865,0.702614,compute
+memory_bound_attention,photonic_interconnect,Photonic,False,294.518075,0.116664,0.003436611,0.011669,260.0,99.0,9.998145,0.001178,0.233329,compute
+memory_bound_attention,in_memory_compute,In-memory,True,22.915524,1.499409,0.001718322,0.074985,450.0,165.5,19.996095,0.00906,0.374852,compute
+memory_bound_attention,hybrid_chiplet,Hybrid,True,13.925545,2.467389,0.006873827,0.493613,500.0,183.0,4.998633,0.013483,0.411232,compute
+memory_bound_attention,sparse_photonic,Photonic,False,129.810488,0.264692,0.002062094,0.015885,320.0,120.0,16.662544,0.002206,0.176461,compute

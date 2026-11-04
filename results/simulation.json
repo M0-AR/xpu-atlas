@@ -1,0 +1,1433 @@
+{
+  "architectures": [
+    {
+      "area_mm2": 120.0,
+      "bandwidth_bytes_s": 100000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "control",
+      "energy_per_byte_pj": 0.02,
+      "energy_per_comm_byte_pj": 0.02,
+      "energy_per_op_pj": 2.0,
+      "execution": "SIMD",
+      "family": "CPU baseline",
+      "fixed_latency_us": 5.0,
+      "id": "cpu_simd",
+      "interconnect": "mesh",
+      "interconnect_bytes_s": 20000000000.0,
+      "memory": "cache+HBM",
+      "name": "SIMD CPU baseline",
+      "note": "General-purpose SIMD cores with a conventional cache hierarchy.",
+      "numeric": "int8",
+      "overhead": {
+        "memory_bound_attention": 1.1,
+        "sparse_event_inference": 1.0,
+        "stochastic_sampling": 1.05
+      },
+      "peak_ops_s": 64000000000.0,
+      "programming": "threads",
+      "utilization": {
+        "memory_bound_attention": 0.08,
+        "sparse_event_inference": 0.03,
+        "stochastic_sampling": 0.15
+      }
+    },
+    {
+      "area_mm2": 600.0,
+      "bandwidth_bytes_s": 2000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "control",
+      "energy_per_byte_pj": 0.01,
+      "energy_per_comm_byte_pj": 0.01,
+      "energy_per_op_pj": 1.0,
+      "execution": "SIMT",
+      "family": "GPU baseline",
+      "fixed_latency_us": 20.0,
+      "id": "gpu_simt",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 200000000000.0,
+      "memory": "HBM+SRAM",
+      "name": "SIMT GPU baseline",
+      "note": "Wide SIMT machine with high HBM bandwidth and a mature toolchain.",
+      "numeric": "fp8",
+      "overhead": {
+        "memory_bound_attention": 1.2,
+        "sparse_event_inference": 1.3,
+        "stochastic_sampling": 1.3
+      },
+      "peak_ops_s": 4000000000000.0,
+      "programming": "threads",
+      "utilization": {
+        "memory_bound_attention": 0.45,
+        "sparse_event_inference": 0.08,
+        "stochastic_sampling": 0.25
+      }
+    },
+    {
+      "area_mm2": 300.0,
+      "bandwidth_bytes_s": 1000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "weight-stationary",
+      "energy_per_byte_pj": 0.008,
+      "energy_per_comm_byte_pj": 0.008,
+      "energy_per_op_pj": 0.5,
+      "execution": "spatial",
+      "family": "NPU baseline",
+      "fixed_latency_us": 15.0,
+      "id": "npu_systolic",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 300000000000.0,
+      "memory": "SRAM-only",
+      "name": "Systolic NPU baseline",
+      "note": "Dense systolic array with on-chip SRAM and a dataflow compiler.",
+      "numeric": "int8",
+      "overhead": {
+        "memory_bound_attention": 1.2,
+        "sparse_event_inference": 1.2,
+        "stochastic_sampling": 1.2
+      },
+      "peak_ops_s": 16000000000000.0,
+      "programming": "dataflow",
+      "utilization": {
+        "memory_bound_attention": 0.55,
+        "sparse_event_inference": 0.12,
+        "stochastic_sampling": 0.2
+      }
+    },
+    {
+      "area_mm2": 150.0,
+      "bandwidth_bytes_s": 500000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "event",
+      "energy_per_byte_pj": 0.004,
+      "energy_per_comm_byte_pj": 0.004,
+      "energy_per_op_pj": 0.15,
+      "execution": "event-driven",
+      "family": "Sparse event",
+      "fixed_latency_us": 8.0,
+      "id": "sparse_event_mesh",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 80000000000.0,
+      "memory": "SRAM-only",
+      "name": "Event-driven mesh",
+      "note": "Event packets, local state, and no global clocked datapath.",
+      "numeric": "int8",
+      "overhead": {
+        "memory_bound_attention": 1.6,
+        "sparse_event_inference": 1.1,
+        "stochastic_sampling": 1.4
+      },
+      "peak_ops_s": 1200000000000.0,
+      "programming": "event-graph",
+      "utilization": {
+        "memory_bound_attention": 0.03,
+        "sparse_event_inference": 0.85,
+        "stochastic_sampling": 0.05
+      }
+    },
+    {
+      "area_mm2": 280.0,
+      "bandwidth_bytes_s": 3000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "event",
+      "energy_per_byte_pj": 0.001,
+      "energy_per_comm_byte_pj": 0.001,
+      "energy_per_op_pj": 0.12,
+      "execution": "near-memory",
+      "family": "Memory-centric",
+      "fixed_latency_us": 9.0,
+      "id": "sparse_near_memory",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 300000000000.0,
+      "memory": "HBM+SRAM",
+      "name": "Sparse near-memory",
+      "note": "Event-driven compute placed beside high-bandwidth memory.",
+      "numeric": "mixed",
+      "overhead": {
+        "memory_bound_attention": 1.6,
+        "sparse_event_inference": 1.3,
+        "stochastic_sampling": 1.5
+      },
+      "peak_ops_s": 2500000000000.0,
+      "programming": "event-graph",
+      "utilization": {
+        "memory_bound_attention": 0.2,
+        "sparse_event_inference": 0.8,
+        "stochastic_sampling": 0.2
+      }
+    },
+    {
+      "area_mm2": 220.0,
+      "bandwidth_bytes_s": 400000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "sampling",
+      "energy_per_byte_pj": 0.003,
+      "energy_per_comm_byte_pj": 0.002,
+      "energy_per_op_pj": 0.06,
+      "execution": "stochastic",
+      "family": "Stochastic",
+      "fixed_latency_us": 10.0,
+      "id": "stochastic_pbit",
+      "interconnect": "all-to-all",
+      "interconnect_bytes_s": 800000000000.0,
+      "memory": "SRAM-only",
+      "name": "Probabilistic-bit array",
+      "note": "Repeated stochastic updates with dense local coupling.",
+      "numeric": "analog",
+      "overhead": {
+        "memory_bound_attention": 2.0,
+        "sparse_event_inference": 1.5,
+        "stochastic_sampling": 1.15
+      },
+      "peak_ops_s": 2000000000000.0,
+      "programming": "probabilistic",
+      "utilization": {
+        "memory_bound_attention": 0.02,
+        "sparse_event_inference": 0.08,
+        "stochastic_sampling": 0.92
+      }
+    },
+    {
+      "area_mm2": 240.0,
+      "bandwidth_bytes_s": 600000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "sampling",
+      "energy_per_byte_pj": 0.003,
+      "energy_per_comm_byte_pj": 0.002,
+      "energy_per_op_pj": 0.04,
+      "execution": "event-driven",
+      "family": "Stochastic",
+      "fixed_latency_us": 8.0,
+      "id": "event_stochastic",
+      "interconnect": "all-to-all",
+      "interconnect_bytes_s": 800000000000.0,
+      "memory": "SRAM-only",
+      "name": "Event-driven sampler",
+      "note": "Only active variables exchange messages; sampler is the target use.",
+      "numeric": "analog",
+      "overhead": {
+        "memory_bound_attention": 2.0,
+        "sparse_event_inference": 1.3,
+        "stochastic_sampling": 1.2
+      },
+      "peak_ops_s": 1200000000000.0,
+      "programming": "probabilistic",
+      "utilization": {
+        "memory_bound_attention": 0.02,
+        "sparse_event_inference": 0.55,
+        "stochastic_sampling": 0.85
+      }
+    },
+    {
+      "area_mm2": 300.0,
+      "bandwidth_bytes_s": 2000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "sampling",
+      "energy_per_byte_pj": 0.0006,
+      "energy_per_comm_byte_pj": 0.0003,
+      "energy_per_op_pj": 0.03,
+      "execution": "photonic",
+      "family": "Photonic",
+      "fixed_latency_us": 6.0,
+      "id": "stochastic_photonic",
+      "interconnect": "optical",
+      "interconnect_bytes_s": 5000000000000.0,
+      "memory": "optical",
+      "name": "Photonic sampler",
+      "note": "Optical all-to-all coupling for dense sampling problems.",
+      "numeric": "analog",
+      "overhead": {
+        "memory_bound_attention": 2.0,
+        "sparse_event_inference": 1.8,
+        "stochastic_sampling": 1.4
+      },
+      "peak_ops_s": 1000000000000.0,
+      "programming": "probabilistic",
+      "utilization": {
+        "memory_bound_attention": 0.05,
+        "sparse_event_inference": 0.1,
+        "stochastic_sampling": 0.8
+      }
+    },
+    {
+      "area_mm2": 380.0,
+      "bandwidth_bytes_s": 8000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "output-stationary",
+      "energy_per_byte_pj": 0.002,
+      "energy_per_comm_byte_pj": 0.002,
+      "energy_per_op_pj": 0.25,
+      "execution": "near-memory",
+      "family": "Memory-centric",
+      "fixed_latency_us": 12.0,
+      "id": "attention_near_memory",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 500000000000.0,
+      "memory": "HBM+SRAM",
+      "name": "Near-memory attention",
+      "note": "Output-stationary tiles placed next to the score-matrix traffic.",
+      "numeric": "fp8",
+      "overhead": {
+        "memory_bound_attention": 1.25,
+        "sparse_event_inference": 1.8,
+        "stochastic_sampling": 1.6
+      },
+      "peak_ops_s": 8000000000000.0,
+      "programming": "dataflow",
+      "utilization": {
+        "memory_bound_attention": 0.88,
+        "sparse_event_inference": 0.04,
+        "stochastic_sampling": 0.15
+      }
+    },
+    {
+      "area_mm2": 260.0,
+      "bandwidth_bytes_s": 10000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "output-stationary",
+      "energy_per_byte_pj": 0.001,
+      "energy_per_comm_byte_pj": 0.0005,
+      "energy_per_op_pj": 0.1,
+      "execution": "photonic",
+      "family": "Photonic",
+      "fixed_latency_us": 6.0,
+      "id": "photonic_interconnect",
+      "interconnect": "optical",
+      "interconnect_bytes_s": 10000000000000.0,
+      "memory": "optical",
+      "name": "Photonic interconnect",
+      "note": "Optical fabric moves tensors cheaply; arithmetic remains modest.",
+      "numeric": "mixed",
+      "overhead": {
+        "memory_bound_attention": 1.5,
+        "sparse_event_inference": 1.6,
+        "stochastic_sampling": 1.8
+      },
+      "peak_ops_s": 500000000000.0,
+      "programming": "dataflow",
+      "utilization": {
+        "memory_bound_attention": 0.35,
+        "sparse_event_inference": 0.2,
+        "stochastic_sampling": 0.1
+      }
+    },
+    {
+      "area_mm2": 450.0,
+      "bandwidth_bytes_s": 20000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "weight-stationary",
+      "energy_per_byte_pj": 0.0005,
+      "energy_per_comm_byte_pj": 0.0005,
+      "energy_per_op_pj": 0.05,
+      "execution": "near-memory",
+      "family": "In-memory",
+      "fixed_latency_us": 9.0,
+      "id": "in_memory_compute",
+      "interconnect": "NoC",
+      "interconnect_bytes_s": 1000000000000.0,
+      "memory": "compute-in-memory",
+      "name": "Compute-in-memory",
+      "note": "Weights live in the memory array; movement is the main saving.",
+      "numeric": "analog",
+      "overhead": {
+        "memory_bound_attention": 1.6,
+        "sparse_event_inference": 1.7,
+        "stochastic_sampling": 1.6
+      },
+      "peak_ops_s": 4000000000000.0,
+      "programming": "dataflow",
+      "utilization": {
+        "memory_bound_attention": 0.6,
+        "sparse_event_inference": 0.3,
+        "stochastic_sampling": 0.4
+      }
+    },
+    {
+      "area_mm2": 500.0,
+      "bandwidth_bytes_s": 4000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "weight-stationary",
+      "energy_per_byte_pj": 0.003,
+      "energy_per_comm_byte_pj": 0.001,
+      "energy_per_op_pj": 0.2,
+      "execution": "spatial",
+      "family": "Hybrid",
+      "fixed_latency_us": 18.0,
+      "id": "hybrid_chiplet",
+      "interconnect": "mesh",
+      "interconnect_bytes_s": 2000000000000.0,
+      "memory": "HBM+SRAM",
+      "name": "Hybrid chiplet",
+      "note": "General-purpose chiplet mix: flexible, larger, and less specialised.",
+      "numeric": "mixed",
+      "overhead": {
+        "memory_bound_attention": 1.7,
+        "sparse_event_inference": 1.7,
+        "stochastic_sampling": 1.7
+      },
+      "peak_ops_s": 6000000000000.0,
+      "programming": "graph",
+      "utilization": {
+        "memory_bound_attention": 0.7,
+        "sparse_event_inference": 0.4,
+        "stochastic_sampling": 0.5
+      }
+    },
+    {
+      "area_mm2": 320.0,
+      "bandwidth_bytes_s": 5000000000000.0,
+      "clock_ghz": 1.0,
+      "dataflow": "event",
+      "energy_per_byte_pj": 0.0008,
+      "energy_per_comm_byte_pj": 0.0004,
+      "energy_per_op_pj": 0.06,
+      "execution": "event-driven",
+      "family": "Photonic",
+      "fixed_latency_us": 7.0,
+      "id": "sparse_photonic",
+      "interconnect": "optical",
+      "interconnect_bytes_s": 5000000000000.0,
+      "memory": "optical",
+      "name": "Sparse photonic mesh",
+      "note": "Event traffic routed over an optical fabric for sparse workloads.",
+      "numeric": "mixed",
+      "overhead": {
+        "memory_bound_attention": 1.7,
+        "sparse_event_inference": 1.6,
+        "stochastic_sampling": 1.8
+      },
+      "peak_ops_s": 1500000000000.0,
+      "programming": "event-graph",
+      "utilization": {
+        "memory_bound_attention": 0.3,
+        "sparse_event_inference": 0.75,
+        "stochastic_sampling": 0.2
+      }
+    }
+  ],
+  "axes": {
+    "dataflow": [
+      "control",
+      "weight-stationary",
+      "output-stationary",
+      "event",
+      "sampling"
+    ],
+    "execution_model": [
+      "SIMD",
+      "SIMT",
+      "spatial",
+      "event-driven",
+      "stochastic",
+      "near-memory",
+      "photonic"
+    ],
+    "interconnect": [
+      "mesh",
+      "NoC",
+      "all-to-all",
+      "optical"
+    ],
+    "memory_hierarchy": [
+      "cache+HBM",
+      "HBM+SRAM",
+      "SRAM-only",
+      "compute-in-memory",
+      "optical"
+    ],
+    "numeric_format": [
+      "int8",
+      "fp8",
+      "mixed",
+      "analog"
+    ],
+    "programming_model": [
+      "threads",
+      "graph",
+      "dataflow",
+      "event-graph",
+      "probabilistic"
+    ]
+  },
+  "frontier": {
+    "memory_bound_attention": [
+      "attention_near_memory",
+      "hybrid_chiplet",
+      "in_memory_compute",
+      "npu_systolic",
+      "stochastic_photonic"
+    ],
+    "sparse_event_inference": [
+      "event_stochastic",
+      "in_memory_compute",
+      "sparse_near_memory",
+      "stochastic_photonic"
+    ],
+    "stochastic_sampling": [
+      "event_stochastic",
+      "hybrid_chiplet",
+      "in_memory_compute",
+      "npu_systolic",
+      "stochastic_pbit",
+      "stochastic_photonic"
+    ]
+  },
+  "metadata": {
+    "cost_per_mm2_usd": 0.35,
+    "design_space_size": 14000,
+    "disclaimer": "Analytical screening only. These are assumptions, not silicon measurements; iso-accuracy, RTL, and FPGA validation are required before any architecture claim.",
+    "evaluated_candidates": 13,
+    "experiments": 39,
+    "model": "analytical roofline + mapping overhead",
+    "model_version": "0.1.0",
+    "package_cost_usd": 8.0,
+    "reference_clock_ghz": 1.0,
+    "reference_node_nm": 5,
+    "workloads": 3
+  },
+  "results": [
+    {
+      "architecture_id": "cpu_simd",
+      "family": "CPU baseline",
+      "metrics": {
+        "area_mm2": 120.0,
+        "average_power_w": 0.003866231819044871,
+        "bottleneck": "compute",
+        "compute_ms": 1066.6666666666667,
+        "cost_usd": 50.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.004124,
+        "interconnect_ms": 10.0,
+        "latency_ms": 1066.6716826666666,
+        "memory_ms": 12.0,
+        "peak_utilization": 0.0299998589256634,
+        "perf_per_dollar_tops": 3.839981942484915e-05,
+        "perf_per_w_tops": 0.49660523763336567,
+        "throughput_tops": 0.0019199909712424577
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "gpu_simt",
+      "family": "GPU baseline",
+      "metrics": {
+        "area_mm2": 600.0,
+        "average_power_w": 0.24724173191034646,
+        "bottleneck": "compute",
+        "compute_ms": 6.4,
+        "cost_usd": 218.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.002062,
+        "interconnect_ms": 1.0,
+        "latency_ms": 8.340016,
+        "memory_ms": 0.6,
+        "peak_utilization": 0.061390769514111244,
+        "perf_per_dollar_tops": 0.0011264361378736007,
+        "perf_per_w_tops": 0.9932104752667313,
+        "throughput_tops": 0.24556307805644498
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "npu_systolic",
+      "family": "NPU baseline",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 0.7114698395069196,
+        "bottleneck": "memory",
+        "compute_ms": 1.0666666666666667,
+        "cost_usd": 113.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.0010352,
+        "interconnect_ms": 0.6666666666666666,
+        "latency_ms": 1.4550159999999999,
+        "memory_ms": 1.2,
+        "peak_utilization": 0.08797154120641973,
+        "perf_per_dollar_tops": 0.01245614742745766,
+        "perf_per_w_tops": 1.9783616692426584,
+        "throughput_tops": 1.4075446593027157
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "sparse_event_mesh",
+      "family": "Sparse event",
+      "metrics": {
+        "area_mm2": 150.0,
+        "average_power_w": 0.1134148605374298,
+        "bottleneck": "interconnect",
+        "compute_ms": 2.007843137254902,
+        "cost_usd": 60.5,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.0003128,
+        "interconnect_ms": 2.5,
+        "latency_ms": 2.7580160000000005,
+        "memory_ms": 2.4,
+        "peak_utilization": 0.6188023081326093,
+        "perf_per_dollar_tops": 0.012273764789407126,
+        "perf_per_w_tops": 6.547314578005115,
+        "throughput_tops": 0.7425627697591312
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "sparse_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 280.0,
+        "average_power_w": 0.18441803410793486,
+        "bottleneck": "compute",
+        "compute_ms": 1.024,
+        "cost_usd": 106.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.00024716,
+        "interconnect_ms": 0.6666666666666666,
+        "latency_ms": 1.340216,
+        "memory_ms": 0.4,
+        "peak_utilization": 0.6112447545768742,
+        "perf_per_dollar_tops": 0.014416149872096091,
+        "perf_per_w_tops": 8.286130441819065,
+        "throughput_tops": 1.5281118864421857
+      },
+      "pareto": true,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "stochastic_pbit",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 220.0,
+        "average_power_w": 0.006604887783539587,
+        "bottleneck": "compute",
+        "compute_ms": 12.8,
+        "cost_usd": 85.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.00012688,
+        "interconnect_ms": 0.25,
+        "latency_ms": 19.210016,
+        "memory_ms": 3.0,
+        "peak_utilization": 0.053305525617469554,
+        "perf_per_dollar_tops": 0.001254247661587519,
+        "perf_per_w_tops": 16.14123581336696,
+        "throughput_tops": 0.10661105123493911
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "event_stochastic",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 240.0,
+        "average_power_w": 0.021257038147632832,
+        "bottleneck": "compute",
+        "compute_ms": 3.103030303030303,
+        "cost_usd": 92.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 8.592e-05,
+        "interconnect_ms": 0.25,
+        "latency_ms": 4.041955393939395,
+        "memory_ms": 2.0,
+        "peak_utilization": 0.4222378775445379,
+        "perf_per_dollar_tops": 0.005507450576667886,
+        "perf_per_w_tops": 23.836126629422715,
+        "throughput_tops": 0.5066854530534455
+      },
+      "pareto": true,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "stochastic_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 0.0016875501220286967,
+        "bottleneck": "compute",
+        "compute_ms": 20.48,
+        "cost_usd": 113.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 6.222e-05,
+        "interconnect_ms": 0.04,
+        "latency_ms": 36.870016,
+        "memory_ms": 0.6,
+        "peak_utilization": 0.055546490676868704,
+        "perf_per_dollar_tops": 0.0004915618643970682,
+        "perf_per_w_tops": 32.9154612664738,
+        "throughput_tops": 0.055546490676868704
+      },
+      "pareto": true,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "attention_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 380.0,
+        "average_power_w": 0.04464093702263333,
+        "bottleneck": "compute",
+        "compute_ms": 6.4,
+        "cost_usd": 141.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.0005147999999999999,
+        "interconnect_ms": 0.4,
+        "latency_ms": 11.532016,
+        "memory_ms": 0.15,
+        "peak_utilization": 0.022199067361682465,
+        "perf_per_dollar_tops": 0.0012595215524358846,
+        "perf_per_w_tops": 3.9782439782439782,
+        "throughput_tops": 0.17759253889345972
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "photonic_interconnect",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 260.0,
+        "average_power_w": 0.006288518318902388,
+        "bottleneck": "compute",
+        "compute_ms": 20.48,
+        "cost_usd": 99.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.0002061,
+        "interconnect_ms": 0.02,
+        "latency_ms": 32.774016,
+        "memory_ms": 0.12000000000000001,
+        "peak_utilization": 0.12497705499380972,
+        "perf_per_dollar_tops": 0.0006311972474434835,
+        "perf_per_w_tops": 9.936923823386707,
+        "throughput_tops": 0.06248852749690486
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "in_memory_compute",
+      "family": "In-memory",
+      "metrics": {
+        "area_mm2": 450.0,
+        "average_power_w": 0.03542530060537979,
+        "bottleneck": "compute",
+        "compute_ms": 1.7066666666666666,
+        "cost_usd": 165.5,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.0001031,
+        "interconnect_ms": 0.2,
+        "latency_ms": 2.910349333333333,
+        "memory_ms": 0.060000000000000005,
+        "peak_utilization": 0.17592389825368046,
+        "perf_per_dollar_tops": 0.004251937117913727,
+        "perf_per_w_tops": 19.86420950533463,
+        "throughput_tops": 0.7036955930147218
+      },
+      "pareto": true,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "hybrid_chiplet",
+      "family": "Hybrid",
+      "metrics": {
+        "area_mm2": 500.0,
+        "average_power_w": 0.2814767337986331,
+        "bottleneck": "compute",
+        "compute_ms": 0.8533333333333333,
+        "cost_usd": 183.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.00041339999999999997,
+        "interconnect_ms": 0.1,
+        "latency_ms": 1.4686826666666668,
+        "memory_ms": 0.3,
+        "peak_utilization": 0.23240781761796514,
+        "perf_per_dollar_tops": 0.00761992844649066,
+        "perf_per_w_tops": 4.954039671020805,
+        "throughput_tops": 1.3944469057077908
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "sparse_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 320.0,
+        "average_power_w": 0.04244232261584263,
+        "bottleneck": "compute",
+        "compute_ms": 1.8204444444444443,
+        "cost_usd": 120.0,
+        "dependency_ms": 1.6000000000000003e-05,
+        "energy_j": 0.00012392,
+        "interconnect_ms": 0.04,
+        "latency_ms": 2.9197271111111114,
+        "memory_ms": 0.24000000000000002,
+        "peak_utilization": 0.46762361048658124,
+        "perf_per_dollar_tops": 0.005845295131082265,
+        "perf_per_w_tops": 16.526791478373145,
+        "throughput_tops": 0.7014354157298718
+      },
+      "pareto": false,
+      "workload_id": "sparse_event_inference"
+    },
+    {
+      "architecture_id": "cpu_simd",
+      "family": "CPU baseline",
+      "metrics": {
+        "area_mm2": 120.0,
+        "average_power_w": 0.018295545119636845,
+        "bottleneck": "compute",
+        "compute_ms": 55.92405333333333,
+        "cost_usd": 50.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 0.0010744129126399999,
+        "interconnect_ms": 0.8388608000000001,
+        "latency_ms": 58.725384000000005,
+        "memory_ms": 0.16777216,
+        "peak_utilization": 0.142844668329457,
+        "perf_per_dollar_tops": 0.00018284117546170495,
+        "perf_per_w_tops": 0.49968769519050604,
+        "throughput_tops": 0.009142058773085247
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "gpu_simt",
+      "family": "GPU baseline",
+      "metrics": {
+        "area_mm2": 600.0,
+        "average_power_w": 0.748135695437728,
+        "bottleneck": "compute",
+        "compute_ms": 0.536870912,
+        "cost_usd": 218.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 0.0005372064563199999,
+        "interconnect_ms": 0.08388608,
+        "latency_ms": 0.7180601856,
+        "memory_ms": 0.008388608,
+        "peak_utilization": 0.1869171006715123,
+        "perf_per_dollar_tops": 0.003429671571954354,
+        "perf_per_w_tops": 0.9993753903810119,
+        "throughput_tops": 0.7476684026860492
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "npu_systolic",
+      "family": "NPU baseline",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 1.2413868838412074,
+        "bottleneck": "compute",
+        "compute_ms": 0.16777216,
+        "cost_usd": 113.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 0.00026870389145599997,
+        "interconnect_ms": 0.05592405333333333,
+        "latency_ms": 0.216454592,
+        "memory_ms": 0.016777216,
+        "peak_utilization": 0.15501834213801294,
+        "perf_per_dollar_tops": 0.021949499771754043,
+        "perf_per_w_tops": 1.9980019980019983,
+        "throughput_tops": 2.480293474208207
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "sparse_event_mesh",
+      "family": "Sparse event",
+      "metrics": {
+        "area_mm2": 150.0,
+        "average_power_w": 0.006435110362856305,
+        "bottleneck": "compute",
+        "compute_ms": 8.947848533333334,
+        "cost_usd": 60.5,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 8.066485452799998e-05,
+        "interconnect_ms": 0.20971520000000002,
+        "latency_ms": 12.535115946666666,
+        "memory_ms": 0.033554432,
+        "peak_utilization": 0.035691127913789825,
+        "perf_per_dollar_tops": 0.0007079231982900461,
+        "perf_per_w_tops": 6.655574043261232,
+        "throughput_tops": 0.04282935349654779
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "sparse_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 280.0,
+        "average_power_w": 0.03979529713575098,
+        "bottleneck": "compute",
+        "compute_ms": 1.073741824,
+        "cost_usd": 106.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 6.445806387199999e-05,
+        "interconnect_ms": 0.05592405333333333,
+        "latency_ms": 1.619740736,
+        "memory_ms": 0.005592405333333333,
+        "peak_utilization": 0.13258193736012822,
+        "perf_per_dollar_tops": 0.0031269324849086846,
+        "perf_per_w_tops": 8.328995314940137,
+        "throughput_tops": 0.33145484340032055
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "stochastic_pbit",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 220.0,
+        "average_power_w": 0.0934299304034526,
+        "bottleneck": "compute",
+        "compute_ms": 0.2917776695652174,
+        "cost_usd": 85.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 3.22961408e-05,
+        "interconnect_ms": 0.02097152,
+        "latency_ms": 0.34567232000000003,
+        "memory_ms": 0.04194304,
+        "peak_utilization": 0.7765604604962295,
+        "perf_per_dollar_tops": 0.0182720108352054,
+        "perf_per_w_tops": 16.623376623376625,
+        "throughput_tops": 1.553120920992459
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "event_stochastic",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 240.0,
+        "average_power_w": 0.03369915017351733,
+        "bottleneck": "compute",
+        "compute_ms": 0.5263440313725489,
+        "cost_usd": 92.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 2.1558722559999998e-05,
+        "interconnect_ms": 0.02097152,
+        "latency_ms": 0.6397408376470587,
+        "memory_ms": 0.027962026666666664,
+        "peak_utilization": 0.6993338557409563,
+        "perf_per_dollar_tops": 0.009121745944447255,
+        "perf_per_w_tops": 24.90272373540856,
+        "throughput_tops": 0.8392006268891475
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "stochastic_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 0.017047735549459406,
+        "bottleneck": "compute",
+        "compute_ms": 0.67108864,
+        "cost_usd": 113.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 1.6121226854399998e-05,
+        "interconnect_ms": 0.0033554432,
+        "latency_ms": 0.9456520959999999,
+        "memory_ms": 0.008388608,
+        "peak_utilization": 0.5677256088903122,
+        "perf_per_dollar_tops": 0.00502412043265763,
+        "perf_per_w_tops": 33.30211260276824,
+        "throughput_tops": 0.5677256088903122
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "attention_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 380.0,
+        "average_power_w": 0.18446837241301545,
+        "bottleneck": "compute",
+        "compute_ms": 0.4473924266666666,
+        "cost_usd": 141.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 0.00013428483686400003,
+        "interconnect_ms": 0.033554432,
+        "latency_ms": 0.7279558826666667,
+        "memory_ms": 0.002097152,
+        "peak_utilization": 0.09218809216042749,
+        "perf_per_dollar_tops": 0.00523053005165546,
+        "perf_per_w_tops": 3.998000999500249,
+        "throughput_tops": 0.7375047372834199
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "photonic_interconnect",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 260.0,
+        "average_power_w": 0.002778198995345817,
+        "bottleneck": "compute",
+        "compute_ms": 10.73741824,
+        "cost_usd": 99.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 5.3712257024e-05,
+        "interconnect_ms": 0.0016777216,
+        "latency_ms": 19.333480831999996,
+        "memory_ms": 0.0016777216,
+        "peak_utilization": 0.05553794649449704,
+        "perf_per_dollar_tops": 0.00028049467926513654,
+        "perf_per_w_tops": 9.995314696236138,
+        "throughput_tops": 0.02776897324724852
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "in_memory_compute",
+      "family": "In-memory",
+      "metrics": {
+        "area_mm2": 450.0,
+        "average_power_w": 0.04919482846148968,
+        "bottleneck": "compute",
+        "compute_ms": 0.33554432,
+        "cost_usd": 165.5,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 2.6860322816e-05,
+        "interconnect_ms": 0.016777216,
+        "latency_ms": 0.545998912,
+        "memory_ms": 0.0008388608,
+        "peak_utilization": 0.24582050449214085,
+        "perf_per_dollar_tops": 0.005941281075338751,
+        "perf_per_w_tops": 19.98750780762024,
+        "throughput_tops": 0.9832820179685634
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "hybrid_chiplet",
+      "family": "Hybrid",
+      "metrics": {
+        "area_mm2": 500.0,
+        "average_power_w": 0.33330130202650843,
+        "bottleneck": "compute",
+        "compute_ms": 0.17895697066666666,
+        "cost_usd": 183.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 0.00010744129126400001,
+        "interconnect_ms": 0.008388608,
+        "latency_ms": 0.32235485013333337,
+        "memory_ms": 0.004194304,
+        "peak_utilization": 0.2775775990227012,
+        "perf_per_dollar_tops": 0.009100904885990203,
+        "perf_per_w_tops": 4.99687695190506,
+        "throughput_tops": 1.665465594136207
+      },
+      "pareto": true,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "sparse_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 320.0,
+        "average_power_w": 0.009984156833740912,
+        "bottleneck": "compute",
+        "compute_ms": 1.7895697066666665,
+        "cost_usd": 120.0,
+        "dependency_ms": 0.00012800000000000002,
+        "energy_j": 3.22323873792e-05,
+        "interconnect_ms": 0.0033554432,
+        "latency_ms": 3.228353472,
+        "memory_ms": 0.0033554432,
+        "peak_utilization": 0.11086578481494525,
+        "perf_per_dollar_tops": 0.0013858223101868156,
+        "perf_per_w_tops": 16.6562565063502,
+        "throughput_tops": 0.16629867722241787
+      },
+      "pareto": false,
+      "workload_id": "stochastic_sampling"
+    },
+    {
+      "architecture_id": "cpu_simd",
+      "family": "CPU baseline",
+      "metrics": {
+        "area_mm2": 120.0,
+        "average_power_w": 0.009310902744035477,
+        "bottleneck": "compute",
+        "compute_ms": 6710.886399999999,
+        "cost_usd": 50.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0687328985088,
+        "interconnect_ms": 3.3554432000000003,
+        "latency_ms": 7381.980072,
+        "memory_ms": 6.03979776,
+        "peak_utilization": 0.07272722315200529,
+        "perf_per_dollar_tops": 9.309084563456676e-05,
+        "perf_per_w_tops": 0.49990236281976175,
+        "throughput_tops": 0.004654542281728338
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "gpu_simt",
+      "family": "GPU baseline",
+      "metrics": {
+        "area_mm2": 600.0,
+        "average_power_w": 1.4989820910771179,
+        "bottleneck": "compute",
+        "compute_ms": 19.08874353777778,
+        "cost_usd": 218.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0343664492544,
+        "interconnect_ms": 0.33554432,
+        "latency_ms": 22.926524245333333,
+        "memory_ms": 0.301989888,
+        "peak_utilization": 0.37467234457697923,
+        "perf_per_dollar_tops": 0.006874721918843656,
+        "perf_per_w_tops": 0.9998047256395234,
+        "throughput_tops": 1.498689378307917
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "npu_systolic",
+      "family": "NPU baseline",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 3.656082868302095,
+        "bottleneck": "compute",
+        "compute_ms": 3.9045157236363637,
+        "cost_usd": 113.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.017185237893119997,
+        "interconnect_ms": 0.2236962133333333,
+        "latency_ms": 4.700450868363636,
+        "memory_ms": 0.603979776,
+        "peak_utilization": 0.45686758741669425,
+        "perf_per_dollar_tops": 0.06468921591740803,
+        "perf_per_w_tops": 1.9993751952514842,
+        "throughput_tops": 7.309881398667108
+      },
+      "pareto": true,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "sparse_event_mesh",
+      "family": "Sparse event",
+      "metrics": {
+        "area_mm2": 150.0,
+        "average_power_w": 0.003376740052048635,
+        "bottleneck": "compute",
+        "compute_ms": 954.4371768888889,
+        "cost_usd": 60.5,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.00515664510976,
+        "interconnect_ms": 0.8388608000000001,
+        "latency_ms": 1527.1075150222223,
+        "memory_ms": 1.207959552,
+        "peak_utilization": 0.018749901382189193,
+        "perf_per_dollar_tops": 0.0003718988703905294,
+        "perf_per_w_tops": 6.663196251952108,
+        "throughput_tops": 0.02249988165862703
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "sparse_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 280.0,
+        "average_power_w": 0.03750302280875977,
+        "bottleneck": "compute",
+        "compute_ms": 68.719476736,
+        "cost_usd": 106.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0041238396927999995,
+        "interconnect_ms": 0.2236962133333333,
+        "latency_ms": 109.9601947776,
+        "memory_ms": 0.201326592,
+        "peak_utilization": 0.12498973264823438,
+        "perf_per_dollar_tops": 0.0029478710530243955,
+        "perf_per_w_tops": 8.331977217249797,
+        "throughput_tops": 0.3124743316205859
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "stochastic_pbit",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 220.0,
+        "average_power_w": 0.001201125798654968,
+        "bottleneck": "compute",
+        "compute_ms": 858.9934592000001,
+        "cost_usd": 85.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0020635304591359997,
+        "interconnect_ms": 0.08388608,
+        "latency_ms": 1717.9969504,
+        "memory_ms": 1.50994944,
+        "peak_utilization": 0.009999941606415553,
+        "perf_per_dollar_tops": 0.00023529274368036597,
+        "perf_per_w_tops": 16.65094799830889,
+        "throughput_tops": 0.019999883212831106
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "event_stochastic",
+      "family": "Stochastic",
+      "metrics": {
+        "area_mm2": 240.0,
+        "average_power_w": 0.0004806783391282359,
+        "bottleneck": "compute",
+        "compute_ms": 1431.6557653333332,
+        "cost_usd": 92.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.001376335691776,
+        "interconnect_ms": 0.08388608,
+        "latency_ms": 2863.319562666666,
+        "memory_ms": 1.00663296,
+        "peak_utilization": 0.009999971948642742,
+        "perf_per_dollar_tops": 0.00013043441672142708,
+        "perf_per_w_tops": 24.96464966600029,
+        "throughput_tops": 0.01199996633837129
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "stochastic_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 300.0,
+        "average_power_w": 0.0007502750274622189,
+        "bottleneck": "compute",
+        "compute_ms": 687.19476736,
+        "cost_usd": 113.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0010311746715647998,
+        "interconnect_ms": 0.0134217728,
+        "latency_ms": 1374.3955667199998,
+        "memory_ms": 0.301989888,
+        "peak_utilization": 0.02499989027904073,
+        "perf_per_dollar_tops": 0.00022123796707115687,
+        "perf_per_w_tops": 33.320968130316224,
+        "throughput_tops": 0.02499989027904073
+      },
+      "pareto": true,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "attention_near_memory",
+      "family": "Memory-centric",
+      "metrics": {
+        "area_mm2": 380.0,
+        "average_power_w": 1.4054481772322502,
+        "bottleneck": "compute",
+        "compute_ms": 4.8806446545454545,
+        "cost_usd": 141.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.008591276769280001,
+        "interconnect_ms": 0.134217728,
+        "latency_ms": 6.112837818181818,
+        "memory_ms": 0.075497472,
+        "peak_utilization": 0.7026143051309484,
+        "perf_per_dollar_tops": 0.03986464142586941,
+        "perf_per_w_tops": 3.999375097640993,
+        "throughput_tops": 5.620914441047587
+      },
+      "pareto": true,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "photonic_interconnect",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 260.0,
+        "average_power_w": 0.011668592391851345,
+        "bottleneck": "compute",
+        "compute_ms": 196.34136210285712,
+        "cost_usd": 99.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0034366113710080004,
+        "interconnect_ms": 0.0067108864,
+        "latency_ms": 294.51807515428567,
+        "memory_ms": 0.0603979776,
+        "peak_utilization": 0.23332855445289988,
+        "perf_per_dollar_tops": 0.0011784270426914135,
+        "perf_per_w_tops": 9.99814487546256,
+        "throughput_tops": 0.11666427722644994
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "in_memory_compute",
+      "family": "In-memory",
+      "metrics": {
+        "area_mm2": 450.0,
+        "average_power_w": 0.07498508191755335,
+        "bottleneck": "compute",
+        "compute_ms": 14.316557653333332,
+        "cost_usd": 165.5,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.00171832246272,
+        "interconnect_ms": 0.067108864,
+        "latency_ms": 22.915524245333334,
+        "memory_ms": 0.0301989888,
+        "peak_utilization": 0.37485219626818317,
+        "perf_per_dollar_tops": 0.009059871813128294,
+        "perf_per_w_tops": 19.996094512790474,
+        "throughput_tops": 1.4994087850727327
+      },
+      "pareto": true,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "hybrid_chiplet",
+      "family": "Hybrid",
+      "metrics": {
+        "area_mm2": 500.0,
+        "average_power_w": 0.4936127561447113,
+        "bottleneck": "compute",
+        "compute_ms": 8.18089008761905,
+        "cost_usd": 183.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.006873826721792001,
+        "interconnect_ms": 0.033554432,
+        "latency_ms": 13.925545148952384,
+        "memory_ms": 0.150994944,
+        "peak_utilization": 0.4112315173359045,
+        "perf_per_dollar_tops": 0.013483000568390312,
+        "perf_per_w_tops": 4.998633186238138,
+        "throughput_tops": 2.467389104015427
+      },
+      "pareto": true,
+      "workload_id": "memory_bound_attention"
+    },
+    {
+      "architecture_id": "sparse_photonic",
+      "family": "Photonic",
+      "metrics": {
+        "area_mm2": 320.0,
+        "average_power_w": 0.01588542158891426,
+        "bottleneck": "compute",
+        "compute_ms": 76.35497415111112,
+        "cost_usd": 120.0,
+        "dependency_ms": 3.2000000000000005e-05,
+        "energy_j": 0.0020620943294464,
+        "interconnect_ms": 0.0134217728,
+        "latency_ms": 129.81048805688891,
+        "memory_ms": 0.1207959552,
+        "peak_utilization": 0.1764610285980487,
+        "perf_per_dollar_tops": 0.002205762857475609,
+        "perf_per_w_tops": 16.662544422603784,
+        "throughput_tops": 0.2646915428970731
+      },
+      "pareto": false,
+      "workload_id": "memory_bound_attention"
+    }
+  ],
+  "summary": {
+    "baseline_frontier": [
+      "npu_systolic"
+    ],
+    "best_by_workload": {
+      "memory_bound_attention": {
+        "cost": "cpu_simd",
+        "energy": "stochastic_photonic",
+        "latency": "npu_systolic",
+        "perf_per_dollar": "npu_systolic",
+        "perf_per_w": "stochastic_photonic"
+      },
+      "sparse_event_inference": {
+        "cost": "cpu_simd",
+        "energy": "stochastic_photonic",
+        "latency": "sparse_near_memory",
+        "perf_per_dollar": "sparse_near_memory",
+        "perf_per_w": "stochastic_photonic"
+      },
+      "stochastic_sampling": {
+        "cost": "cpu_simd",
+        "energy": "stochastic_photonic",
+        "latency": "npu_systolic",
+        "perf_per_dollar": "npu_systolic",
+        "perf_per_w": "stochastic_photonic"
+      }
+    },
+    "multi_workload_frontier": [
+      "event_stochastic",
+      "hybrid_chiplet",
+      "in_memory_compute",
+      "npu_systolic",
+      "stochastic_photonic"
+    ],
+    "pareto_appearances": {
+      "attention_near_memory": 1,
+      "event_stochastic": 2,
+      "hybrid_chiplet": 2,
+      "in_memory_compute": 3,
+      "npu_systolic": 2,
+      "sparse_near_memory": 1,
+      "stochastic_pbit": 1,
+      "stochastic_photonic": 3
+    }
+  },
+  "workloads": [
+    {
+      "bottleneck": "memory and event interconnect",
+      "bytes_moved": 1200000000.0,
+      "communication_bytes": 200000000.0,
+      "description": "100M events, 64 fan-out, 16 timesteps, 2% active. The cost is dominated by state movement and event delivery, not dense MACs.",
+      "id": "sparse_event_inference",
+      "name": "Sparse event-driven inference",
+      "ops": 2048000000.0,
+      "parallelism": 100000000,
+      "precision_bits": 8,
+      "sequential_steps": 16,
+      "sparsity": 0.98
+    },
+    {
+      "bottleneck": "interconnect and sampling",
+      "bytes_moved": 16777216.0,
+      "communication_bytes": 16777216.0,
+      "description": "4,096 variables, 1,024 samples, 128 sweeps. The cost is dominated by repeated state exchange and sampling, not matrix multiplication.",
+      "id": "stochastic_sampling",
+      "name": "Stochastic sampling",
+      "ops": 536870912.0,
+      "parallelism": 4096,
+      "precision_bits": 8,
+      "sequential_steps": 128,
+      "sparsity": 0.0
+    },
+    {
+      "bottleneck": "memory bandwidth",
+      "bytes_moved": 603979776.0,
+      "communication_bytes": 67108864.0,
+      "description": "4 batches, 16 heads, 2,048 tokens, 64 head width. The cost is dominated by the score matrix and tensor movement.",
+      "id": "memory_bound_attention",
+      "name": "Memory-bound attention",
+      "ops": 34359738368.0,
+      "parallelism": 8388608,
+      "precision_bits": 8,
+      "sequential_steps": 32,
+      "sparsity": 0.0
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 PYTHON ?= python3
-export PYTHONPATH := src
+export PYTHONPATH := src:.
 
-.PHONY: help install fetch claims analyze bench figures report preview paper-check test pipeline all docker-build docker-run clean
+.PHONY: help install fetch claims analyze bench figures report sim preview paper-check test pipeline all docker-build docker-run clean
 
 help:
 	@echo "XPU-Atlas targets:"
@@ -12,10 +12,11 @@ help:
 	@echo "  bench         refresh host CPU microbenchmarks (hardware-dependent; not part of all)"
 	@echo "  figures       render publication-quality figures"
 	@echo "  report        render docs/EVIDENCE.md and docs/RESULTS.md"
+	@echo "  sim           screen hypothetical architectures and render the Pareto report"
 	@echo "  preview       rebuild the browser bundle and GitHub Pages entry point"
 	@echo "  paper-check   enforce README/paper consistency with generated results"
 	@echo "  test          run the test suite"
-	@echo "  pipeline      claims + analyze + figures + report + preview + paper-check"
+	@echo "  pipeline      claims + analyze + figures + report + sim + preview + paper-check"
 	@echo "  all           test + pipeline (offline, reproducible default)"
 	@echo "  docker-build  build the container image"
 	@echo "  docker-run    run the full pipeline in docker compose"
@@ -42,6 +43,9 @@ figures:
 report:
 	$(PYTHON) -m xpu_atlas.report
 
+sim:
+	$(PYTHON) -m sim.run
+
 preview:
 	$(PYTHON) scripts/sync_preview.py
 
@@ -51,7 +55,7 @@ paper-check:
 test:
 	$(PYTHON) -m pytest
 
-pipeline: claims analyze figures report preview paper-check
+pipeline: claims analyze figures report sim preview paper-check
 
 all: pipeline test
 
@@ -62,4 +66,4 @@ docker-run:
 	docker compose up --build --abort-on-container-exit
 
 clean:
-	rm -f results/evidence_audit.json results/analysis.json results/summary.json figures/*.png docs/EVIDENCE.md docs/RESULTS.md index.html
+	rm -f results/evidence_audit.json results/analysis.json results/summary.json results/simulation.json results/simulation.csv figures/*.png docs/EVIDENCE.md docs/RESULTS.md docs/SIMULATION.md index.html

@@ -94,7 +94,7 @@ def main() -> int:
 
     docs_missing = [
         str(path.relative_to(ROOT))
-        for path in (DOCS / "EVIDENCE.md", DOCS / "RESULTS.md")
+        for path in (DOCS / "EVIDENCE.md", DOCS / "RESULTS.md", DOCS / "SIMULATION.md")
         if not path.exists()
     ]
 
