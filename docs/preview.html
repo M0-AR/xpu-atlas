@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#071014">
+<title>XPU-Atlas — the processor market, mapped with evidence</title>
+<meta name="description" content="An open, reproducible evidence atlas of 20 processing-unit paradigms: 64 graded claims, 58 sources, live publication and attention data, market signals, benchmarks, and a guided quiz.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XPU-Atlas — the processor market, mapped with evidence">
+<meta property="og:description" content="64 graded claims, 58 sources, six findings, and a 20-paradigm atlas. Built for decisions, not hype.">
+<meta property="og:image" content="assets/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XPU-Atlas — the processor market, mapped with evidence">
+<meta name="twitter:description" content="64 graded claims, 58 sources, six findings, and a 20-paradigm atlas. Built for decisions, not hype.">
+<meta name="twitter:image" content="assets/social-preview.png">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<style>
+:root{
+  --bg:#071014; --bg2:#0a171d; --surface:#0d1d24; --surface2:#122832;
+  --text:#ecf7f7; --muted:#9db3b8; --faint:#6f888e;
+  --line:rgba(226,244,244,.12); --line2:rgba(226,244,244,.2);
+  --teal:#5eead4; --teal2:#2dd4bf; --amber:#fbbf24; --rose:#fb7185; --violet:#a78bfa; --blue:#60a5fa;
+  --shadow:0 24px 80px rgba(0,0,0,.38);
+  --radius:18px; --radius-sm:12px; --max:1180px;
+  --sans:"Inter","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+}
+html[data-theme="light"]{
+  --bg:#f6f8f7; --bg2:#eef3f1; --surface:#ffffff; --surface2:#f2f7f5;
+  --text:#0d2226; --muted:#52696e; --faint:#6b8085;
+  --line:rgba(13,34,38,.12); --line2:rgba(13,34,38,.22);
+  --teal:#0f766e; --teal2:#0d9488; --amber:#b45309; --rose:#be123c; --violet:#6d28d9; --blue:#1d4ed8;
+  --shadow:0 24px 70px rgba(13,34,38,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body{margin:0;background:radial-gradient(1200px 700px at 78% -10%,rgba(94,234,212,.12),transparent 55%),radial-gradient(900px 600px at 8% 18%,rgba(251,191,36,.07),transparent 55%),var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--amber)}
+img{max-width:100%;height:auto}
+button,input,select{font:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--amber);color:#071014;padding:10px 14px;border-radius:10px;font-weight:800}
+.skip:focus{top:12px}
+.progress{position:fixed;inset:0 auto auto 0;height:3px;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));z-index:90}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.site-header{position:sticky;top:0;z-index:80;backdrop-filter:blur(18px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:18px;min-height:70px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 0 0 1px var(--line)}
+.brand span small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700;line-height:1.2}
+.nav-links{display:flex;align-items:center;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:650;padding:9px 10px;border-radius:9px;white-space:nowrap}
+.nav-links a:hover,.nav-links a[aria-current="true"]{color:var(--text);background:var(--surface2)}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:11px;cursor:pointer;flex:0 0 auto}
+.icon-btn:hover{border-color:var(--line2);background:var(--surface2)}
+.hero{position:relative;padding:74px 0 34px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:auto -10% -35% 42%;height:520px;background:conic-gradient(from 210deg,rgba(94,234,212,.16),rgba(96,165,250,.1),rgba(251,191,36,.12),rgba(94,234,212,.16));filter:blur(70px);opacity:.55;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(340px,.88fr);gap:44px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 35%,transparent);background:color-mix(in srgb,var(--teal) 8%,transparent);padding:7px 11px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 16%,transparent)}
+h1{font-size:clamp(2.5rem,4.6vw,4.6rem);line-height:1.02;letter-spacing:-.055em;margin:18px 0 20px;max-width:26ch}
+h1 em{font-style:normal;color:var(--teal)}
+.lede{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--muted);max-width:60ch;margin:0 0 26px}
+.lede strong{color:var(--text)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:12px;font-weight:800;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--teal);color:#041012}
+.btn-primary:hover{background:var(--amber);color:#071014}
+.btn-ghost{background:var(--surface);border-color:var(--line2);color:var(--text)}
+.btn-ghost:hover{background:var(--surface2)}
+.micro{display:flex;flex-wrap:wrap;gap:14px;color:var(--faint);font-size:12px;margin-top:20px}
+.micro span{display:inline-flex;gap:7px;align-items:center}
+.signal-board{position:relative;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line2);border-radius:24px;padding:22px;box-shadow:var(--shadow);overflow:hidden}
+.signal-board:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(94,234,212,.08),transparent);transform:translateX(-100%);animation:scan 7s ease-in-out infinite}
+@keyframes scan{0%,60%{transform:translateX(-100%)}80%,100%{transform:translateX(100%)}}
+.board-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;position:relative}
+.board-head strong{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.live{font-size:11px;font-weight:800;color:var(--teal);display:inline-flex;align-items:center;gap:6px}
+.signal{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:13px 0;border-top:1px solid var(--line);position:relative}
+.signal span{color:var(--muted);font-size:13px}
+.signal b{font-size:22px;letter-spacing:-.03em}
+.signal b small{font-size:11px;color:var(--faint);font-weight:700;letter-spacing:.06em;margin-left:3px}
+.signal-note{display:flex;gap:9px;align-items:flex-start;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:12px;position:relative}
+.section{padding:64px 0;border-top:1px solid var(--line)}
+.kicker{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:850;margin-bottom:10px}
+.kicker:before{content:"";width:26px;height:1px;background:var(--teal);opacity:.7}
+h2{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.05;letter-spacing:-.045em;margin:0 0 14px;max-width:18ch}
+.section > .wrap > p.sub{color:var(--muted);max-width:70ch;margin:0 0 30px;font-size:17px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 88%,black));border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:transform .2s ease,border-color .2s ease}
+.card:hover{transform:translateY(-2px);border-color:var(--line2)}
+.card h3{font-size:17px;margin:0 0 7px;letter-spacing:-.02em}
+.card p{color:var(--muted);font-size:14px;margin:0}
+.card .num{font-size:11px;letter-spacing:.15em;color:var(--faint);font-weight:800;text-transform:uppercase;margin-bottom:14px}
+.icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--teal) 12%,transparent);color:var(--teal);border:1px solid color-mix(in srgb,var(--teal) 24%,transparent);margin-bottom:14px;font-size:17px}
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:26px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+.kpi b{display:block;font-size:clamp(1.15rem,2vw,1.55rem);letter-spacing:-.04em}
+.kpi span{display:block;color:var(--muted);font-size:11px;line-height:1.35;margin-top:3px}
+.kpi.accent b{color:var(--teal)}
+.kpi.warn b{color:var(--amber)}
+.findings{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.finding{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;overflow:hidden}
+.finding h3{margin:0 0 4px;font-size:18px;letter-spacing:-.02em}
+.finding .tag{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:850;color:var(--amber)}
+.finding p{color:var(--muted);font-size:13px;margin:0 0 16px}
+.chart{display:grid;gap:9px;margin-top:8px}
+.bar-row{display:grid;grid-template-columns:78px 1fr 62px;gap:9px;align-items:center}
+.bar-row .name{font-size:11px;color:var(--muted);font-weight:750;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{display:block;height:9px;background:var(--surface2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.fill{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--teal2),var(--teal));min-width:3px}
+.fill.warn{background:linear-gradient(90deg,var(--amber),var(--rose))}
+.fill.violet{background:linear-gradient(90deg,var(--violet),var(--blue))}
+.bar-row .val{font-size:11px;font-variant-numeric:tabular-nums;color:var(--text);font-weight:800;text-align:right}
+.chart-note{font-size:10px;color:var(--faint);margin-top:10px}
+.era{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end;height:190px;margin-top:8px}
+.era-col{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:6px}
+.era-bar{width:100%;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,var(--teal),color-mix(in srgb,var(--teal) 20%,var(--surface)));min-height:5px;position:relative}
+.era-col .v{font-size:13px;font-weight:850;text-align:center}
+.era-col .l{font-size:10px;color:var(--muted);text-align:center;line-height:1.2}
+.lifecycle{display:flex;height:18px;border-radius:999px;overflow:hidden;border:1px solid var(--line);margin:12px 0 14px}
+.lifecycle span{height:100%}
+.legend{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 14px}
+.legend span{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--muted)}
+.sw{width:9px;height:9px;border-radius:3px;flex:0 0 auto}
+.attn{display:grid;gap:7px}
+.attn-row{display:grid;grid-template-columns:86px 1fr 64px;gap:8px;align-items:center}
+.attn-row .name{font-size:10px;color:var(--muted);text-align:right;font-weight:750}
+.attn-row .track{height:8px}
+.attn-row .val{font-size:10px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.positive{background:linear-gradient(90deg,var(--teal2),var(--teal))}
+.negative{background:linear-gradient(90deg,var(--rose),#f43f5e)}
+.mkt{display:grid;gap:8px}
+.mkt-row{display:grid;grid-template-columns:72px 1fr 58px;gap:8px;align-items:center}
+.mkt-row .name{font-size:11px;color:var(--muted);text-align:right;font-weight:750}
+.mkt-row .track{height:8px}
+.mkt-row .val{font-size:11px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:11px;color:var(--faint);margin-top:12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.chip{appearance:none;border:1px solid var(--line2);background:var(--surface);color:var(--muted);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:750;cursor:pointer}
+.chip:hover{color:var(--text);border-color:var(--teal)}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#041012}
+.atlas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.atlas-card{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:13px;color:var(--text);cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.atlas-card:hover{transform:translateY(-2px);border-color:var(--line2);background:var(--surface2)}
+.atlas-card[aria-pressed="true"]{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal) inset}
+.atlas-card .abbr{font-size:16px;font-weight:900;letter-spacing:-.03em}
+.atlas-card .nm{font-size:10px;color:var(--muted);line-height:1.25;margin-top:3px;min-height:25px}
+.atlas-card .meta{display:flex;justify-content:space-between;gap:5px;font-size:9px;color:var(--faint);margin-top:9px;text-transform:uppercase;letter-spacing:.06em}
+.atlas-detail{margin-top:14px;background:var(--surface2);border:1px solid var(--line2);border-radius:14px;padding:18px;min-height:130px}
+.atlas-detail h3{margin:0 0 4px;font-size:20px;letter-spacing:-.03em}
+.atlas-detail p{margin:0;color:var(--muted);font-size:13px}
+.detail-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.detail-grid div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+.detail-grid b{display:block;font-size:16px}
+.detail-grid span{font-size:10px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.claim-tools{display:grid;grid-template-columns:1.4fr .7fr .7fr;gap:10px;margin-bottom:14px}
+.field label{display:block;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:5px}
+.field input,.field select{width:100%;background:var(--surface);border:1px solid var(--line2);color:var(--text);border-radius:10px;padding:10px 11px;font-size:13px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;min-width:760px}
+caption{text-align:left;padding:14px 16px;color:var(--muted);font-size:12px;border-bottom:1px solid var(--line)}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;font-size:12px}
+th{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);background:var(--surface2);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+td.statement{max-width:460px;color:var(--text)}
+.pill{display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;font-weight:850;white-space:nowrap;border:1px solid transparent}
+.pill.ok{background:color-mix(in srgb,var(--teal) 14%,transparent);color:var(--teal);border-color:color-mix(in srgb,var(--teal) 28%,transparent)}
+.pill.warn{background:color-mix(in srgb,var(--amber) 14%,transparent);color:var(--amber);border-color:color-mix(in srgb,var(--amber) 28%,transparent)}
+.pill.bad{background:color-mix(in srgb,var(--rose) 14%,transparent);color:var(--rose);border-color:color-mix(in srgb,var(--rose) 28%,transparent)}
+.pill.neutral{background:var(--surface2);color:var(--muted);border-color:var(--line2)}
+.quiz-shell{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
+.quiz-panel{background:var(--surface);border:1px solid var(--line2);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.quiz-top span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--faint);font-weight:850}
+.quiz-progress{height:8px;background:var(--surface2);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.quiz-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--amber));width:0;transition:width .3s ease}
+fieldset{border:0;padding:0;margin:0}
+legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;margin-bottom:14px}
+.opt{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:11px 12px;margin-bottom:8px;cursor:pointer;font-size:13px}
+.opt:hover{border-color:var(--line2)}
+.opt input{accent-color:var(--teal);margin-top:3px;flex:0 0 auto}
+.opt.correct{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 10%,var(--surface2))}
+.opt.wrong{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 10%,var(--surface2))}
+.feedback{margin-top:12px;padding:12px;border-radius:10px;background:var(--surface2);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.feedback strong{color:var(--text)}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.quiz-side{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.quiz-side h3{margin:0 0 8px;font-size:17px}
+.quiz-side p{color:var(--muted);font-size:13px}
+.quiz-score{font-size:54px;font-weight:900;letter-spacing:-.06em;line-height:1;color:var(--teal)}
+.quiz-score small{font-size:14px;color:var(--faint);letter-spacing:0}
+.use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.use-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}
+.use-card h3{font-size:15px;margin:0 0 6px}
+.use-card p{font-size:12px;color:var(--muted);margin:0}
+.use-card .who{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);font-weight:850;margin-bottom:9px}
+.datasets{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dataset{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}
+.dataset b{font-size:24px;letter-spacing:-.04em;display:block}
+.dataset span{font-size:11px;color:var(--muted);display:block;margin-top:3px}
+.dataset code{display:block;font-family:var(--mono);font-size:8px;color:var(--faint);margin-top:12px;word-break:break-all;line-height:1.55}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:step}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.step:before{counter-increment:step;content:"0" counter(step);font-size:10px;letter-spacing:.12em;color:var(--teal);font-weight:900}
+.step h3{font-size:15px;margin:10px 0 5px}
+.step p{font-size:12px;color:var(--muted);margin:0}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.trust div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.trust b{display:block;font-size:13px}
+.trust span{font-size:11px;color:var(--muted)}
+.start-box{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;background:linear-gradient(135deg,var(--surface2),var(--surface));border:1px solid var(--line2);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.start-box h2{margin-bottom:8px}
+.start-box p{color:var(--muted);margin:0 0 18px}
+.code{background:#041012;border:1px solid rgba(94,234,212,.2);border-radius:12px;padding:14px;font-family:var(--mono);font-size:12px;color:#d7f7f1;overflow:auto;line-height:1.8}
+.code span{color:#5eead4}
+.footer{border-top:1px solid var(--line);padding:34px 0 44px;color:var(--faint);font-size:12px}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px}
+.footer a{color:var(--muted)}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.path-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.path-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.path-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--teal)}
+.path-card:nth-child(2):before{background:var(--blue)}
+.path-card:nth-child(3):before{background:var(--violet)}
+.path-card:nth-child(4):before{background:var(--amber)}
+.path-card .lvl{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:850}
+.path-card h3{font-size:18px;margin:5px 0 5px;letter-spacing:-.03em}
+.path-card p{font-size:12px;color:var(--muted);margin:0 0 12px}
+.check{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:var(--muted);padding:7px 0;border-top:1px solid var(--line);cursor:pointer;line-height:1.4}
+.check input{accent-color:var(--teal);margin-top:2px;flex:0 0 auto}
+.check.done{color:var(--text);text-decoration:line-through;text-decoration-color:var(--faint)}
+.path-progress-wrap{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.path-progress{height:10px;background:var(--surface2);border-radius:999px;overflow:hidden;flex:1;min-width:180px;border:1px solid var(--line)}
+.path-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .25s ease}
+.path-progress-label{font-size:12px;font-weight:800;color:var(--muted)}
+@media (max-width:980px){
+  .hero-grid,.quiz-shell,.start-box{grid-template-columns:1fr}
+  .hero{padding-top:48px}
+  .grid-4,.kpis{grid-template-columns:repeat(3,1fr)}
+  .findings{grid-template-columns:1fr}
+  .atlas-grid{grid-template-columns:repeat(4,1fr)}
+  .path-grid{grid-template-columns:repeat(2,1fr)}
+  .use-grid,.datasets{grid-template-columns:repeat(2,1fr)}
+  .steps,.trust{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:700px){
+  .wrap{padding:0 18px}
+  .nav{flex-wrap:wrap;gap:10px;padding:10px 0}
+  .nav-links{display:flex;order:3;width:100%;margin-left:0;padding-top:4px;border-top:1px solid var(--line)}
+  h1{font-size:clamp(2.4rem,13vw,4rem)}
+  .grid-3,.grid-4,.use-grid,.datasets,.steps,.trust,.kpis,.path-grid{grid-template-columns:1fr 1fr}
+  .atlas-grid{grid-template-columns:repeat(3,1fr)}
+  .detail-grid{grid-template-columns:repeat(2,1fr)}
+  .claim-tools{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:64px 1fr 52px}
+  .section{padding:48px 0}
+  .start-box{padding:20px}
+  .table-wrap{border-radius:10px}
+}
+@media (max-width:430px){
+  .grid-3,.grid-4,.use-grid,.datasets,.steps,.trust,.kpis,.atlas-grid,.path-grid{grid-template-columns:1fr 1fr}
+  .atlas-grid{grid-template-columns:1fr 1fr}
+  .era{height:160px}
+  .micro{display:none}
+}
+</style>
+</head>
+<body>
+<noscript><p style="margin:0;padding:14px 20px;background:#fbbf24;color:#071014;font-weight:750">This page works without JavaScript for reading, but the interactive atlas, claim explorer, and quiz need JavaScript. All data is also available in the repository.</p></noscript>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="read-progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="XPU-Atlas home">
+      <img src="../assets/logo.svg" alt="">
+      <span>XPU-Atlas<small>Evidence atlas · 2026</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#why">Why</a>
+      <a href="#findings">Findings</a>
+      <a href="#atlas">Atlas</a>
+      <a href="#explorer">Claims</a>
+      <a href="#learn">Learn</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#use-cases">Use cases</a>
+      <a href="#data">Data</a>
+      <a href="#start">Start</a>
+    </nav>
+    <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Open research asset · version 0.1.0</div>
+      <h1>The processor market, <em>mapped with evidence.</em></h1>
+      <p class="lede">A plain-English, fully sourced atlas of <strong>20 processing-unit paradigms</strong> — built from <strong>64 graded claims</strong>, <strong>58 sources</strong>, three frozen public datasets, six figures, and a one-command audit. See what is real, what is inflated, and where value is moving.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#findings">Explore the six findings <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#quiz">Take the 5-minute quiz</a>
+      </div>
+      <div class="micro">
+        <span>No signup</span><span>No tracking</span><span>Works offline</span><span>MIT code · CC-BY-4.0 data</span>
+      </div>
+    </div>
+    <aside class="signal-board" aria-label="Headline numbers from the audit">
+      <div class="board-head"><strong>Audit signal board</strong><span class="live"><span class="dot" aria-hidden="true"></span>frozen 2026-11-04</span></div>
+      <div class="signal"><span>Claims audited</span><b>64</b></div>
+      <div class="signal"><span>Supported by a captured source</span><b>73.4<small>%</small></b></div>
+      <div class="signal"><span>Primary evidence</span><b>20.3<small>%</small></b></div>
+      <div class="signal"><span>Maximum lexical inflation</span><b>579<small>x</small></b></div>
+      <div class="signal"><span>Absorbed or integrated</span><b>40<small>%</small></b></div>
+      <div class="signal"><span>Matmul speedup vs serial</span><b>11,918<small>x</small></b></div>
+      <div class="signal-note"><span aria-hidden="true">◎</span><span>Every number on this page is generated from committed data. The full ledger, sources, and methods are linked at the bottom.</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="kicker">The problem</div>
+    <h2>AI hardware is loud. The evidence is quieter.</h2>
+    <p class="sub">New processor names arrive every quarter. Most explanations are vivid, confident, and hard to check. XPU-Atlas turns that noise into a decision map you can inspect.</p>
+    <div class="grid-3">
+      <article class="card">
+        <div class="icon" aria-hidden="true">◎</div>
+        <h3>The narrative problem</h3>
+        <p>Twenty labels — CPU, GPU, TPU, NPU, DPU, LPU, QPU, photonic, wetware — are often presented as a flat list of rivals. The history is messier: functions get absorbed, integrated, or abandoned.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">⌁</div>
+        <h3>The evidence problem</h3>
+        <p>Only 20.3% of the audited claims rest on primary evidence. Definitions are easy; product specs, launch prices, and financial details are where the narrative gets thin.</p>
+      </article>
+      <article class="card">
+        <div class="icon" aria-hidden="true">↗</div>
+        <h3>The value problem</h3>
+        <p>Research output, public attention, and market value diverge. GPU publications grew 5.4% a year while GPU pageviews fell 18.8%; NPU attention rose 2,196% from a tiny base.</p>
+      </article>
+    </div>
+    <div class="kpis">
+      <div class="kpi accent"><b>64</b><span>claims, each with a status and source</span></div>
+      <div class="kpi"><b>20</b><span>paradigms mapped across 55 years</span></div>
+      <div class="kpi"><b>58</b><span>public sources, graded E1–E3</span></div>
+      <div class="kpi warn"><b>15</b><span>claims left visibly unverified</span></div>
+      <div class="kpi"><b>3</b><span>frozen public datasets</span></div>
+      <div class="kpi"><b>6</b><span>figures + 1 interactive atlas</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="findings">
+  <div class="wrap">
+    <div class="kicker">What the evidence shows</div>
+    <h2>Six findings that change the conversation.</h2>
+    <p class="sub">Each finding is generated from the same committed data. Click any chart card to jump to the underlying claim ledger or generated results.</p>
+    <div class="findings">
+      <article class="finding">
+        <div class="tag">01 · Measurement</div>
+        <h3>Acronyms inflate search results.</h3>
+        <p>Unquoted OpenAlex searches overcount by a median of 4.8x. Five terms exceed 10x; PPU reaches 579x.</p>
+        <div class="chart" id="inflation-chart"></div>
+        <div class="chart-note">Inflation factor = unquoted ÷ exact-phrase count. Log scale. Source: OpenAlex snapshot.</div>
+      </article>
+      <article class="finding">
+        <div class="tag">02 · Evidence</div>
+        <h3>Primary evidence is improving — slowly.</h3>
+        <p>The primary-source share rises from 6.1% before 2015 to 40.0% for 2021–2026. The overall share is still 20.3%.</p>
+        <div class="era" id="era-chart" aria-label="Primary evidence share by era"></div>
+        <div class="chart-note">Yates χ² = 6.83, p = 0.009, Cramér's V = 0.327. Descriptive signal, not a causal claim.</div>
+      </article>
+      <article class="finding">
+        <div class="tag">03 · Lifecycle</div>
+        <h3>Absorption beats replacement.</h3>
+        <p>8 of 20 paradigms (40%) are absorbed into other units or integrated into systems-on-chip. The standalone label often outlives the standalone chip.</p>
+        <div class="lifecycle" id="lifecycle-bar" aria-label="Lifecycle distribution of 20 paradigms"></div>
+        <div class="legend" id="lifecycle-legend"></div>
+        <div class="chart-note">Analytical labels, not vendor categories. Counts: absorbed 3, integrated 5, commercial 4, research 4, general-purpose 2, embedded 1, emerging 1.</div>
+      </article>
+      <article class="finding">
+        <div class="tag">04 · Attention</div>
+        <h3>Attention is polarising.</h3>
+        <p>NPU and neuromorphic pageviews exploded from tiny bases; CPU, MCU, ASIC, FPGA, and GPU all lost attention.</p>
+        <div class="attn" id="attention-chart"></div>
+        <div class="chart-note">Change in mean monthly Wikimedia pageviews, 2021→2025. Log-scaled bar length; labels show actual change.</div>
+      </article>
+      <article class="finding">
+        <div class="tag">05 · Markets</div>
+        <h3>Value accrues to integrators and the foundry.</h3>
+        <p>Equal-weight CAGR: integrators 33.4%, foundry 30.0%, legacy CPU 4.9%, mobile SoC −0.03%.</p>
+        <div class="mkt" id="market-chart"></div>
+        <div class="chart-note">Monthly adjusted close, Dec 2021–Nov 2026 where available. Arm starts Oct 2023. Cerebras is a 6-month total return, not annualised: −55.7%.</div>
+      </article>
+      <article class="finding">
+        <div class="tag">06 · Architecture</div>
+        <h3>The latency–throughput gap is enormous.</h3>
+        <p>One ordinary CPU: 18.0M serial ops/s, 65.6x with vectorisation, 11,918x with BLAS matmul. Eight threads add only 2.29x.</p>
+        <div class="chart" id="bench-chart"></div>
+        <div class="chart-note">Intel Core i7-14700F, Python 3.12.13, NumPy 2.2.6. CPU-only benchmark; not a TPU/GPU/QPU measurement.</div>
+      </article>
+    </div>
+    <p class="note">Want the full tables? <a href="../docs/RESULTS.md">Open the generated results</a> · <a href="../figures/fig1_lexical_inflation.png">Figure 1</a> · <a href="../figures/fig2_publication_trajectories.png">Figure 2</a> · <a href="../figures/fig3_attention_reallocation.png">Figure 3</a> · <a href="../figures/fig4_market_economics.png">Figure 4</a> · <a href="../figures/fig5_evidence_gradient.png">Figure 5</a> · <a href="../figures/fig6_latency_throughput.png">Figure 6</a></p>
+  </div>
+</section>
+
+<section class="section" id="atlas">
+  <div class="wrap">
+    <div class="kicker">The map</div>
+    <h2>Twenty paradigms. One click each.</h2>
+    <p class="sub">Filter by lifecycle and select a unit to see its year, claim count, support rate, and evidence mix. The map is generated from the same ledger as the paper.</p>
+    <div class="filters" id="atlas-filters" role="group" aria-label="Filter paradigms by lifecycle"></div>
+    <div class="atlas-grid" id="atlas-grid"></div>
+    <div class="atlas-detail" id="atlas-detail" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section" id="explorer">
+  <div class="wrap">
+    <div class="kicker">The receipts</div>
+    <h2>Explore all 64 claims.</h2>
+    <p class="sub">Search the ledger, filter by status or evidence grade, and see the exact source IDs. This is the part most AI-hardware explainers leave out.</p>
+    <div class="claim-tools">
+      <div class="field"><label for="claim-search">Search claims</label><input id="claim-search" type="search" placeholder="Try “Groq”, “neuron”, “price”…" autocomplete="off"></div>
+      <div class="field"><label for="claim-status">Status</label><select id="claim-status"><option value="all">All statuses</option><option value="supported">Supported</option><option value="unverified">Unverified</option><option value="conflicting">Conflicting</option><option value="refuted">Refuted</option></select></div>
+      <div class="field"><label for="claim-grade">Grade</label><select id="claim-grade"><option value="all">All grades</option><option value="E1">E1 · primary</option><option value="E2">E2 · secondary</option><option value="E3">E3 · tertiary</option><option value="E0">E0 · unverified</option></select></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <caption id="claim-caption">All 64 claims</caption>
+        <thead><tr><th scope="col">ID</th><th scope="col">Paradigm</th><th scope="col">Claim</th><th scope="col">Status</th><th scope="col">Grade</th><th scope="col">Sources</th></tr></thead>
+        <tbody id="claim-rows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="learn">
+  <div class="wrap">
+    <div class="kicker">From scratch to pro</div>
+    <h2>A learning path you can finish.</h2>
+    <p class="sub">Four levels, twelve checkpoints. Tick what you can explain out loud. Your progress is saved in this browser, not on a server.</p>
+    <div class="path-grid">
+      <article class="path-card">
+        <div class="lvl">Level 01 · Newcomer</div>
+        <h3>Name the jobs</h3>
+        <p>Stop treating the acronyms as a flat list of rivals.</p>
+        <label class="check"><input type="checkbox" data-path="l1a"> I can explain CPU vs GPU in one sentence each.</label>
+        <label class="check"><input type="checkbox" data-path="l1b"> I can name three specialized units and their jobs.</label>
+        <label class="check"><input type="checkbox" data-path="l1c"> I know why “NPU” can mean two different things here.</label>
+      </article>
+      <article class="path-card">
+        <div class="lvl">Level 02 · Reader</div>
+        <h3>Read the evidence</h3>
+        <p>Separate a claim from the source behind it.</p>
+        <label class="check"><input type="checkbox" data-path="l2a"> I can define E1, E2, E3, and E0 without looking.</label>
+        <label class="check"><input type="checkbox" data-path="l2b"> I know why “supported” is not the same as “primary”.</label>
+        <label class="check"><input type="checkbox" data-path="l2c"> I can find a claim’s source IDs in the explorer.</label>
+      </article>
+      <article class="path-card">
+        <div class="lvl">Level 03 · Analyst</div>
+        <h3>Read the signals</h3>
+        <p>Triangulate publications, attention, and markets.</p>
+        <label class="check"><input type="checkbox" data-path="l3a"> I can explain why unquoted acronym searches inflate.</label>
+        <label class="check"><input type="checkbox" data-path="l3b"> I know which signals disagree, and why that matters.</label>
+        <label class="check"><input type="checkbox" data-path="l3c"> I can name one lifecycle absorption and one integration.</label>
+      </article>
+      <article class="path-card">
+        <div class="lvl">Level 04 · Practitioner</div>
+        <h3>Use it in a room</h3>
+        <p>Turn the atlas into a briefing, a lesson, or a diligence memo.</p>
+        <label class="check"><input type="checkbox" data-path="l4a"> I can brief the six findings in five minutes.</label>
+        <label class="check"><input type="checkbox" data-path="l4b"> I can name the limitation that matters most for my use case.</label>
+        <label class="check"><input type="checkbox" data-path="l4c"> I can reproduce the headline numbers with one command.</label>
+      </article>
+    </div>
+    <div class="path-progress-wrap">
+      <div class="path-progress" aria-hidden="true"><i id="path-bar"></i></div>
+      <span class="path-progress-label" id="path-label">0 of 12 checkpoints</span>
+      <a class="btn btn-ghost" href="#quiz">Test yourself <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="note">The path is a study aid, not a certification. The quiz gives instant explanations; the README gives the full plain-English guide.</p>
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="wrap">
+    <div class="kicker">Learn by doing</div>
+    <h2>The 5-minute evidence quiz.</h2>
+    <p class="sub">Ten questions, plain English, instant explanations. No signup. Designed for a coffee break, a classroom, or a sales conversation.</p>
+    <div class="quiz-shell">
+      <div class="quiz-panel" id="quiz-panel">
+        <div class="quiz-top"><span id="quiz-step">Question 1 of 10</span><span id="quiz-score-label">Score 0</span></div>
+        <div class="quiz-progress"><i id="quiz-progress"></i></div>
+        <form id="quiz-form" novalidate></form>
+        <div class="quiz-actions" id="quiz-actions"></div>
+        <p class="sr-only" id="quiz-live" aria-live="polite"></p>
+      </div>
+      <aside class="quiz-side">
+        <h3>Why this quiz exists</h3>
+        <p>Most people meet this material through a video. A quiz turns passive watching into retrieval practice — the fastest way to remember the difference between a supported claim, a primary source, and a number that is simply repeated.</p>
+        <div class="quiz-score" id="quiz-big-score">0<small>/10</small></div>
+        <p id="quiz-verdict">Answer a question to begin.</p>
+        <p class="note">Every answer is explained and linked to the ledger. Restart any time.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="use-cases">
+  <div class="wrap">
+    <div class="kicker">Who it is for</div>
+    <h2>One atlas. Many jobs.</h2>
+    <p class="sub">The same evidence base supports a board briefing, an investment memo, a lesson plan, a procurement review, or a product strategy session.</p>
+    <div class="use-grid">
+      <article class="use-card"><div class="who">Strategy &amp; analysts</div><h3>Pressure-test the narrative</h3><p>Separate definitions from product claims. See which categories are absorbed, integrated, or still independent before you build a market map.</p></article>
+      <article class="use-card"><div class="who">Investors &amp; VC</div><h3>Read three signals at once</h3><p>Publication growth, public attention, and market returns are different signals. The atlas shows where they agree and where they diverge.</p></article>
+      <article class="use-card"><div class="who">Founders &amp; product</div><h3>Find the integration gap</h3><p>If 40% of categories are absorbed or integrated, the opportunity may be the system, the software layer, or the workflow — not another standalone chip.</p></article>
+      <article class="use-card"><div class="who">Educators &amp; students</div><h3>Teach evidence, not slogans</h3><p>Use the claim ledger, figures, and quiz as a ready-made module on source grading, bibliometrics, and reproducible research.</p></article>
+      <article class="use-card"><div class="who">Journalists &amp; creators</div><h3>Start from receipts</h3><p>Every claim has an ID, a status, a grade, and a source pointer. Check the work before repeating the number.</p></article>
+      <article class="use-card"><div class="who">Procurement &amp; enterprise</div><h3>Ask better vendor questions</h3><p>Distinguish a primary announcement from a trade-press summary. Request the filing, the benchmark, or the standard behind the slide.</p></article>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>What it is not</h3>
+      <p>Not investment advice, not a causal model, not a live product database, and not a claim that one architecture “wins”. It is a descriptive, reproducible evidence base — with negative and unverified findings deliberately retained.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="data">
+  <div class="wrap">
+    <div class="kicker">The data</div>
+    <h2>Frozen, hashed, and ready to reuse.</h2>
+    <p class="sub">Three independent snapshots are committed with SHA256 hashes. The default pipeline runs offline; a separate refresh command updates the snapshots from the public APIs.</p>
+    <div class="datasets">
+      <article class="dataset"><b>14</b><span>OpenAlex search terms, quoted and unquoted, 2000–2025</span><code>openalex_counts.json<br>7512dfd09dfc97195cfdb8dbeae3e59a01c541e3c915d50ebbb52df52931ff95</code></article>
+      <article class="dataset"><b>12 × 70</b><span>Wikimedia articles × months of pageviews, 2021–2026</span><code>wikimedia_pageviews.json<br>e45e5c6dca17c0adc983b15bb539a4eab2fe4fcc13b3df8cdc7e5ffa25bd051c</code></article>
+      <article class="dataset"><b>8</b><span>Yahoo Finance tickers, monthly adjusted close</span><code>yahoo_prices.json<br>c641f5623c8382056826c77961ce304cb6922e96caef5b69ef05d56054121d12</code></article>
+    </div>
+    <div class="grid-3" style="margin-top:16px">
+      <article class="card"><h3>Claim ledger</h3><p>64 claims, 20 paradigms, 58 sources. Every source has a grade, type, publisher, and URL in the generated register.</p><p style="margin-top:10px"><a href="../data/claims.yaml">Open claims.yaml</a></p></article>
+      <article class="card"><h3>Generated evidence</h3><p>Full claim register and source list, rebuilt from the ledger on every run.</p><p style="margin-top:10px"><a href="../docs/EVIDENCE.md">Open EVIDENCE.md</a></p></article>
+      <article class="card"><h3>Generated results</h3><p>Every table behind every number on this page, including the negative and unverified cases.</p><p style="margin-top:10px"><a href="../docs/RESULTS.md">Open RESULTS.md</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>Four steps. No magic.</h2>
+    <p class="sub">The atlas is a pipeline, not a slide deck. Each stage writes an auditable artifact.</p>
+    <div class="steps">
+      <article class="step"><h3>Extract</h3><p>Turn the narrative into 64 stable, testable claims — one statement at a time.</p></article>
+      <article class="step"><h3>Grade</h3><p>Attach a status and an evidence grade: E1 primary, E2 secondary, E3 tertiary, E0 unverified or conflicting.</p></article>
+      <article class="step"><h3>Join</h3><p>Add exact-phrase publication counts, public attention, market returns, and a local latency–throughput benchmark.</p></article>
+      <article class="step"><h3>Reproduce</h3><p>Freeze the inputs, hash them, and regenerate every table and figure with one command.</p></article>
+    </div>
+    <div class="trust" style="margin-top:16px">
+      <div><b>64 claims</b><span>20 paradigms, 58 sources</span></div>
+      <div><b>23 tests</b><span>schema, statistics, snapshots, outputs, preview</span></div>
+      <div><b>Docker</b><span>pinned Python 3.12 pipeline</span></div>
+      <div><b>CI</b><span>rebuild and guard on every push</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="start">
+  <div class="wrap">
+    <div class="start-box">
+      <div>
+        <div class="kicker">Start here</div>
+        <h2>Pick your path.</h2>
+        <p><strong>5 minutes:</strong> read the executive brief and the beginner guide in the README. <strong>15 minutes:</strong> take the quiz and filter the claim ledger. <strong>2 minutes:</strong> reproduce the entire atlas with one command.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="../README.md">Open the README <span aria-hidden="true">→</span></a>
+          <button class="btn btn-ghost" id="copy-cite" type="button">Copy citation</button>
+        </div>
+        <p class="note" id="copy-status" role="status"></p>
+      </div>
+      <div>
+        <div class="code" aria-label="Reproduce the atlas"><span># reproduce every number</span><br>make all<br><br><span># or run the same pipeline in Docker</span><br>docker compose up --abort-on-container-exit<br><br><span># refresh the public snapshots</span><br>make fetch</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <strong style="color:var(--text)">XPU-Atlas</strong> · Working paper v0.1.0 · 4 November 2026<br>
+      Code MIT · data CC-BY-4.0 · citation available in the README.
+    </div>
+    <div class="footer-links">
+      <a href="../README.md">README</a>
+      <a href="../docs/PAPER.md">Full paper</a>
+      <a href="../docs/EVIDENCE.md">Evidence</a>
+      <a href="../docs/RESULTS.md">Results</a>
+      <a href="../data/claims.yaml">Ledger</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/atlas-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  const D = window.XPU_DATA;
+  if(!D){document.body.insertAdjacentHTML("afterbegin","<p style='padding:20px;color:#fb7185'>Data bundle missing. Run <code>python3 scripts/build_atlas_data.py</code>.</p>");return;}
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const fmt = (n, d=0) => Number(n).toLocaleString("en-US", {maximumFractionDigits:d, minimumFractionDigits:d});
+  const pct = (n, d=1) => (n*100).toFixed(d) + "%";
+  const signed = (n, d=1) => (n>=0?"+":"") + (n*100).toFixed(d) + "%";
+  const esc = (s) => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const gradeClass = g => g==="E1"?"ok":g==="E0"?"bad":"neutral";
+  const statusClass = s => s==="supported"?"ok":s==="unverified"?"warn":s==="refuted"?"bad":"warn";
+
+  // Theme
+  const root = document.documentElement;
+  const saved = localStorage.getItem("xpu-theme");
+  if(saved) root.dataset.theme = saved;
+  else if(window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) root.dataset.theme = "light";
+  $("#theme-toggle").addEventListener("click", () => {
+    root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem("xpu-theme", root.dataset.theme);
+    $("#theme-toggle").textContent = root.dataset.theme === "dark" ? "◐" : "☀";
+  });
+  $("#theme-toggle").textContent = root.dataset.theme === "dark" ? "◐" : "☀";
+
+  // Scroll progress + reveal
+  const bar = $("#read-progress");
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + "%";
+  };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("in"); reveal.unobserve(e.target); } });
+  }, {rootMargin:"0px 0px -8% 0px"});
+  $$(".section, .finding, .card, .use-card, .step, .dataset").forEach(el => { el.classList.add("reveal"); reveal.observe(el); });
+
+  // Charts
+  const maxLog = Math.log10(D.terms[0].inflation + 1);
+  $("#inflation-chart").innerHTML = D.terms.slice(0,8).map(t => {
+    const w = Math.max(2, (Math.log10(t.inflation + 1) / maxLog) * 100);
+    return `<div class="bar-row"><span class="name">${esc(t.label)}</span><span class="track"><span class="fill warn" style="width:${w.toFixed(1)}%"></span></span><span class="val">${fmt(t.inflation, t.inflation < 10 ? 1 : 0)}x</span></div>`;
+  }).join("");
+
+  const eras = [["pre-2015", D.evidence.by_era["pre-2015"]], ["2015–2020", D.evidence.by_era["2015-2020"]], ["2021–2026", D.evidence.by_era["2021-2026"]]];
+  $("#era-chart").innerHTML = eras.map(([label, v]) => {
+    const share = v.primary_share;
+    return `<div class="era-col"><div class="v">${pct(share)}</div><div class="era-bar" style="height:${Math.max(4, share*100*1.7)}%"></div><div class="l">${label}<br>${v.primary}/${v.claims}</div></div>`;
+  }).join("");
+
+  const lifeColors = {"general-purpose":"#60a5fa","integrated":"#5eead4","absorbed":"#fbbf24","commercial":"#a78bfa","research":"#fb7185","embedded":"#94a3b8","emerging":"#f472b6"};
+  const lifeOrder = ["integrated","absorbed","commercial","research","general-purpose","embedded","emerging"];
+  const lifeCounts = {};
+  D.paradigms.forEach(p => lifeCounts[p.lifecycle] = (lifeCounts[p.lifecycle]||0)+1);
+  const total = D.paradigms.length;
+  $("#lifecycle-bar").innerHTML = lifeOrder.map(l => `<span style="width:${(lifeCounts[l]/total*100).toFixed(2)}%;background:${lifeColors[l]}" title="${l}: ${lifeCounts[l]}"></span>`).join("");
+  $("#lifecycle-legend").innerHTML = lifeOrder.map(l => `<span><i class="sw" style="background:${lifeColors[l]}"></i>${l} · ${lifeCounts[l]}</span>`).join("");
+
+  const attention = D.attention.slice();
+  const top = attention.slice(0,5).concat(attention.slice(-5)).sort((a,b)=>b.change-a.change);
+  const maxAttn = Math.log10(Math.max(...attention.map(a=>Math.abs(a.change)*100)) + 1);
+  $("#attention-chart").innerHTML = top.map(a => {
+    const v = a.change*100;
+    const w = Math.max(2, Math.log10(Math.abs(v)+1)/maxAttn*100);
+    return `<div class="attn-row"><span class="name">${esc(a.label)}</span><span class="track"><span class="fill ${v>=0?"positive":"negative"}" style="width:${w.toFixed(1)}%"></span></span><span class="val" style="color:${v>=0?"var(--teal)":"var(--rose)"}">${signed(a.change, v>99||v<-99?0:1)}</span></div>`;
+  }).join("");
+
+  const mkt = D.markets.filter(m => m.cagr > 0).sort((a,b)=>b.cagr-a.cagr);
+  const maxMkt = Math.max(...mkt.map(m=>m.cagr));
+  $("#market-chart").innerHTML = mkt.map(m => `<div class="mkt-row"><span class="name">${esc(m.label)}</span><span class="track"><span class="fill" style="width:${(m.cagr/maxMkt*100).toFixed(1)}%"></span></span><span class="val">${signed(m.cagr,1)}</span></div>`).join("") + `<div class="mkt-row"><span class="name">Qualcomm</span><span class="track"><span class="fill negative" style="width:2%"></span></span><span class="val" style="color:var(--rose)">${signed(-0.0002724,2)}</span></div>`;
+
+  const bench = D.bench;
+  const bmax = Math.log10(bench.matmul_ratio + 1);
+  const bvals = [["Serial Python", 1, fmt(bench.serial_ops/1e6,1)+"M ops/s", "linear"], ["NumPy vector", bench.vector_ratio, fmt(bench.vector_ratio,1)+"x vs serial", "linear"], ["BLAS matmul", bench.matmul_ratio, fmt(bench.matmul_gflops,1)+" GFLOPS", "linear"]];
+  $("#bench-chart").innerHTML = bvals.map(([name, ratio, label]) => {
+    const w = Math.max(2, Math.log10(ratio+1)/bmax*100);
+    return `<div class="bar-row"><span class="name">${name}</span><span class="track"><span class="fill violet" style="width:${w.toFixed(1)}%"></span></span><span class="val">${label}</span></div>`;
+  }).join("");
+
+  // Atlas
+  const lifeList = ["all", ...lifeOrder];
+  const atlasFilters = $("#atlas-filters");
+  atlasFilters.innerHTML = lifeList.map((l,i)=>`<button class="chip" type="button" data-life="${l}" aria-pressed="${i===0}">${l==="all"?"All 20":l}</button>`).join("");
+  let activeLife = "all";
+  function renderAtlas(){
+    const items = D.paradigms.filter(p => activeLife==="all" || p.lifecycle===activeLife);
+    $("#atlas-grid").innerHTML = items.map(p => `<button class="atlas-card" type="button" data-id="${esc(p.id)}" aria-pressed="false" aria-label="${esc(p.abbr)}: ${esc(p.name)}">
+      <div class="abbr">${esc(p.abbr)}</div><div class="nm">${esc(p.name)}</div>
+      <div class="meta"><span>${p.year}</span><span>${p.claims} claims</span></div>
+    </button>`).join("");
+  }
+  function showDetail(id){
+    const p = D.paradigms.find(x=>x.id===id) || D.paradigms[0];
+    const grads = Object.entries(p.grades).sort().map(([g,n])=>`<span class="pill ${gradeClass(g)}">${g} ${n}</span>`).join(" ");
+    $("#atlas-detail").innerHTML = `<h3>${esc(p.abbr)} · ${esc(p.name)}</h3><p>First public introduction <strong>${p.year}</strong> · lifecycle <strong>${esc(p.lifecycle)}</strong> · ${p.claims} claims · ${pct(p.support_rate)} supported.</p><div class="detail-grid"><div><b>${p.claims}</b><span>claims</span></div><div><b>${p.supported}</b><span>supported</span></div><div><b>${p.primary}</b><span>primary E1</span></div><div><b>${pct(p.support_rate,0)}</b><span>support rate</span></div></div><p style="margin-top:12px">${grads}</p>`;
+  }
+  atlasFilters.addEventListener("click", e => {
+    const b = e.target.closest("button[data-life]"); if(!b) return;
+    activeLife = b.dataset.life;
+    $$("#atlas-filters .chip").forEach(x=>x.setAttribute("aria-pressed", String(x===b)));
+    renderAtlas();
+  });
+  $("#atlas-grid").addEventListener("click", e => {
+    const b = e.target.closest("button[data-id]"); if(!b) return;
+    showDetail(b.dataset.id);
+    $$("#atlas-grid .atlas-card").forEach(x=>x.setAttribute("aria-pressed", String(x===b)));
+  });
+  renderAtlas(); showDetail(D.paradigms[0].id);
+
+  // Explorer
+  const rows = $("#claim-rows"), caption = $("#claim-caption");
+  function renderClaims(){
+    const q = $("#claim-search").value.trim().toLowerCase();
+    const st = $("#claim-status").value, gr = $("#claim-grade").value;
+    const items = D.claims.filter(c => (st==="all"||c.status===st) && (gr==="all"||c.grade===gr) && (!q || (c.statement+" "+c.abbr+" "+c.paradigm+" "+c.id).toLowerCase().includes(q)));
+    caption.textContent = `${items.length} of ${D.claims.length} claims shown`;
+    rows.innerHTML = items.length ? items.map(c => `<tr><td><code>${esc(c.id)}</code></td><td>${esc(c.abbr)}</td><td class="statement">${esc(c.statement)}</td><td><span class="pill ${statusClass(c.status)}">${esc(c.status)}</span></td><td><span class="pill ${gradeClass(c.grade)}">${esc(c.grade)}</span></td><td>${c.sources.map(s=>`<span class="pill neutral" title="${esc(D.sources[s]?.title||"")}">${esc(s)}</span>`).join(" ")}</td></tr>`).join("") : `<tr><td colspan="6" style="color:var(--muted)">No claims match those filters.</td></tr>`;
+  }
+  ["input","change"].forEach(ev => { $("#claim-search").addEventListener(ev, renderClaims); $("#claim-status").addEventListener(ev, renderClaims); $("#claim-grade").addEventListener(ev, renderClaims); });
+  renderClaims();
+
+  // Quiz
+  const questions = [
+    {q:"What share of the 64 claims is supported by a captured source?", a:["73.4%","50.0%","95.0%","100%"], correct:0, why:"47 of 64 claims are supported (73.4%, 95% Wilson CI 61.5–82.7%)."},
+    {q:"Which term has the highest OpenAlex lexical inflation?", a:["GPU (1.1x)","CPU (4.9x)","PPU (579x)","TPU (4.6x)"], correct:2, why:"PPU's unquoted search returns 6,369 works versus 11 exact-phrase works — a 579x inflation factor."},
+    {q:"What does an E1 grade mean?", a:["A primary source","A news summary","An encyclopedia","An unverified claim"], correct:0, why:"E1 means a primary source: official release, filing, peer-reviewed paper, standard, or API dataset."},
+    {q:"What share of the 20 paradigms is absorbed or integrated?", a:["10%","20%","40%","80%"], correct:2, why:"8 of 20 (40%) are absorbed into other units or integrated into systems-on-chip."},
+    {q:"Which market group had the highest equal-weight CAGR?", a:["Integrators (33.4%)","Foundry (30.0%)","Legacy CPU (4.9%)","Mobile SoC (−0.03%)"], correct:0, why:"Integrators returned 33.4%, the foundry 30.0%, legacy CPU 4.9%, mobile SoC −0.03%."},
+    {q:"Which attention change is correct for 2021→2025?", a:["CPU +48%","GPU +18.8%","NPU +2,196%","ASIC +38%"], correct:2, why:"NPU pageviews rose 2,196% from a tiny base; CPU, GPU, and ASIC all fell."},
+    {q:"What does the local benchmark compare?", a:["GPU vs TPU","Serial Python vs vectorised NumPy vs BLAS matmul","Quantum vs photonic","Cloud vs laptop"], correct:1, why:"It measures one CPU: serial Python, NumPy vectorisation, threaded chunks, and BLAS matmul. It is not an accelerator benchmark."},
+    {q:"What is the correct Groq figure in the ledger?", a:["About $20","About $20 million","About $20 billion","About $2 billion"], correct:2, why:"The transcript said “about $20”; the reported deal is about $20 billion. The claim is retained as refuted."},
+    {q:"How should the atlas be read?", a:["As a causal proof","As investment advice","As a descriptive evidence base","As a live product database"], correct:2, why:"It is descriptive, not causal. It retains negative, conflicting, and unverified evidence rather than discarding it."},
+    {q:"What is frozen in the repository?", a:["The quiz questions","The README design","The public-data snapshots","The colour theme"], correct:2, why:"The three public-data snapshots are frozen and hashed. Live refresh is a separate command."}
+  ];
+  let qi = 0, score = 0, answered = false;
+  const form = $("#quiz-form"), actions = $("#quiz-actions"), live = $("#quiz-live");
+  function renderQuiz(focus=true){
+    answered = false;
+    const q = questions[qi];
+    $("#quiz-step").textContent = `Question ${qi+1} of ${questions.length}`;
+    $("#quiz-score-label").textContent = `Score ${score}`;
+    $("#quiz-progress").style.width = ((qi)/questions.length*100)+"%";
+    form.innerHTML = `<fieldset><legend tabindex="-1" id="quiz-question">${esc(q.q)}</legend>${q.a.map((a,i)=>`<label class="opt" data-i="${i}"><input type="radio" name="answer" value="${i}"> <span>${esc(a)}</span></label>`).join("")}</fieldset><div id="quiz-feedback"></div>`;
+    actions.innerHTML = `<button class="btn btn-primary" type="submit" form="quiz-form">Check answer</button>`;
+    if(focus) $("#quiz-question").focus();
+  }
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if(answered) return;
+    const chosen = form.querySelector('input[name="answer"]:checked');
+    if(!chosen){ live.textContent = "Please choose an answer."; return; }
+    answered = true;
+    const q = questions[qi], pick = Number(chosen.value), ok = pick === q.correct;
+    if(ok) score++;
+    $$("#quiz-form .opt").forEach((el,i)=>{
+      el.classList.toggle("correct", i===q.correct);
+      el.classList.toggle("wrong", i===pick && !ok);
+      el.querySelector("input").disabled = true;
+    });
+    const fb = $("#quiz-feedback");
+    fb.className = "feedback";
+    fb.innerHTML = `<strong>${ok?"Correct.":"Not quite."}</strong> ${esc(q.why)}`;
+    fb.setAttribute("tabindex","-1"); fb.focus();
+    live.textContent = (ok?"Correct. ":"Incorrect. ") + q.why;
+    $("#quiz-score-label").textContent = `Score ${score}`;
+    $("#quiz-big-score").innerHTML = `${score}<small>/${questions.length}</small>`;
+    $("#quiz-verdict").textContent = ok ? "Good call. Keep going." : "Read the explanation, then keep going.";
+    $("#quiz-progress").style.width = ((qi+1)/questions.length*100)+"%";
+    if(qi < questions.length-1){
+      actions.innerHTML = `<button class="btn btn-primary" type="button" id="quiz-next">Next question <span aria-hidden="true">→</span></button>`;
+      $("#quiz-next").addEventListener("click", ()=>{ qi++; renderQuiz(true); });
+    } else {
+      const msg = score >= 8 ? "Excellent — you can brief a room." : score >= 5 ? "Solid foundation. Revisit the findings and try again." : "Good start. Read the beginner guide, then retake the quiz.";
+      actions.innerHTML = `<button class="btn btn-primary" type="button" id="quiz-restart">Restart quiz</button><a class="btn btn-ghost" href="#findings">Review findings</a>`;
+      $("#quiz-verdict").textContent = msg;
+      $("#quiz-restart").addEventListener("click", ()=>{ qi=0; score=0; $("#quiz-big-score").innerHTML = `0<small>/${questions.length}</small>`; renderQuiz(true); });
+      live.textContent = `Quiz complete. You scored ${score} out of ${questions.length}. ${msg}`;
+    }
+  });
+  renderQuiz(false);
+
+  // Learning path
+  const pathInputs = $$("[data-path]");
+  const savedPath = JSON.parse(localStorage.getItem("xpu-path") || "{}");
+  function updatePath(){
+    const done = pathInputs.filter(i=>i.checked).length;
+    $("#path-bar").style.width = (done/pathInputs.length*100)+"%";
+    $("#path-label").textContent = `${done} of ${pathInputs.length} checkpoints`;
+    pathInputs.forEach(i=>i.closest(".check").classList.toggle("done", i.checked));
+    const state = {}; pathInputs.forEach(i=>state[i.dataset.path]=i.checked);
+    localStorage.setItem("xpu-path", JSON.stringify(state));
+  }
+  pathInputs.forEach(i=>{ if(savedPath[i.dataset.path]) i.checked = true; i.addEventListener("change", updatePath); });
+  updatePath();
+
+  // Citation
+  const citation = `@misc{xpuatlas2026,\n  title   = {XPU-Atlas: A Reproducible Evidence Audit of Twenty Processing-Unit Paradigms, 1971-2026},\n  author  = {{XPU-Atlas Project}},\n  year    = {2026},\n  version = {0.1.0}\n}`;
+  $("#copy-cite").addEventListener("click", async () => {
+    try{ await navigator.clipboard.writeText(citation); $("#copy-status").textContent = "Citation copied to the clipboard."; }
+    catch(err){ $("#copy-status").textContent = "Copy failed — the citation is in the README."; }
+  });
+
+  // Scroll spy
+  const links = $$(".nav-links a");
+  const sections = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ links.forEach(a=>a.removeAttribute("aria-current")); const l = links.find(a=>a.getAttribute("href")==="#"+e.target.id); if(l) l.setAttribute("aria-current","true"); } });
+  }, {rootMargin:"-45% 0px -50% 0px"});
+  sections.forEach(s=>spy.observe(s));
+})();
+</script>
+</body>
+</html>

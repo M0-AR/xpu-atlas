@@ -8,7 +8,9 @@
 A plain-English, fully sourced atlas of 20 processing-unit paradigms — built from 64 graded claims, 58 sources, three frozen public datasets, six figures, and a one-command audit.</p>
 
 <p align="center">
-  <a href="preview.html"><strong>Open the interactive atlas</strong></a> ·
+  <a href="https://m0-ar.github.io/xpu-atlas/"><strong>Open the live atlas</strong></a> ·
+  <a href="https://m0-ar.github.io/xpu-atlas/preview.html">preview.html</a> ·
+  <a href="https://m0-ar.github.io/xpu-atlas/docs/preview.html">docs/preview.html</a> ·
   <a href="docs/PAPER.md">Read the working paper</a> ·
   <a href="#-beginner-guide--read-this-and-you-are-a-professional">Beginner guide</a> ·
   <a href="#-quick-start">Quick start</a>
@@ -22,7 +24,7 @@ A plain-English, fully sourced atlas of 20 processing-unit paradigms — built f
 </p>
 
 <p align="center">
-  <a href="preview.html">
+  <a href="https://m0-ar.github.io/xpu-atlas/">
     <img src="assets/xpu-atlas-demo.gif" alt="Animated tour of XPU-Atlas: headline numbers, six findings, the 20-paradigm atlas, the 64-claim explorer, and the interactive quiz" width="100%">
   </a>
 </p>
@@ -88,7 +90,7 @@ The repo is built around one rule: **a claim without a source is a hypothesis, n
 
 | Asset | What it gives you | Where |
 |---|---|---|
-| **Interactive atlas** | A responsive, accessible web page with charts, a 20-paradigm map, a 64-claim explorer, a learning path, and a 10-question quiz. | [`preview.html`](preview.html) |
+| **Interactive atlas** | A responsive, accessible web page with charts, a 20-paradigm map, a 64-claim explorer, a learning path, and a 10-question quiz. | [Live atlas](https://m0-ar.github.io/xpu-atlas/) · [`preview.html`](https://m0-ar.github.io/xpu-atlas/preview.html) · [`docs/preview.html`](https://m0-ar.github.io/xpu-atlas/docs/preview.html) |
 | **Graded claim ledger** | 64 claims across 20 paradigms, each with a status, grade, sources, and note. | [`data/claims.yaml`](data/claims.yaml) |
 | **Evidence register** | Every source with publisher, type, grade, URL, and retrieval date. | [`docs/EVIDENCE.md`](docs/EVIDENCE.md) |
 | **Generated results** | Every table behind every headline number. | [`docs/RESULTS.md`](docs/RESULTS.md) |
@@ -106,9 +108,9 @@ The repo is built around one rule: **a claim without a source is a hypothesis, n
 |---|---|---|
 | **A founder or product leader** | To know whether a new processor category is a durable market or a feature that will be absorbed. | [The six findings](#the-six-findings), then the [atlas](#explore-the-atlas). |
 | **An investor or analyst** | To separate research activity, public attention, and market value — and to see where they diverge. | [Finding 04](#04--attention-is-polarising) and [Finding 05](#05--value-accrues-to-integrators-and-the-foundry). |
-| **An enterprise buyer** | To ask vendors for the filing, the benchmark, or the standard behind the slide. | [The beginner guide](#-beginner-guide--read-this-and-you-are-a-professional) and the [claim explorer](preview.html#explorer). |
+| **An enterprise buyer** | To ask vendors for the filing, the benchmark, or the standard behind the slide. | [The beginner guide](#-beginner-guide--read-this-and-you-are-a-professional) and the [claim explorer](https://m0-ar.github.io/xpu-atlas/preview.html#explorer). |
 | **A journalist or creator** | To start from receipts instead of recycled numbers. | [The claim ledger](data/claims.yaml) and [EVIDENCE.md](docs/EVIDENCE.md). |
-| **An educator or student** | A ready-made module on source grading, bibliometrics, and reproducible research. | [The learning path](preview.html#quiz) and [the quiz](preview.html#quiz). |
+| **An educator or student** | A ready-made module on source grading, bibliometrics, and reproducible research. | [The learning path](https://m0-ar.github.io/xpu-atlas/preview.html#learn) and [the quiz](https://m0-ar.github.io/xpu-atlas/preview.html#quiz). |
 | **An engineer or researcher** | A clean dataset, a reproducible pipeline, and honest limitations. | [Quick start](#-quick-start) and [METHODOLOGY.md](docs/METHODOLOGY.md). |
 
 ---
@@ -233,8 +235,8 @@ Status and grade are different. A claim can be **supported** by an encyclopedia 
 
 1. Read the [Executive summary](#executive-summary) (2 minutes).
 2. Skim the [six findings](#the-six-findings) (3 minutes).
-3. Open the [interactive atlas](preview.html), click two paradigms, and filter two claims (3 minutes).
-4. Take the [10-question quiz](preview.html#quiz) (2 minutes).
+3. Open the [live atlas](https://m0-ar.github.io/xpu-atlas/), click two paradigms, and filter two claims (3 minutes).
+4. Take the [10-question quiz](https://m0-ar.github.io/xpu-atlas/preview.html#quiz) (2 minutes).
 
 You will know more than most interview candidates.
 
@@ -395,26 +397,27 @@ The committed benchmark was measured on an Intel Core i7-14700F with 28 logical 
 
 ---
 
-## Publish the interactive atlas
+## Live site and GitHub Pages
 
-GitHub Pages can serve the repo as a public website. The root entry point is [`index.html`](index.html), a generated copy of [`preview.html`](preview.html), so the branch deployment works without a build step.
+**Live site:** <https://m0-ar.github.io/xpu-atlas/>
 
-**Branch deployment (the simple path):**
+The repository is configured for **Branch: `main`**, **Folder: `/ (root)`**. Three URLs are intentionally kept in sync:
 
-1. Push the repository to GitHub.
-2. Open **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select **Branch: `main`** and **Folder: `/ (root)`**.
-5. Save. GitHub publishes the site at `https://<your-username>.github.io/<repository-name>/`.
-6. Open the URL. The atlas loads at the root; `preview.html` also works directly.
+| URL | What it serves | Source file |
+|---|---|---|
+| <https://m0-ar.github.io/xpu-atlas/> | Landing page | `index.html` — generated copy of `preview.html` |
+| <https://m0-ar.github.io/xpu-atlas/preview.html> | Interactive atlas | `preview.html` |
+| <https://m0-ar.github.io/xpu-atlas/docs/preview.html> | Interactive atlas under `docs/` | `docs/preview.html` — generated mirror |
 
-The repository already includes [`.nojekyll`](.nojekyll), so files and folders beginning with an underscore are served as-is. No build step, database, or API key is required.
+`make preview` regenerates `index.html`, `docs/preview.html`, and `docs/index.html`, and keeps `.nojekyll` in both the repository root and `docs/`. `docs/index.html` redirects to `preview.html` in the same folder, so the `/docs/` URL also resolves. All asset paths in the `docs/` mirror use `../assets/…`, so the page renders correctly when served from `/docs/preview.html`.
+
+**Branch deployment:** **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**. No build step, database, or API key is required.
+
+**If you fork or rename the repository:** update the live URLs at the top of this README and in this table. Keep the Pages source at `main` / root, or update the links if you choose `/docs`. The root and `docs/` mirrors make both `/preview.html` and `/docs/preview.html` work under root source.
 
 **Custom domain (optional):** add a `CNAME` file with your domain and follow GitHub’s DNS instructions.
 
 **Important:** GitHub Pages sites are public even when the source repository is private. Do not publish a fork that contains private data. This repo contains only public sources and generated analysis.
-
-**Update the demo link:** after deployment, replace the relative `preview.html` link at the top of this README with your live Pages URL if you want a one-click public demo. The repository intentionally does not invent a URL before it exists.
 
 ---
 
@@ -442,14 +445,17 @@ xpu-atlas/
 │   ├── RESULTS.md             ← generated tables
 │   ├── METHODOLOGY.md
 │   ├── REPRODUCIBILITY.md
-│   └── LIMITATIONS.md
+│   ├── LIMITATIONS.md
+│   ├── preview.html           ← generated docs/ mirror of the atlas
+│   ├── index.html             ← redirects to docs/preview.html
+│   └── .nojekyll
 ├── figures/                   ← six generated PNGs
 ├── results/                   ← generated JSON and benchmark files
 ├── scripts/
 │   ├── build_atlas_data.py    ← regenerate assets/atlas-data.js
-│   └── sync_preview.py        ← build the bundle and copy preview.html → index.html
+│   └── sync_preview.py        ← build the bundle and generate root + docs/ entry points
 ├── src/xpu_atlas/             ← fetch, claims, analyse, bench, figures, report, guard
-├── tests/                     ← 22 tests
+├── tests/                     ← 23 tests
 ├── Makefile
 ├── Dockerfile
 ├── docker-compose.yml
@@ -462,7 +468,7 @@ xpu-atlas/
 
 ## Quality and verification
 
-- **22 tests** cover the ledger schema, statistics, snapshot hashes, generated outputs, the paper guard, and the browser preview.
+- **23 tests** cover the ledger schema, statistics, snapshot hashes, generated outputs, the paper guard, and the browser preview.
 - **`make paper-check`** verifies that the README contains the generated headline numbers and does not contain forbidden overclaims.
 - **Snapshot integrity** is checked by recomputing SHA256 hashes against the manifest.
 - **Docker** runs the same pipeline in a pinned Python 3.12 image.

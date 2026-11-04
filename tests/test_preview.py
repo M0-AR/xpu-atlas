@@ -5,6 +5,8 @@ from xpu_atlas.io_utils import ROOT
 
 PREVIEW = ROOT / "preview.html"
 INDEX = ROOT / "index.html"
+DOCS_PREVIEW = ROOT / "docs" / "preview.html"
+DOCS_INDEX = ROOT / "docs" / "index.html"
 DATA = ROOT / "assets" / "atlas-data.js"
 
 
@@ -12,7 +14,19 @@ def test_pages_entry_points_exist():
     assert PREVIEW.exists()
     assert INDEX.exists()
     assert INDEX.read_bytes() == PREVIEW.read_bytes()
+    assert DOCS_PREVIEW.exists()
+    assert DOCS_INDEX.exists()
     assert (ROOT / ".nojekyll").exists()
+    assert (ROOT / "docs" / ".nojekyll").exists()
+
+
+def test_docs_preview_mirror_uses_parent_assets():
+    text = DOCS_PREVIEW.read_text(encoding="utf-8")
+    assert 'src="../assets/atlas-data.js"' in text
+    assert 'src="assets/' not in text
+    assert 'href="docs/' not in text
+    assert 'href="../README.md"' in text
+    assert "url=preview.html" in DOCS_INDEX.read_text(encoding="utf-8")
 
 
 def test_preview_bundle_and_sections():
@@ -39,4 +53,11 @@ def test_preview_local_assets_exist():
     refs.update(re.findall(r"url\((assets/[^)]+)\)", text))
     assert refs
     missing = [ref for ref in sorted(refs) if not (ROOT / ref).exists()]
+    assert not missing, missing
+
+    docs_text = DOCS_PREVIEW.read_text(encoding="utf-8")
+    docs_refs = set(re.findall(r'(?:src|href)="(\.\./assets/[^"]+)"', docs_text))
+    docs_refs.update(re.findall(r"url\((\.\./assets/[^)]+)\)", docs_text))
+    assert docs_refs
+    missing = [ref for ref in sorted(docs_refs) if not (DOCS_PREVIEW.parent / ref).resolve().exists()]
     assert not missing, missing
