@@ -341,7 +341,7 @@ The full protocol is in [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 **Requirements:** Python 3.10+ (3.12 recommended), `make`, and a POSIX shell. Docker is optional.
 
 ```bash
-git clone <your-repository-url> xpu-atlas
+git clone https://github.com/M0-AR/xpu-atlas.git xpu-atlas
 cd xpu-atlas
 make install
 make all
