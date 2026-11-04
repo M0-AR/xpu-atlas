@@ -1,0 +1,32 @@
+services:
+  pipeline:
+    build: .
+    image: xpu-atlas:0.1.0
+    command: make all
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/mplconfig
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTEST_ADDOPTS: "-p no:cacheprovider"
+      PYTHONPATH: /app/src
+    volumes:
+      - ./results:/app/results
+      - ./figures:/app/figures
+      - ./docs:/app/docs
+      - ./assets:/app/assets
+      - ./index.html:/app/index.html
+    working_dir: /app
+
+  test:
+    build: .
+    image: xpu-atlas:0.1.0
+    command: python -m pytest -q
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/mplconfig
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTEST_ADDOPTS: "-p no:cacheprovider"
+      PYTHONPATH: /app/src
+    working_dir: /app

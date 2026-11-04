@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest a new view, analysis, or usability improvement.
+title: "[feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Data or sources
+      description: Does this require new data? If so, what public source would you use?
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Constraints
+      options:
+        - label: This can work offline with committed data.
+        - label: This does not require a server, login, or API key.
+        - label: I have read docs/METHODOLOGY.md and docs/LIMITATIONS.md.

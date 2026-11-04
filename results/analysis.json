@@ -1,0 +1,1385 @@
+{
+  "attention": {
+    "articles": {
+      "asic": {
+        "annual_means": {
+          "2021": 27330.25,
+          "2022": 20982.666666666668,
+          "2023": 22543.75,
+          "2024": 21878.416666666668,
+          "2025": 16834.75,
+          "2026": 13393.9
+        },
+        "article": "Application-specific_integrated_circuit",
+        "cagr_2021_2025": -0.11408762801239758,
+        "change_2021_2025": -0.3840250272134357,
+        "first_month": "202101",
+        "label": "ASIC",
+        "last_month": "202610",
+        "mean_2021": 27330.25,
+        "mean_2025": 16834.75,
+        "n_months": 70,
+        "peak_month": "202401",
+        "peak_views": 44619
+      },
+      "cpu": {
+        "annual_means": {
+          "2021": 122370.83333333333,
+          "2022": 127387.08333333333,
+          "2023": 137571.25,
+          "2024": 107893.75,
+          "2025": 64046.416666666664,
+          "2026": 46380.3
+        },
+        "article": "Central_processing_unit",
+        "cagr_2021_2025": -0.1494414203130262,
+        "change_2021_2025": -0.47662024583744766,
+        "first_month": "202101",
+        "label": "CPU",
+        "last_month": "202610",
+        "mean_2021": 122370.83333333333,
+        "mean_2025": 64046.416666666664,
+        "n_months": 70,
+        "peak_month": "202401",
+        "peak_views": 198825
+      },
+      "dpu": {
+        "annual_means": {
+          "2021": 1754.5,
+          "2022": 2684.6666666666665,
+          "2023": 3663.1666666666665,
+          "2024": 3084.5833333333335,
+          "2025": 3089.0833333333335,
+          "2026": 2225.4
+        },
+        "article": "Data_processing_unit",
+        "cagr_2021_2025": 0.15191136446445253,
+        "change_2021_2025": 0.7606630569013015,
+        "first_month": "202101",
+        "label": "DPU",
+        "last_month": "202610",
+        "mean_2021": 1754.5,
+        "mean_2025": 3089.0833333333335,
+        "n_months": 70,
+        "peak_month": "202305",
+        "peak_views": 7076
+      },
+      "fpga": {
+        "annual_means": {
+          "2021": 38445.083333333336,
+          "2022": 37283.916666666664,
+          "2023": 36453.333333333336,
+          "2024": 33403.583333333336,
+          "2025": 30871.666666666668,
+          "2026": 25191.5
+        },
+        "article": "Field-programmable_gate_array",
+        "cagr_2021_2025": -0.05337097280761405,
+        "change_2021_2025": -0.1969931135537487,
+        "first_month": "202101",
+        "label": "FPGA",
+        "last_month": "202610",
+        "mean_2021": 38445.083333333336,
+        "mean_2025": 30871.666666666668,
+        "n_months": 70,
+        "peak_month": "202401",
+        "peak_views": 47531
+      },
+      "gpu": {
+        "annual_means": {
+          "2021": 58050.416666666664,
+          "2022": 62339.5,
+          "2023": 66731.58333333333,
+          "2024": 59346.916666666664,
+          "2025": 47133.75,
+          "2026": 39145.7
+        },
+        "article": "Graphics_processing_unit",
+        "cagr_2021_2025": -0.050747688913404754,
+        "change_2021_2025": -0.18805492352193853,
+        "first_month": "202101",
+        "label": "GPU",
+        "last_month": "202610",
+        "mean_2021": 58050.416666666664,
+        "mean_2025": 47133.75,
+        "n_months": 70,
+        "peak_month": "202401",
+        "peak_views": 99667
+      },
+      "mcu": {
+        "annual_means": {
+          "2021": 32760.0,
+          "2022": 33277.583333333336,
+          "2023": 30006.916666666668,
+          "2024": 25427.666666666668,
+          "2025": 19033.083333333332,
+          "2026": 15652.3
+        },
+        "article": "Microcontroller",
+        "cagr_2021_2025": -0.12694558276450296,
+        "change_2021_2025": -0.41901455026455026,
+        "first_month": "202101",
+        "label": "MCU",
+        "last_month": "202610",
+        "mean_2021": 32760.0,
+        "mean_2025": 19033.083333333332,
+        "n_months": 70,
+        "peak_month": "202211",
+        "peak_views": 41566
+      },
+      "neuromorphic": {
+        "annual_means": {
+          "2021": 421.75,
+          "2022": 754.5,
+          "2023": 734.3333333333334,
+          "2024": 4229.333333333333,
+          "2025": 10990.083333333334,
+          "2026": 9216.7
+        },
+        "article": "Neuromorphic_computing",
+        "cagr_2021_2025": 1.2593653994467355,
+        "change_2021_2025": 25.05828887571626,
+        "first_month": "202101",
+        "label": "Neuromorphic",
+        "last_month": "202610",
+        "mean_2021": 421.75,
+        "mean_2025": 10990.083333333334,
+        "n_months": 70,
+        "peak_month": "202504",
+        "peak_views": 12772
+      },
+      "npu": {
+        "annual_means": {
+          "2021": 594.9166666666666,
+          "2022": 517.0,
+          "2023": 696.25,
+          "2024": 1733.1666666666667,
+          "2025": 13659.0,
+          "2026": 15250.1
+        },
+        "article": "Neural_processing_unit",
+        "cagr_2021_2025": 1.1889744491153165,
+        "change_2021_2025": 21.95951813979549,
+        "first_month": "202101",
+        "label": "NPU",
+        "last_month": "202610",
+        "mean_2021": 594.9166666666666,
+        "mean_2025": 13659.0,
+        "n_months": 70,
+        "peak_month": "202603",
+        "peak_views": 21368
+      },
+      "photonic": {
+        "annual_means": {
+          "2021": 6775.083333333333,
+          "2022": 6256.083333333333,
+          "2023": 7660.25,
+          "2024": 7704.333333333333,
+          "2025": 7109.333333333333,
+          "2026": 6310.3
+        },
+        "article": "Optical_computing",
+        "cagr_2021_2025": 0.012111964890275662,
+        "change_2021_2025": 0.049335186529070985,
+        "first_month": "202101",
+        "label": "Photonic",
+        "last_month": "202610",
+        "mean_2021": 6775.083333333333,
+        "mean_2025": 7109.333333333333,
+        "n_months": 70,
+        "peak_month": "202301",
+        "peak_views": 13176
+      },
+      "quantum": {
+        "annual_means": {
+          "2021": 97170.08333333333,
+          "2022": 98224.0,
+          "2023": 124715.83333333333,
+          "2024": 113205.08333333333,
+          "2025": 133857.83333333334,
+          "2026": 94237.2
+        },
+        "article": "Quantum_computing",
+        "cagr_2021_2025": 0.08337249148397219,
+        "change_2021_2025": 0.377562195497414,
+        "first_month": "202101",
+        "label": "Quantum",
+        "last_month": "202610",
+        "mean_2021": 97170.08333333333,
+        "mean_2025": 133857.83333333334,
+        "n_months": 70,
+        "peak_month": "202510",
+        "peak_views": 230643
+      },
+      "tpu": {
+        "annual_means": {
+          "2021": 17463.0,
+          "2022": 17371.666666666668,
+          "2023": 21196.25,
+          "2024": 22421.75,
+          "2025": 29376.5,
+          "2026": 23833.4
+        },
+        "article": "Tensor_Processing_Unit",
+        "cagr_2021_2025": 0.13885989458182957,
+        "change_2021_2025": 0.6822138235125694,
+        "first_month": "202101",
+        "label": "TPU",
+        "last_month": "202610",
+        "mean_2021": 17463.0,
+        "mean_2025": 29376.5,
+        "n_months": 70,
+        "peak_month": "202511",
+        "peak_views": 75987
+      },
+      "wse": {
+        "annual_means": {
+          "2021": 1023.5833333333334,
+          "2022": 845.4166666666666,
+          "2023": 862.6666666666666,
+          "2024": 1179.9166666666667,
+          "2025": 1190.9166666666667,
+          "2026": 1818.5
+        },
+        "article": "Wafer-scale_integration",
+        "cagr_2021_2025": 0.03857901172378764,
+        "change_2021_2025": 0.1634779776927462,
+        "first_month": "202101",
+        "label": "WSE",
+        "last_month": "202610",
+        "mean_2021": 1023.5833333333334,
+        "mean_2025": 1190.9166666666667,
+        "n_months": 70,
+        "peak_month": "202605",
+        "peak_views": 4309
+      }
+    },
+    "retrieved_at": "2026-11-04T11:05:22+00:00",
+    "source": "Wikimedia Pageviews API",
+    "summary": {
+      "median_change_2021_2025": 0.10640658211090859,
+      "n_articles": 12,
+      "n_declining": 5,
+      "n_growing": 7
+    }
+  },
+  "bench": {
+    "energy": {
+      "gflops_per_watt": null,
+      "joules": null,
+      "note": "RAPL energy counter unavailable"
+    },
+    "matmul_peak_gflops": 214.78365241169422,
+    "matmul_to_serial_ratio": 11918.246680419763,
+    "platform": {
+      "cpu_model": "Intel(R) Core(TM) i7-14700F",
+      "logical_cores": 28,
+      "machine": "x86_64",
+      "numpy": "2.2.6",
+      "python": "3.12.13",
+      "started_at": "2026-11-04T11:10:56+00:00",
+      "system": "Linux"
+    },
+    "raw": {
+      "energy": {
+        "gflops_per_watt": null,
+        "joules": null,
+        "note": "RAPL energy counter unavailable"
+      },
+      "finished_at": "2026-11-04T11:11:06+00:00",
+      "matmul": [
+        {
+          "batch": 50,
+          "gflops": 4.132319588414526,
+          "iqr_s": 0.0017417514399858192,
+          "median_s": 0.008119999259997712,
+          "n": 256
+        },
+        {
+          "batch": 20,
+          "gflops": 30.512379601069714,
+          "iqr_s": 0.001731433399982052,
+          "median_s": 0.008797591649999959,
+          "n": 512
+        },
+        {
+          "batch": 5,
+          "gflops": 111.74707915907535,
+          "iqr_s": 0.0008406816001297557,
+          "median_s": 0.01921735819996684,
+          "n": 1024
+        },
+        {
+          "batch": 2,
+          "gflops": 214.78365241169422,
+          "iqr_s": 0.0038087904999883904,
+          "median_s": 0.0799868564999997,
+          "n": 2048
+        }
+      ],
+      "platform": {
+        "cpu_model": "Intel(R) Core(TM) i7-14700F",
+        "logical_cores": 28,
+        "machine": "x86_64",
+        "numpy": "2.2.6",
+        "python": "3.12.13",
+        "started_at": "2026-11-04T11:10:56+00:00",
+        "system": "Linux"
+      },
+      "serial": [
+        {
+          "iqr_s": 0.01852017500095826,
+          "median_s": 0.06453719000001001,
+          "n": 1000000,
+          "ops_per_s": 15494941.753736796
+        },
+        {
+          "iqr_s": 0.03977572800067719,
+          "median_s": 0.1664686285002972,
+          "n": 3000000,
+          "ops_per_s": 18021413.5661882
+        },
+        {
+          "iqr_s": 0.01298121100080607,
+          "median_s": 0.500278777999938,
+          "n": 10000000,
+          "ops_per_s": 19988855.093911737
+        }
+      ],
+      "threads": [
+        {
+          "iqr_s": 0.00021160400046937866,
+          "median_s": 0.025853471499885927,
+          "ops_per_s": 309436200.8612769,
+          "parallel_efficiency": 1.0,
+          "speedup_vs_1": 1.0,
+          "threads": 1
+        },
+        {
+          "iqr_s": 0.0010064240004794556,
+          "median_s": 0.026658074999886594,
+          "ops_per_s": 300096687.4027488,
+          "parallel_efficiency": 0.4849088221860714,
+          "speedup_vs_1": 0.9698176443721428,
+          "threads": 2
+        },
+        {
+          "iqr_s": 0.003360492999490816,
+          "median_s": 0.015238002999922173,
+          "ops_per_s": 525003177.9125427,
+          "parallel_efficiency": 0.4241610842972332,
+          "speedup_vs_1": 1.6966443371889328,
+          "threads": 4
+        },
+        {
+          "iqr_s": 0.00023933800002851058,
+          "median_s": 0.011266685500231688,
+          "ops_per_s": 710057984.651785,
+          "parallel_efficiency": 0.2868353729603338,
+          "speedup_vs_1": 2.2946829836826703,
+          "threads": 8
+        }
+      ],
+      "vector": [
+        {
+          "n": 1000,
+          "numpy_iqr_s": 1.2550008250400424e-06,
+          "numpy_median_s": 2.7844998840009794e-06,
+          "numpy_ops_per_s": 359130918.1751965,
+          "python_iqr_s": 5.590000000665896e-06,
+          "python_median_s": 2.276600025652442e-05,
+          "python_ops_per_s": 43925151.046829745,
+          "speedup": 8.175974575302375
+        },
+        {
+          "n": 10000,
+          "numpy_iqr_s": 4.700004865298979e-07,
+          "numpy_median_s": 8.456499926978722e-06,
+          "numpy_ops_per_s": 1182522330.3197885,
+          "python_iqr_s": 1.3449998732539825e-06,
+          "python_median_s": 0.00021230699985608226,
+          "python_ops_per_s": 47101602.89947461,
+          "speedup": 25.10577682130174
+        },
+        {
+          "n": 100000,
+          "numpy_iqr_s": 2.0619000679289456e-05,
+          "numpy_median_s": 0.00032999249970089295,
+          "numpy_ops_per_s": 303037190.5138467,
+          "python_iqr_s": 0.00043367600028432207,
+          "python_median_s": 0.0031432810001206235,
+          "python_ops_per_s": 31813891.27989591,
+          "speedup": 9.52531043272108
+        },
+        {
+          "n": 1000000,
+          "numpy_iqr_s": 9.7946999630949e-05,
+          "numpy_median_s": 0.0033184230005645077,
+          "numpy_ops_per_s": 301347959.5066351,
+          "python_iqr_s": 0.001767505000316305,
+          "python_median_s": 0.0328923160004706,
+          "python_ops_per_s": 30402237.40966409,
+          "speedup": 9.912032310189263
+        },
+        {
+          "n": 10000000,
+          "numpy_iqr_s": 0.0015346460004366236,
+          "numpy_median_s": 0.031880221999927016,
+          "numpy_ops_per_s": 313674101.76826537
+        }
+      ]
+    },
+    "serial_ops_per_s": 18021413.5661882,
+    "thread_efficiency_8": 0.2868353729603338,
+    "thread_speedup_8": 2.2946829836826703,
+    "vector_crossover_n": 1000,
+    "vector_speedup_max": 25.10577682130174,
+    "vector_speedup_min": 8.175974575302375,
+    "vector_throughput_ops_per_s": 1182522330.3197885,
+    "vector_to_serial_ratio": 65.6176234997702
+  },
+  "bibliometrics": {
+    "retrieved_at": "2026-11-04T11:06:37+00:00",
+    "source": "OpenAlex",
+    "summary": {
+      "max_cagr_2021_2025": 0.7121652519221513,
+      "max_inflation": 579.0,
+      "median_cagr_2021_2025": 0.2067554794394555,
+      "median_inflation": 4.77,
+      "n_reliable": 13,
+      "n_terms": 14,
+      "terms_with_100x_inflation": [
+        "dpu",
+        "isp",
+        "ppu"
+      ],
+      "terms_with_10x_inflation": [
+        "dpu",
+        "isp",
+        "npu",
+        "photonic",
+        "ppu"
+      ]
+    },
+    "terms": {
+      "asic": {
+        "annual_growth_rate": 0.04604230357271755,
+        "cagr_2015_2025": 0.05405752253628027,
+        "cagr_2021_2025": 0.04663513939210562,
+        "doubling_years": 15.398545717111956,
+        "first_year": 2000,
+        "fit_quality": "poor",
+        "inflation_factor": 1.592,
+        "label": "ASIC",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 408,
+        "peak_year": 2025,
+        "query": "application-specific integrated circuit",
+        "r_squared": 0.5476857437231837,
+        "recent_5y_share": 0.27468904540686345,
+        "reliable": true,
+        "total_quoted": 6673,
+        "total_unquoted": 10623
+      },
+      "cpu": {
+        "annual_growth_rate": 0.1121719684544531,
+        "cagr_2015_2025": 0.09041023562536754,
+        "cagr_2021_2025": 0.1373518295258329,
+        "doubling_years": 6.519759934432037,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 4.914,
+        "label": "CPU",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 922,
+        "peak_year": 2025,
+        "query": "central processing unit",
+        "r_squared": 0.9640465194582721,
+        "recent_5y_share": 0.4025566027515979,
+        "reliable": true,
+        "total_quoted": 9231,
+        "total_unquoted": 45365
+      },
+      "dpu": {
+        "annual_growth_rate": 0.08613240184406878,
+        "cagr_2015_2025": 0.11612317403390437,
+        "cagr_2021_2025": 0.2067554794394555,
+        "doubling_years": 8.389263050602128,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 187.824,
+        "label": "DPU",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 123,
+        "peak_year": 2025,
+        "query": "data processing unit",
+        "r_squared": 0.806088406881721,
+        "recent_5y_share": 0.39093242087254065,
+        "reliable": true,
+        "total_quoted": 1169,
+        "total_unquoted": 219566
+      },
+      "fpga": {
+        "annual_growth_rate": 0.07752897978364937,
+        "cagr_2015_2025": 0.023496756872301905,
+        "cagr_2021_2025": 0.04171266944158569,
+        "doubling_years": 9.28275230323879,
+        "first_year": 2000,
+        "fit_quality": "moderate",
+        "inflation_factor": 1.017,
+        "label": "FPGA",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 2455,
+        "peak_year": 2024,
+        "query": "field-programmable gate array",
+        "r_squared": 0.6888754655512648,
+        "recent_5y_share": 0.26942392196629483,
+        "reliable": true,
+        "total_quoted": 41418,
+        "total_unquoted": 42103
+      },
+      "gpu": {
+        "annual_growth_rate": 0.22716394060975498,
+        "cagr_2015_2025": -0.00395234266417277,
+        "cagr_2021_2025": 0.0542711677402552,
+        "doubling_years": 3.3860657090308934,
+        "first_year": 2000,
+        "fit_quality": "poor",
+        "inflation_factor": 1.093,
+        "label": "GPU",
+        "last_year": 2025,
+        "n_years": 25,
+        "peak_count": 1564,
+        "peak_year": 2014,
+        "query": "graphics processing unit",
+        "r_squared": 0.5936101343379094,
+        "recent_5y_share": 0.25993743099006256,
+        "reliable": true,
+        "total_quoted": 21736,
+        "total_unquoted": 23750
+      },
+      "isp": {
+        "annual_growth_rate": 0.09327202241680221,
+        "cagr_2015_2025": 0.14954020435072923,
+        "cagr_2021_2025": 0.1870468751759169,
+        "doubling_years": 7.772881999344391,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 129.534,
+        "label": "ISP",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 137,
+        "peak_year": 2025,
+        "query": "image signal processor",
+        "r_squared": 0.8158586253862053,
+        "recent_5y_share": 0.4425531914893617,
+        "reliable": true,
+        "total_quoted": 1175,
+        "total_unquoted": 152202
+      },
+      "mcu": {
+        "annual_growth_rate": 0.13225675383158997,
+        "cagr_2015_2025": 0.12783246027986617,
+        "cagr_2021_2025": 0.21004261516810852,
+        "doubling_years": 5.580321487724846,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 1.0,
+        "label": "MCU",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 13037,
+        "peak_year": 2025,
+        "query": "microcontroller",
+        "r_squared": 0.9304855944287367,
+        "recent_5y_share": 0.4253020890400339,
+        "reliable": true,
+        "total_quoted": 96743,
+        "total_unquoted": 96743
+      },
+      "neuromorphic": {
+        "annual_growth_rate": 0.4521736033935133,
+        "cagr_2015_2025": 0.39943081486180176,
+        "cagr_2021_2025": 0.34673642295632745,
+        "doubling_years": 1.8579972330931294,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 1.375,
+        "label": "Neuromorphic",
+        "last_year": 2025,
+        "n_years": 21,
+        "peak_count": 2852,
+        "peak_year": 2025,
+        "query": "neuromorphic computing",
+        "r_squared": 0.9643180274270006,
+        "recent_5y_share": 0.7575757575757576,
+        "reliable": true,
+        "total_quoted": 10593,
+        "total_unquoted": 14563
+      },
+      "npu": {
+        "annual_growth_rate": 0.18442927734862602,
+        "cagr_2015_2025": 0.46129634156016697,
+        "cagr_2021_2025": 0.5985216195330378,
+        "doubling_years": 4.095137289812766,
+        "first_year": 2000,
+        "fit_quality": "moderate",
+        "inflation_factor": 51.568,
+        "label": "NPU",
+        "last_year": 2025,
+        "n_years": 23,
+        "peak_count": 222,
+        "peak_year": 2025,
+        "query": "neural processing unit",
+        "r_squared": 0.7071523745434602,
+        "recent_5y_share": 0.8274582560296846,
+        "reliable": true,
+        "total_quoted": 539,
+        "total_unquoted": 27795
+      },
+      "photonic": {
+        "annual_growth_rate": 0.23419294805573254,
+        "cagr_2015_2025": 0.4929190815424387,
+        "cagr_2021_2025": 0.7121652519221513,
+        "doubling_years": 3.2941553243800508,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 15.39,
+        "label": "Photonic",
+        "last_year": 2025,
+        "n_years": 21,
+        "peak_count": 275,
+        "peak_year": 2025,
+        "query": "photonic computing",
+        "r_squared": 0.8506083722985088,
+        "recent_5y_share": 0.8561046511627907,
+        "reliable": true,
+        "total_quoted": 688,
+        "total_unquoted": 10588
+      },
+      "ppu": {
+        "annual_growth_rate": -0.08317182630793718,
+        "cagr_2015_2025": null,
+        "cagr_2021_2025": null,
+        "doubling_years": null,
+        "first_year": 2006,
+        "fit_quality": "poor",
+        "inflation_factor": 579.0,
+        "label": "PPU",
+        "last_year": 2013,
+        "n_years": 6,
+        "peak_count": 3,
+        "peak_year": 2007,
+        "query": "physics processing unit",
+        "r_squared": 0.1949545121074433,
+        "recent_5y_share": 0.0,
+        "reliable": false,
+        "total_quoted": 11,
+        "total_unquoted": 6369
+      },
+      "quantum": {
+        "annual_growth_rate": 0.13341311028411695,
+        "cagr_2015_2025": 0.3150988201612417,
+        "cagr_2021_2025": 0.4308053232750735,
+        "doubling_years": 5.534836956386039,
+        "first_year": 2000,
+        "fit_quality": "good",
+        "inflation_factor": 2.15,
+        "label": "Quantum",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 11605,
+        "peak_year": 2025,
+        "query": "quantum computing",
+        "r_squared": 0.867259374231772,
+        "recent_5y_share": 0.6652173913043479,
+        "reliable": true,
+        "total_quoted": 43700,
+        "total_unquoted": 93935
+      },
+      "tpu": {
+        "annual_growth_rate": 0.5606478793790608,
+        "cagr_2015_2025": null,
+        "cagr_2021_2025": 0.039736788017928015,
+        "doubling_years": 1.557280515266085,
+        "first_year": 2016,
+        "fit_quality": "moderate",
+        "inflation_factor": 4.626,
+        "label": "TPU",
+        "last_year": 2025,
+        "n_years": 10,
+        "peak_count": 98,
+        "peak_year": 2023,
+        "query": "tensor processing unit",
+        "r_squared": 0.7743001184787659,
+        "recent_5y_share": 0.813780260707635,
+        "reliable": true,
+        "total_quoted": 537,
+        "total_unquoted": 2484
+      },
+      "wse": {
+        "annual_growth_rate": 0.03113223922794295,
+        "cagr_2015_2025": 0.2311444133449163,
+        "cagr_2021_2025": 0.2962777869089679,
+        "doubling_years": 22.60941327873791,
+        "first_year": 2000,
+        "fit_quality": "poor",
+        "inflation_factor": 9.481,
+        "label": "WSE",
+        "last_year": 2025,
+        "n_years": 26,
+        "peak_count": 111,
+        "peak_year": 2002,
+        "query": "wafer-scale integration",
+        "r_squared": 0.08643818431470796,
+        "recent_5y_share": 0.253411306042885,
+        "reliable": true,
+        "total_quoted": 513,
+        "total_unquoted": 4864
+      }
+    }
+  },
+  "coupling": {
+    "n_terms": 12,
+    "pearson": 0.4644861315836959,
+    "rows": [
+      {
+        "attention_cagr": -0.11408762801239758,
+        "label": "ASIC",
+        "publication_cagr": 0.04663513939210562,
+        "term": "asic"
+      },
+      {
+        "attention_cagr": -0.1494414203130262,
+        "label": "CPU",
+        "publication_cagr": 0.1373518295258329,
+        "term": "cpu"
+      },
+      {
+        "attention_cagr": 0.15191136446445253,
+        "label": "DPU",
+        "publication_cagr": 0.2067554794394555,
+        "term": "dpu"
+      },
+      {
+        "attention_cagr": -0.05337097280761405,
+        "label": "FPGA",
+        "publication_cagr": 0.04171266944158569,
+        "term": "fpga"
+      },
+      {
+        "attention_cagr": -0.050747688913404754,
+        "label": "GPU",
+        "publication_cagr": 0.0542711677402552,
+        "term": "gpu"
+      },
+      {
+        "attention_cagr": -0.12694558276450296,
+        "label": "MCU",
+        "publication_cagr": 0.21004261516810852,
+        "term": "mcu"
+      },
+      {
+        "attention_cagr": 1.2593653994467355,
+        "label": "Neuromorphic",
+        "publication_cagr": 0.34673642295632745,
+        "term": "neuromorphic"
+      },
+      {
+        "attention_cagr": 1.1889744491153165,
+        "label": "NPU",
+        "publication_cagr": 0.5985216195330378,
+        "term": "npu"
+      },
+      {
+        "attention_cagr": 0.012111964890275662,
+        "label": "Photonic",
+        "publication_cagr": 0.7121652519221513,
+        "term": "photonic"
+      },
+      {
+        "attention_cagr": 0.08337249148397219,
+        "label": "Quantum",
+        "publication_cagr": 0.4308053232750735,
+        "term": "quantum"
+      },
+      {
+        "attention_cagr": 0.13885989458182957,
+        "label": "TPU",
+        "publication_cagr": 0.039736788017928015,
+        "term": "tpu"
+      },
+      {
+        "attention_cagr": 0.03857901172378764,
+        "label": "WSE",
+        "publication_cagr": 0.2962777869089679,
+        "term": "wse"
+      }
+    ],
+    "spearman": 0.38461538461538464
+  },
+  "evidence": {
+    "by_era": {
+      "2015-2020": {
+        "claims": 21,
+        "primary": 7,
+        "primary_share": 0.3333333333333333,
+        "supported": 17
+      },
+      "2021-2026": {
+        "claims": 10,
+        "primary": 4,
+        "primary_share": 0.4,
+        "supported": 8
+      },
+      "pre-2015": {
+        "claims": 33,
+        "primary": 2,
+        "primary_share": 0.06060606060606061,
+        "supported": 22
+      }
+    },
+    "by_paradigm": {
+      "apu": {
+        "abbreviation": "APU",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "integrated",
+        "name": "Accelerated Processing Unit",
+        "supported": 2,
+        "year": 2011
+      },
+      "asic": {
+        "abbreviation": "ASIC",
+        "claims": 3,
+        "grades": {
+          "E0": 2,
+          "E3": 1
+        },
+        "lifecycle": "commercial",
+        "name": "Application-Specific Integrated Circuit",
+        "supported": 1,
+        "year": 1980
+      },
+      "biological": {
+        "abbreviation": "Wetware",
+        "claims": 4,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E2": 2
+        },
+        "lifecycle": "research",
+        "name": "Biological Processing Unit",
+        "supported": 3,
+        "year": 2022
+      },
+      "cpu": {
+        "abbreviation": "CPU",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "general-purpose",
+        "name": "Central Processing Unit",
+        "supported": 2,
+        "year": 1971
+      },
+      "dpu": {
+        "abbreviation": "DPU",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "integrated",
+        "name": "Data Processing Unit",
+        "supported": 2,
+        "year": 2019
+      },
+      "fpga": {
+        "abbreviation": "FPGA",
+        "claims": 3,
+        "grades": {
+          "E3": 3
+        },
+        "lifecycle": "commercial",
+        "name": "Field-Programmable Gate Array",
+        "supported": 3,
+        "year": 1985
+      },
+      "gpu": {
+        "abbreviation": "GPU",
+        "claims": 3,
+        "grades": {
+          "E3": 3
+        },
+        "lifecycle": "general-purpose",
+        "name": "Graphics Processing Unit",
+        "supported": 3,
+        "year": 1999
+      },
+      "isp": {
+        "abbreviation": "ISP",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "integrated",
+        "name": "Image Signal Processor",
+        "supported": 2,
+        "year": 1990
+      },
+      "lpu": {
+        "abbreviation": "LPU",
+        "claims": 3,
+        "grades": {
+          "E2": 3
+        },
+        "lifecycle": "absorbed",
+        "name": "Language Processing Unit",
+        "supported": 2,
+        "year": 2016
+      },
+      "mcu": {
+        "abbreviation": "MCU",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "embedded",
+        "name": "Microcontroller Unit",
+        "supported": 2,
+        "year": 1971
+      },
+      "neuromorphic": {
+        "abbreviation": "NPU (neuromorphic)",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E3": 1
+        },
+        "lifecycle": "research",
+        "name": "Neuromorphic Processor",
+        "supported": 2,
+        "year": 2014
+      },
+      "npu": {
+        "abbreviation": "NPU",
+        "claims": 4,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E3": 2
+        },
+        "lifecycle": "integrated",
+        "name": "Neural Processing Unit",
+        "supported": 3,
+        "year": 2017
+      },
+      "photonic": {
+        "abbreviation": "Photonic",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E3": 1
+        },
+        "lifecycle": "research",
+        "name": "Photonic Processor",
+        "supported": 2,
+        "year": 2025
+      },
+      "ppu": {
+        "abbreviation": "PPU",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E3": 2
+        },
+        "lifecycle": "absorbed",
+        "name": "Physics Processing Unit",
+        "supported": 2,
+        "year": 2006
+      },
+      "qpu": {
+        "abbreviation": "QPU",
+        "claims": 4,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E3": 2
+        },
+        "lifecycle": "research",
+        "name": "Quantum Processing Unit",
+        "supported": 3,
+        "year": 2019
+      },
+      "security": {
+        "abbreviation": "TPM / Secure Enclave",
+        "claims": 3,
+        "grades": {
+          "E0": 1,
+          "E1": 1,
+          "E3": 1
+        },
+        "lifecycle": "integrated",
+        "name": "Security Processor",
+        "supported": 2,
+        "year": 2001
+      },
+      "spu": {
+        "abbreviation": "SPU",
+        "claims": 3,
+        "grades": {
+          "E0": 2,
+          "E3": 1
+        },
+        "lifecycle": "absorbed",
+        "name": "Synergistic Processing Unit",
+        "supported": 1,
+        "year": 2006
+      },
+      "tpu": {
+        "abbreviation": "TPU",
+        "claims": 3,
+        "grades": {
+          "E1": 2,
+          "E3": 1
+        },
+        "lifecycle": "commercial",
+        "name": "Tensor Processing Unit",
+        "supported": 3,
+        "year": 2015
+      },
+      "tsu": {
+        "abbreviation": "TSU",
+        "claims": 3,
+        "grades": {
+          "E1": 2,
+          "E2": 1
+        },
+        "lifecycle": "emerging",
+        "name": "Thermodynamic Sampling Unit",
+        "supported": 3,
+        "year": 2026
+      },
+      "wse": {
+        "abbreviation": "WSE",
+        "claims": 4,
+        "grades": {
+          "E1": 3,
+          "E2": 1
+        },
+        "lifecycle": "commercial",
+        "name": "Wafer-Scale Engine",
+        "supported": 4,
+        "year": 2019
+      }
+    },
+    "conflict_rate": 0.03125,
+    "conflict_register": [
+      {
+        "claim_id": "spu-003",
+        "grade": "E0",
+        "note": "Secondary reports differ between 1,760 and 1,716 nodes; the fetched Cell extract does not resolve the count.",
+        "sources": [
+          "S008"
+        ],
+        "statement": "The US Air Force built a supercomputer from 1,760 PlayStation 3 consoles.",
+        "status": "conflicting"
+      },
+      {
+        "claim_id": "lpu-003",
+        "grade": "E2",
+        "note": "Unit/scale error in popular narration; retained as a conflict-register entry.",
+        "sources": [
+          "S018"
+        ],
+        "statement": "The transcript's statement that Nvidia paid 'about $20' for Groq's technology is off by roughly three orders of magnitude; the reported figure is about $20 billion.",
+        "status": "refuted"
+      }
+    ],
+    "era_test": {
+      "chi2_yates": 6.82802923410134,
+      "comparison": "pre-2015 vs 2015+ primary-evidence share",
+      "cramers_v": 0.32663122444560233,
+      "p_value": 0.008973822634141352,
+      "table": {
+        "new_non_primary": 20,
+        "new_primary": 11,
+        "old_non_primary": 31,
+        "old_primary": 2
+      }
+    },
+    "grade_counts": {
+      "E0": 16,
+      "E1": 13,
+      "E2": 7,
+      "E3": 28
+    },
+    "lifecycle_counts": {
+      "absorbed": 3,
+      "commercial": 4,
+      "embedded": 1,
+      "emerging": 1,
+      "general-purpose": 2,
+      "integrated": 5,
+      "research": 4
+    },
+    "metadata": {
+      "compiled": "2026-11-04",
+      "grading": {
+        "E0": "Unverified, conflicting, or refuted; retained for transparency.",
+        "E1": "Primary source: official press release, regulatory filing, peer-reviewed paper, standard, or API dataset.",
+        "E2": "Reputable secondary source: major news wire, trade press, or expert analysis.",
+        "E3": "Tertiary source: encyclopedia or general reference."
+      },
+      "scope": "Twenty processing-unit paradigms discussed in a 2026 popular technology transcript, audited against public sources available on 2026-11-04.",
+      "status_definitions": {
+        "conflicting": "Credible sources disagree on a material detail.",
+        "refuted": "A captured source contradicts the statement.",
+        "supported": "At least one cited source directly supports the statement.",
+        "unverified": "Plausible or widely repeated, but not confirmed by a captured source."
+      },
+      "title": "XPU-Atlas Claim Ledger",
+      "version": "0.1.0"
+    },
+    "primary_share": 0.203125,
+    "status_counts": {
+      "conflicting": 1,
+      "refuted": 1,
+      "supported": 47,
+      "unverified": 15
+    },
+    "totals": {
+      "claims": 64,
+      "paradigms": 20,
+      "sources": 58
+    },
+    "unverified_rate": 0.234375,
+    "verification_rate": 0.734375,
+    "verification_rate_ci95": [
+      0.615168937427648,
+      0.8270376143046224
+    ]
+  },
+  "markets": {
+    "attention_market_pairs": [
+      {
+        "company": "NVIDIA",
+        "price_cagr": 0.48802385216641797,
+        "term": "gpu",
+        "ticker": "NVDA"
+      },
+      {
+        "company": "Intel",
+        "price_cagr": 0.049423831075509295,
+        "term": "cpu",
+        "ticker": "INTC"
+      },
+      {
+        "company": "AMD",
+        "price_cagr": 0.27974774941010083,
+        "term": "cpu",
+        "ticker": "AMD"
+      },
+      {
+        "company": "Alphabet",
+        "price_cagr": 0.14567914072957677,
+        "term": "tpu",
+        "ticker": "GOOGL"
+      },
+      {
+        "company": "Qualcomm",
+        "price_cagr": -0.00027239911497456415,
+        "term": "npu",
+        "ticker": "QCOM"
+      }
+    ],
+    "correlation_matrix": {
+      "AMD": {
+        "AMD": 1.0,
+        "GOOGL": 0.5649704050202926,
+        "INTC": 0.6074226234740451,
+        "NVDA": 0.6296135167322449,
+        "QCOM": 0.6206277658091226,
+        "TSM": 0.6312807917088391
+      },
+      "GOOGL": {
+        "AMD": 0.5649704050202926,
+        "GOOGL": 1.0,
+        "INTC": 0.5135485833125117,
+        "NVDA": 0.5491374175418684,
+        "QCOM": 0.5098664416976842,
+        "TSM": 0.5940605352894793
+      },
+      "INTC": {
+        "AMD": 0.6074226234740451,
+        "GOOGL": 0.5135485833125117,
+        "INTC": 1.0,
+        "NVDA": 0.32541608375409325,
+        "QCOM": 0.5102722605103265,
+        "TSM": 0.4415562325800331
+      },
+      "NVDA": {
+        "AMD": 0.6296135167322449,
+        "GOOGL": 0.5491374175418684,
+        "INTC": 0.32541608375409325,
+        "NVDA": 1.0,
+        "QCOM": 0.4778290877445789,
+        "TSM": 0.6349360064210864
+      },
+      "QCOM": {
+        "AMD": 0.6206277658091226,
+        "GOOGL": 0.5098664416976842,
+        "INTC": 0.5102722605103265,
+        "NVDA": 0.4778290877445789,
+        "QCOM": 1.0,
+        "TSM": 0.5000632141139515
+      },
+      "TSM": {
+        "AMD": 0.6312807917088391,
+        "GOOGL": 0.5940605352894793,
+        "INTC": 0.4415562325800331,
+        "NVDA": 0.6349360064210864,
+        "QCOM": 0.5000632141139515,
+        "TSM": 1.0
+      }
+    },
+    "group_cagr": {
+      "foundry": 0.2998000122790401,
+      "integrators_cpu_gpu_tpu": 0.3339828541416592,
+      "legacy_cpu": 0.049423831075509295,
+      "mobile_soc": -0.00027239911497456415
+    },
+    "retrieved_at": "2026-11-04T11:05:41+00:00",
+    "source": "Yahoo Finance chart API",
+    "tickers": {
+      "AMD": {
+        "annualized_volatility": 0.6240964272362767,
+        "cagr": 0.27974774941010083,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2021-12",
+        "first_price": 143.89999389648438,
+        "label": "AMD",
+        "last_month": "2026-11",
+        "last_price": 483.8999938964844,
+        "max_drawdown": -0.5826267969372141,
+        "n_months": 60,
+        "total_return": 2.3627520112654192
+      },
+      "ARM": {
+        "annualized_volatility": 0.7876848377144074,
+        "cagr": 0.5813205837078499,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2023-10",
+        "first_price": 49.290000915527344,
+        "label": "Arm",
+        "last_month": "2026-11",
+        "last_price": 202.49000549316406,
+        "max_drawdown": -0.4289138920088995,
+        "n_months": 38,
+        "total_return": 3.108135559587211
+      },
+      "CBRS": {
+        "annualized_volatility": 0.6353408292145927,
+        "cagr": -0.8585884377220702,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2026-06",
+        "first_price": 221.0,
+        "label": "Cerebras",
+        "last_month": "2026-11",
+        "last_price": 97.81999969482422,
+        "max_drawdown": -0.5573755669917456,
+        "n_months": 6,
+        "total_return": -0.5573755669917456
+      },
+      "GOOGL": {
+        "annualized_volatility": 0.31952397556444756,
+        "cagr": 0.14567914072957677,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2021-12",
+        "first_price": 143.48663330078125,
+        "label": "Alphabet",
+        "last_month": "2026-11",
+        "last_price": 280.0299987792969,
+        "max_drawdown": -0.39089555635430917,
+        "n_months": 60,
+        "total_return": 0.9516103509954761
+      },
+      "INTC": {
+        "annualized_volatility": 0.6844072307014876,
+        "cagr": 0.049423831075509295,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2021-12",
+        "first_price": 47.764522552490234,
+        "label": "Intel",
+        "last_month": "2026-11",
+        "last_price": 60.54999923706055,
+        "max_drawdown": -0.6081547564142638,
+        "n_months": 60,
+        "total_return": 0.2676772634023479
+      },
+      "NVDA": {
+        "annualized_volatility": 0.4775806506194945,
+        "cagr": 0.48802385216641797,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2021-12",
+        "first_price": 29.285602569580078,
+        "label": "NVIDIA",
+        "last_month": "2026-11",
+        "last_price": 206.69000244140625,
+        "max_drawdown": -0.586982914650103,
+        "n_months": 60,
+        "total_return": 6.057734323558088
+      },
+      "QCOM": {
+        "annualized_volatility": 0.4085553396765246,
+        "cagr": -0.00027239911497456415,
+        "currency": "USD",
+        "exchange": "NMS",
+        "first_month": "2021-12",
+        "first_price": 164.650390625,
+        "label": "Qualcomm",
+        "last_month": "2026-11",
+        "last_price": 164.42999267578125,
+        "max_drawdown": -0.40978731642585986,
+        "n_months": 60,
+        "total_return": -0.0013385813928660228
+      },
+      "TSM": {
+        "annualized_volatility": 0.3643290683330819,
+        "cagr": 0.2998000122790401,
+        "currency": "USD",
+        "exchange": "NYQ",
+        "first_month": "2021-12",
+        "first_price": 111.5186538696289,
+        "label": "TSMC",
+        "last_month": "2026-11",
+        "last_price": 404.79998779296875,
+        "max_drawdown": -0.4901392316542249,
+        "n_months": 60,
+        "total_return": 2.629885886770127
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this artifact, please cite the repository and the archived release."
+title: "XPU-Atlas: A Reproducible Evidence Audit of Twenty Processing-Unit Paradigms, 1971-2026"
+authors:
+  - family-names: "XPU-Atlas Contributors"
+version: 0.1.0
+date-released: "2026-11-04"
+license: MIT
+keywords:
+  - computer architecture
+  - accelerators
+  - evidence audit
+  - reproducibility
+  - bibliometrics
+  - benchmarking
+abstract: >-
+  A verification-first taxonomy and empirical audit of twenty processing-unit
+  paradigms, combining a graded claim ledger, live bibliometric, public-attention
+  and market data, host microbenchmarks, and a fully containerized reproduction
+  pipeline.

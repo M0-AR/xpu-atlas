@@ -1,0 +1,91 @@
+{
+  "attention": {
+    "median_change_2021_2025": 0.10640658211090859,
+    "n_articles": 12,
+    "n_declining": 5,
+    "n_growing": 7
+  },
+  "bench": {
+    "matmul_peak_gflops": 214.78365241169422,
+    "matmul_to_serial_ratio": 11918.246680419763,
+    "serial_ops_per_s": 18021413.5661882,
+    "thread_efficiency_8": 0.2868353729603338,
+    "vector_speedup_max": 25.10577682130174,
+    "vector_to_serial_ratio": 65.6176234997702
+  },
+  "bibliometrics": {
+    "max_cagr_2021_2025": 0.7121652519221513,
+    "max_inflation": 579.0,
+    "median_cagr_2021_2025": 0.2067554794394555,
+    "median_inflation": 4.77,
+    "n_reliable": 13,
+    "n_terms": 14,
+    "terms_with_100x_inflation": [
+      "dpu",
+      "isp",
+      "ppu"
+    ],
+    "terms_with_10x_inflation": [
+      "dpu",
+      "isp",
+      "npu",
+      "photonic",
+      "ppu"
+    ]
+  },
+  "checks": [
+    "64",
+    "73.4%",
+    "20.3%",
+    "579x (PPU)",
+    "40%"
+  ],
+  "coupling": {
+    "n_terms": 12,
+    "pearson": 0.4644861315836959,
+    "spearman": 0.38461538461538464
+  },
+  "evidence": {
+    "claims": 64,
+    "paradigms": 20,
+    "sources": 58
+  },
+  "generated_at": "2026-11-04T11:07:25+00:00",
+  "headline": {
+    "absorption_share": "40%",
+    "claims_conflicting": "1",
+    "claims_refuted": "1",
+    "claims_supported": "47",
+    "claims_total": "64",
+    "claims_unverified": "15",
+    "coupling_spearman": "0.38",
+    "era_chi2_p": "0.009",
+    "foundry_cagr": "30.0%",
+    "gpu_attention_change": "-18.8%",
+    "gpu_publication_cagr": "5.4%",
+    "inflation_terms_10x": "5",
+    "integrators_cagr": "33.4%",
+    "legacy_cpu_cagr": "4.9%",
+    "matmul_peak_gflops": "214.8",
+    "matmul_to_serial_ratio": "11918x",
+    "max_inflation": "579x (PPU)",
+    "mobile_cagr": "-0.03%",
+    "paradigms_total": "20",
+    "primary_share": "20.3%",
+    "serial_ops_per_s": "18.0M",
+    "sources_total": "58",
+    "thread_efficiency_8": "28.7%",
+    "top_attention_decliners": "CPU -48%, MCU -42%, ASIC -38%",
+    "top_attention_gainers": "Neuromorphic +2506%, NPU +2196%, DPU +76%",
+    "vector_speedup_max": "25.1x",
+    "vector_to_serial_ratio": "65.6x",
+    "verification_ci": "61.5-82.7%",
+    "verification_rate": "73.4%"
+  },
+  "markets": {
+    "foundry": 0.2998000122790401,
+    "integrators_cpu_gpu_tpu": 0.3339828541416592,
+    "legacy_cpu": 0.049423831075509295,
+    "mobile_soc": -0.00027239911497456415
+  }
+}

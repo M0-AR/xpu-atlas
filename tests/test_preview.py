@@ -1,0 +1,42 @@
+import re
+from pathlib import Path
+
+from xpu_atlas.io_utils import ROOT
+
+PREVIEW = ROOT / "preview.html"
+INDEX = ROOT / "index.html"
+DATA = ROOT / "assets" / "atlas-data.js"
+
+
+def test_pages_entry_points_exist():
+    assert PREVIEW.exists()
+    assert INDEX.exists()
+    assert INDEX.read_bytes() == PREVIEW.read_bytes()
+    assert (ROOT / ".nojekyll").exists()
+
+
+def test_preview_bundle_and_sections():
+    assert DATA.exists()
+    bundle = DATA.read_text(encoding="utf-8")
+    assert "window.XPU_DATA" in bundle
+    text = PREVIEW.read_text(encoding="utf-8")
+    for section in ("findings", "atlas", "explorer", "learn", "quiz"):
+        assert f'id="{section}"' in text
+    for control in ("claim-search", "claim-rows", "quiz-form", "path-label", "theme-toggle"):
+        assert f'id="{control}"' in text
+
+
+def test_preview_has_no_local_or_placeholder_urls():
+    text = PREVIEW.read_text(encoding="utf-8")
+    assert "localhost" not in text
+    assert "127.0.0.1" not in text
+    assert "example.org" not in text
+
+
+def test_preview_local_assets_exist():
+    text = PREVIEW.read_text(encoding="utf-8")
+    refs = set(re.findall(r'(?:src|href)="(assets/[^"]+)"', text))
+    refs.update(re.findall(r"url\((assets/[^)]+)\)", text))
+    assert refs
+    missing = [ref for ref in sorted(refs) if not (ROOT / ref).exists()]
+    assert not missing, missing

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">XPU-Atlas logo</title>
+  <rect width="64" height="64" rx="16" fill="#071014"/>
+  <path d="M14 18h16v10H14zM34 18h16v10H34zM14 36h16v10H14zM34 36h16v10H34z" fill="#5eead4"/>
+  <path d="M20 23h4v0h-4zM40 23h4v0h-4zM20 41h4v0h-4z" fill="#071014"/>
+  <circle cx="46" cy="41" r="4" fill="#fbbf24"/>
+</svg>

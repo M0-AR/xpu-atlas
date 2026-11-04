@@ -1,0 +1,353 @@
+{
+  "by_era": {
+    "2015-2020": {
+      "claims": 21,
+      "primary": 7,
+      "primary_share": 0.3333333333333333,
+      "supported": 17
+    },
+    "2021-2026": {
+      "claims": 10,
+      "primary": 4,
+      "primary_share": 0.4,
+      "supported": 8
+    },
+    "pre-2015": {
+      "claims": 33,
+      "primary": 2,
+      "primary_share": 0.06060606060606061,
+      "supported": 22
+    }
+  },
+  "by_paradigm": {
+    "apu": {
+      "abbreviation": "APU",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "integrated",
+      "name": "Accelerated Processing Unit",
+      "supported": 2,
+      "year": 2011
+    },
+    "asic": {
+      "abbreviation": "ASIC",
+      "claims": 3,
+      "grades": {
+        "E0": 2,
+        "E3": 1
+      },
+      "lifecycle": "commercial",
+      "name": "Application-Specific Integrated Circuit",
+      "supported": 1,
+      "year": 1980
+    },
+    "biological": {
+      "abbreviation": "Wetware",
+      "claims": 4,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 2
+      },
+      "lifecycle": "research",
+      "name": "Biological Processing Unit",
+      "supported": 3,
+      "year": 2022
+    },
+    "cpu": {
+      "abbreviation": "CPU",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "general-purpose",
+      "name": "Central Processing Unit",
+      "supported": 2,
+      "year": 1971
+    },
+    "dpu": {
+      "abbreviation": "DPU",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "integrated",
+      "name": "Data Processing Unit",
+      "supported": 2,
+      "year": 2019
+    },
+    "fpga": {
+      "abbreviation": "FPGA",
+      "claims": 3,
+      "grades": {
+        "E3": 3
+      },
+      "lifecycle": "commercial",
+      "name": "Field-Programmable Gate Array",
+      "supported": 3,
+      "year": 1985
+    },
+    "gpu": {
+      "abbreviation": "GPU",
+      "claims": 3,
+      "grades": {
+        "E3": 3
+      },
+      "lifecycle": "general-purpose",
+      "name": "Graphics Processing Unit",
+      "supported": 3,
+      "year": 1999
+    },
+    "isp": {
+      "abbreviation": "ISP",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "integrated",
+      "name": "Image Signal Processor",
+      "supported": 2,
+      "year": 1990
+    },
+    "lpu": {
+      "abbreviation": "LPU",
+      "claims": 3,
+      "grades": {
+        "E2": 3
+      },
+      "lifecycle": "absorbed",
+      "name": "Language Processing Unit",
+      "supported": 2,
+      "year": 2016
+    },
+    "mcu": {
+      "abbreviation": "MCU",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "embedded",
+      "name": "Microcontroller Unit",
+      "supported": 2,
+      "year": 1971
+    },
+    "neuromorphic": {
+      "abbreviation": "NPU (neuromorphic)",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E3": 1
+      },
+      "lifecycle": "research",
+      "name": "Neuromorphic Processor",
+      "supported": 2,
+      "year": 2014
+    },
+    "npu": {
+      "abbreviation": "NPU",
+      "claims": 4,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E3": 2
+      },
+      "lifecycle": "integrated",
+      "name": "Neural Processing Unit",
+      "supported": 3,
+      "year": 2017
+    },
+    "photonic": {
+      "abbreviation": "Photonic",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E3": 1
+      },
+      "lifecycle": "research",
+      "name": "Photonic Processor",
+      "supported": 2,
+      "year": 2025
+    },
+    "ppu": {
+      "abbreviation": "PPU",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E3": 2
+      },
+      "lifecycle": "absorbed",
+      "name": "Physics Processing Unit",
+      "supported": 2,
+      "year": 2006
+    },
+    "qpu": {
+      "abbreviation": "QPU",
+      "claims": 4,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E3": 2
+      },
+      "lifecycle": "research",
+      "name": "Quantum Processing Unit",
+      "supported": 3,
+      "year": 2019
+    },
+    "security": {
+      "abbreviation": "TPM / Secure Enclave",
+      "claims": 3,
+      "grades": {
+        "E0": 1,
+        "E1": 1,
+        "E3": 1
+      },
+      "lifecycle": "integrated",
+      "name": "Security Processor",
+      "supported": 2,
+      "year": 2001
+    },
+    "spu": {
+      "abbreviation": "SPU",
+      "claims": 3,
+      "grades": {
+        "E0": 2,
+        "E3": 1
+      },
+      "lifecycle": "absorbed",
+      "name": "Synergistic Processing Unit",
+      "supported": 1,
+      "year": 2006
+    },
+    "tpu": {
+      "abbreviation": "TPU",
+      "claims": 3,
+      "grades": {
+        "E1": 2,
+        "E3": 1
+      },
+      "lifecycle": "commercial",
+      "name": "Tensor Processing Unit",
+      "supported": 3,
+      "year": 2015
+    },
+    "tsu": {
+      "abbreviation": "TSU",
+      "claims": 3,
+      "grades": {
+        "E1": 2,
+        "E2": 1
+      },
+      "lifecycle": "emerging",
+      "name": "Thermodynamic Sampling Unit",
+      "supported": 3,
+      "year": 2026
+    },
+    "wse": {
+      "abbreviation": "WSE",
+      "claims": 4,
+      "grades": {
+        "E1": 3,
+        "E2": 1
+      },
+      "lifecycle": "commercial",
+      "name": "Wafer-Scale Engine",
+      "supported": 4,
+      "year": 2019
+    }
+  },
+  "conflict_rate": 0.03125,
+  "conflict_register": [
+    {
+      "claim_id": "spu-003",
+      "grade": "E0",
+      "note": "Secondary reports differ between 1,760 and 1,716 nodes; the fetched Cell extract does not resolve the count.",
+      "sources": [
+        "S008"
+      ],
+      "statement": "The US Air Force built a supercomputer from 1,760 PlayStation 3 consoles.",
+      "status": "conflicting"
+    },
+    {
+      "claim_id": "lpu-003",
+      "grade": "E2",
+      "note": "Unit/scale error in popular narration; retained as a conflict-register entry.",
+      "sources": [
+        "S018"
+      ],
+      "statement": "The transcript's statement that Nvidia paid 'about $20' for Groq's technology is off by roughly three orders of magnitude; the reported figure is about $20 billion.",
+      "status": "refuted"
+    }
+  ],
+  "era_test": {
+    "chi2_yates": 6.82802923410134,
+    "comparison": "pre-2015 vs 2015+ primary-evidence share",
+    "cramers_v": 0.32663122444560233,
+    "p_value": 0.008973822634141352,
+    "table": {
+      "new_non_primary": 20,
+      "new_primary": 11,
+      "old_non_primary": 31,
+      "old_primary": 2
+    }
+  },
+  "grade_counts": {
+    "E0": 16,
+    "E1": 13,
+    "E2": 7,
+    "E3": 28
+  },
+  "lifecycle_counts": {
+    "absorbed": 3,
+    "commercial": 4,
+    "embedded": 1,
+    "emerging": 1,
+    "general-purpose": 2,
+    "integrated": 5,
+    "research": 4
+  },
+  "metadata": {
+    "compiled": "2026-11-04",
+    "grading": {
+      "E0": "Unverified, conflicting, or refuted; retained for transparency.",
+      "E1": "Primary source: official press release, regulatory filing, peer-reviewed paper, standard, or API dataset.",
+      "E2": "Reputable secondary source: major news wire, trade press, or expert analysis.",
+      "E3": "Tertiary source: encyclopedia or general reference."
+    },
+    "scope": "Twenty processing-unit paradigms discussed in a 2026 popular technology transcript, audited against public sources available on 2026-11-04.",
+    "status_definitions": {
+      "conflicting": "Credible sources disagree on a material detail.",
+      "refuted": "A captured source contradicts the statement.",
+      "supported": "At least one cited source directly supports the statement.",
+      "unverified": "Plausible or widely repeated, but not confirmed by a captured source."
+    },
+    "title": "XPU-Atlas Claim Ledger",
+    "version": "0.1.0"
+  },
+  "primary_share": 0.203125,
+  "status_counts": {
+    "conflicting": 1,
+    "refuted": 1,
+    "supported": 47,
+    "unverified": 15
+  },
+  "totals": {
+    "claims": 64,
+    "paradigms": 20,
+    "sources": 58
+  },
+  "unverified_rate": 0.234375,
+  "verification_rate": 0.734375,
+  "verification_rate_ci95": [
+    0.615168937427648,
+    0.8270376143046224
+  ]
+}

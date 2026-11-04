@@ -1,0 +1,931 @@
+metadata:
+  title: "XPU-Atlas Claim Ledger"
+  version: "0.1.0"
+  compiled: "2026-11-04"
+  scope: >-
+    Twenty processing-unit paradigms discussed in a 2026 popular technology
+    transcript, audited against public sources available on 2026-11-04.
+  grading:
+    E1: "Primary source: official press release, regulatory filing, peer-reviewed paper, standard, or API dataset."
+    E2: "Reputable secondary source: major news wire, trade press, or expert analysis."
+    E3: "Tertiary source: encyclopedia or general reference."
+    E0: "Unverified, conflicting, or refuted; retained for transparency."
+  status_definitions:
+    supported: "At least one cited source directly supports the statement."
+    conflicting: "Credible sources disagree on a material detail."
+    unverified: "Plausible or widely repeated, but not confirmed by a captured source."
+    refuted: "A captured source contradicts the statement."
+
+sources:
+  - id: S001
+    title: "Central processing unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Central_processing_unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S002
+    title: "Graphics processing unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Graphics_processing_unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S003
+    title: "GeForce 256"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/GeForce_256"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S004
+    title: "Physics processing unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Physics_processing_unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S005
+    title: "Ageia"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Ageia"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S006
+    title: "AMD APU"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/AMD_APU"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S007
+    title: "Steam Deck"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Steam_Deck"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S008
+    title: "Cell (processor)"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Cell_(processor)"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S009
+    title: "Neural processing unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Neural_processing_unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S010
+    title: "Apple A11"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Apple_A11"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S011
+    title: "Introducing Copilot+ PCs"
+    publisher: "Microsoft"
+    url: "https://blogs.microsoft.com/blog/2024/05/20/introducing-copilot-pcs/"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S012
+    title: "Windows 11 specifications and system requirements"
+    publisher: "Microsoft"
+    url: "https://www.microsoft.com/en-us/windows/windows-11-specifications"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S013
+    title: "Tensor Processing Unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Tensor_Processing_Unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S014
+    title: "Our eighth generation TPUs: two chips for the agentic era"
+    publisher: "Google"
+    url: "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S015
+    title: "AI infrastructure at Next '26"
+    publisher: "Google Cloud"
+    url: "https://cloud.google.com/blog/products/compute/ai-infrastructure-at-next26"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S016
+    title: "Groq and Nvidia enter non-exclusive inference technology licensing agreement"
+    publisher: "Groq"
+    url: "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S017
+    title: "Nvidia to license Groq technology, hire executives"
+    publisher: "Reuters"
+    url: "https://www.reuters.com/business/nvidia-buy-ai-chip-startup-groq-about-20-billion-cnbc-reports-2025-12-24/"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S018
+    title: "Nvidia buying AI chip startup Groq for about $20 billion"
+    publisher: "CNBC"
+    url: "https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S019
+    title: "Nvidia to license technology from inference chip startup Groq in reported $20B deal"
+    publisher: "SiliconANGLE"
+    url: "https://siliconangle.com/2025/12/24/nvidia-license-technology-inference-chip-startup-groq-reported-20b-deal/"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S020
+    title: "Microcontroller"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Microcontroller"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S021
+    title: "Image processor"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Image_processor"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S022
+    title: "Trusted Platform Module"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Trusted_Platform_Module"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S023
+    title: "Application-specific integrated circuit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Application-specific_integrated_circuit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S024
+    title: "Field-programmable gate array"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Field-programmable_gate_array"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S025
+    title: "Xilinx"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Xilinx"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S026
+    title: "Data processing unit"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Data_processing_unit"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S027
+    title: "Nvidia BlueField"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Nvidia_BlueField"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S028
+    title: "Cerebras Systems announces pricing of initial public offering"
+    publisher: "Cerebras"
+    url: "https://www.cerebras.ai/press-release/cerebras-systems-announces-pricing-of-initial-public-offering"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S029
+    title: "Cerebras Systems 424B4 prospectus"
+    publisher: "U.S. Securities and Exchange Commission"
+    url: "https://www.sec.gov/Archives/edgar/data/2021728/000162828026035214/cerebras-424b4.htm"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S030
+    title: "Cerebras scores OpenAI deal worth over $10 billion"
+    publisher: "CNBC"
+    url: "https://www.cnbc.com/2026/01/14/cerebras-scores-openai-deal-worth-over-10-billion.html"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S031
+    title: "AI chipmaker Cerebras files for IPO after scrapping paperwork in 2025"
+    publisher: "CNBC"
+    url: "https://www.cnbc.com/2026/04/17/cerebras-new-ipo-ai-chips.html"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S032
+    title: "Cerebras prices IPO above expected range"
+    publisher: "CNBC"
+    url: "https://www.cnbc.com/amp/2026/05/13/cerebras-prices-ipo-above-expected-range-wall-street-expects-ai-flood.html"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S033
+    title: "Cerebras Systems"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Cerebras_Systems"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S034
+    title: "Intel builds world's largest neuromorphic system"
+    publisher: "Intel"
+    url: "https://www.intel.com/content/www/us/en/newsroom/news/intel-builds-worlds-largest-neuromorphic-system.html"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S035
+    title: "Neuromorphic computing"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Neuromorphic_computing"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S036
+    title: "Optical computing"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Optical_computing"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S037
+    title: "Photonic processor running AI models (Nature)"
+    publisher: "Nature"
+    url: "https://www.nature.com/articles/s41586-025-08854-x"
+    type: peer_reviewed
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S038
+    title: "Quantum supremacy using a programmable superconducting processor (Willow)"
+    publisher: "Nature"
+    url: "https://doi.org/10.1038/s41586-024-08449-y"
+    type: peer_reviewed
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S039
+    title: "Quantum computing"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Quantum_computing"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S040
+    title: "From one to one billion: Torx, Thermalizers, and Z1"
+    publisher: "Extropic"
+    url: "https://extropic.ai/writing/from-one-to-one-billion/"
+    type: primary
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S041
+    title: "The transistor's intriguing second act"
+    publisher: "Kindred Ventures"
+    url: "https://kindredventures.com/research/the-transistors-intriguing-second-act/"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S042
+    title: "In vitro neurons learn and exhibit sentience when embodied in a simulated game-world (Neuron)"
+    publisher: "Cell Press"
+    url: "https://doi.org/10.1016/j.neuron.2022.09.001"
+    type: peer_reviewed
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S043
+    title: "Biological computer: human brain cells on a chip"
+    publisher: "IEEE Spectrum"
+    url: "https://spectrum.ieee.org/biological-computer-for-sale"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S044
+    title: "200,000 living human neurons on a microchip demonstrated playing Doom"
+    publisher: "Tom's Hardware"
+    url: "https://www.tomshardware.com/tech-industry/artificial-intelligence/200-000-living-human-neurons-on-a-microchip-demonstrated-playing-doom-cortical-labs-cl1-video-shows-the-gameplay-and-explains-how-the-neurons-learn-the-game"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S045
+    title: "This $35,000 computer made of living human neurons can run Doom"
+    publisher: "TechSpot"
+    url: "https://www.techspot.com/news/111506-35000-computer-made-living-human-neurons-can-run.html"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S046
+    title: "How human neurons on a chip learned to play Doom"
+    publisher: "Scientific American"
+    url: "https://www.scientificamerican.com/article/how-human-neurons-on-a-chip-learned-to-play-doom/"
+    type: press
+    retrieved: "2026-11-04"
+    grade: E2
+  - id: S047
+    title: "Wafer-scale integration"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Wafer-scale_integration"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S048
+    title: "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews"
+    publisher: "BMJ"
+    url: "https://www.bmj.com/content/372/bmj.n71"
+    type: peer_reviewed
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S049
+    title: "PRISMA 2020 statement"
+    publisher: "PRISMA"
+    url: "https://www.prisma-statement.org/"
+    type: standard
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S050
+    title: "MLPerf Inference rules"
+    publisher: "MLCommons"
+    url: "https://raw.githubusercontent.com/mlcommons/inference_policies/master/inference_rules.adoc"
+    type: standard
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S051
+    title: "Artifact review and badging"
+    publisher: "ACM"
+    url: "https://www.acm.org/publications/policies/artifact-review-and-badging-current/"
+    type: standard
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S052
+    title: "NeurIPS paper checklist"
+    publisher: "NeurIPS"
+    url: "https://neurips.cc/public/guides/PaperChecklist"
+    type: standard
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S053
+    title: "OpenAlex works API"
+    publisher: "OpenAlex"
+    url: "https://api.openalex.org/"
+    type: dataset
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S054
+    title: "Wikimedia Pageviews API"
+    publisher: "Wikimedia Foundation"
+    url: "https://wikimedia.org/api/rest_v1/"
+    type: dataset
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S055
+    title: "Yahoo Finance chart API"
+    publisher: "Yahoo Finance"
+    url: "https://query1.finance.yahoo.com/v8/finance/chart/NVDA"
+    type: dataset
+    retrieved: "2026-11-04"
+    grade: E1
+  - id: S056
+    title: "Bitcoin"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Bitcoin"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S057
+    title: "PlayStation 5"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/PlayStation_5"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+  - id: S058
+    title: "Trusted execution environment"
+    publisher: "Wikipedia"
+    url: "https://en.wikipedia.org/wiki/Trusted_execution_environment"
+    type: encyclopedia
+    retrieved: "2026-11-04"
+    grade: E3
+
+paradigms:
+  - id: cpu
+    name: "Central Processing Unit"
+    abbreviation: "CPU"
+    year: 1971
+    year_confidence: "high"
+    lifecycle: general-purpose
+    claims:
+      - id: cpu-001
+        statement: "The CPU executes the instructions of a computer program, including arithmetic, logic, control and input/output operations."
+        status: supported
+        grade: E3
+        sources: [S001]
+        note: "Definition-level claim; encyclopedic source."
+      - id: cpu-002
+        statement: "The CPU is the primary, general-purpose processor and is contrasted with specialized coprocessors such as GPUs."
+        status: supported
+        grade: E3
+        sources: [S001]
+      - id: cpu-003
+        statement: "Consumer desktop CPUs in 2026 span roughly 4 to 24 cores."
+        status: unverified
+        grade: E0
+        sources: [S001]
+        note: "Product-stack generalization; not sampled from vendor SKUs in this audit."
+
+  - id: gpu
+    name: "Graphics Processing Unit"
+    abbreviation: "GPU"
+    year: 1999
+    year_confidence: "high"
+    lifecycle: general-purpose
+    claims:
+      - id: gpu-001
+        statement: "Nvidia announced the GeForce 256 on 31 August 1999 and marketed it as the world's first GPU."
+        status: supported
+        grade: E3
+        sources: [S003]
+        note: "'World's first GPU' is a marketing claim, not a neutral architectural priority claim."
+      - id: gpu-002
+        statement: "A GPU is a specialized circuit for digital image processing and graphics acceleration, present on discrete cards and integrated into systems-on-chip."
+        status: supported
+        grade: E3
+        sources: [S002]
+      - id: gpu-003
+        statement: "GPUs are increasingly used for AI processing and model training because of linear-algebra acceleration."
+        status: supported
+        grade: E3
+        sources: [S002]
+
+  - id: ppu
+    name: "Physics Processing Unit"
+    abbreviation: "PPU"
+    year: 2006
+    year_confidence: "medium"
+    lifecycle: absorbed
+    claims:
+      - id: ppu-001
+        statement: "A PPU is a dedicated microprocessor for physics calculations, especially game physics engines."
+        status: supported
+        grade: E3
+        sources: [S004]
+      - id: ppu-002
+        statement: "Ageia acquired NovodeX/PhysX in 2004 and produced a PhysX physics-processing chip."
+        status: supported
+        grade: E3
+        sources: [S005]
+      - id: ppu-003
+        statement: "The PhysX card launched at roughly $250-300 in 2006 and Nvidia acquired Ageia in 2008, moving PhysX onto GPUs."
+        status: unverified
+        grade: E0
+        sources: [S005]
+        note: "The absorption narrative is consistent across secondary reports, but price and dates were not captured from a primary source in this snapshot."
+
+  - id: apu
+    name: "Accelerated Processing Unit"
+    abbreviation: "APU"
+    year: 2011
+    year_confidence: "medium"
+    lifecycle: integrated
+    claims:
+      - id: apu-001
+        statement: "AMD's APU combines a general-purpose AMD64 CPU and a 3D integrated GPU on a single die."
+        status: supported
+        grade: E3
+        sources: [S006]
+      - id: apu-002
+        statement: "AMD launched its first APUs in 2011."
+        status: unverified
+        grade: E0
+        sources: [S006]
+        note: "Launch year is widely reported but not present in the fetched extract."
+      - id: apu-003
+        statement: "The Steam Deck integrates a custom AMD APU."
+        status: supported
+        grade: E3
+        sources: [S007]
+
+  - id: spu
+    name: "Synergistic Processing Unit"
+    abbreviation: "SPU"
+    year: 2006
+    year_confidence: "high"
+    lifecycle: absorbed
+    claims:
+      - id: spu-001
+        statement: "The Cell Broadband Engine combines a general-purpose PowerPC PPE with multiple Synergistic Processing Elements."
+        status: supported
+        grade: E3
+        sources: [S008]
+      - id: spu-002
+        statement: "Cell contains eight SPEs; one was disabled for yields and one reserved for the system, leaving six usable by games."
+        status: unverified
+        grade: E0
+        sources: [S008]
+        note: "Widely reported; the fetched extract does not contain the yield and reservation details."
+      - id: spu-003
+        statement: "The US Air Force built a supercomputer from 1,760 PlayStation 3 consoles."
+        status: conflicting
+        grade: E0
+        sources: [S008]
+        note: "Secondary reports differ between 1,760 and 1,716 nodes; the fetched Cell extract does not resolve the count."
+
+  - id: npu
+    name: "Neural Processing Unit"
+    abbreviation: "NPU"
+    year: 2017
+    year_confidence: "medium"
+    lifecycle: integrated
+    claims:
+      - id: npu-001
+        statement: "An NPU is a specialized accelerator for AI and machine learning, and may be standalone or integrated into a CPU or GPU."
+        status: supported
+        grade: E3
+        sources: [S009]
+      - id: npu-002
+        statement: "Apple introduced the A11 Bionic in the iPhone 8/8 Plus and iPhone X on 12 September 2017."
+        status: supported
+        grade: E3
+        sources: [S010]
+      - id: npu-003
+        statement: "Apple branded the A11's AI accelerator as the Neural Engine."
+        status: unverified
+        grade: E0
+        sources: [S010]
+        note: "Device and date are verified; the Neural Engine branding is not in the fetched extract."
+      - id: npu-004
+        statement: "Microsoft requires an NPU capable of 40+ TOPS for Copilot+ PC certification."
+        status: supported
+        grade: E1
+        sources: [S011, S012]
+
+  - id: tpu
+    name: "Tensor Processing Unit"
+    abbreviation: "TPU"
+    year: 2015
+    year_confidence: "high"
+    lifecycle: commercial
+    claims:
+      - id: tpu-001
+        statement: "Google's TPU is an NPU/ASIC designed for neural-network machine learning; internal use began in 2015."
+        status: supported
+        grade: E3
+        sources: [S013]
+      - id: tpu-002
+        statement: "Google announced its eighth-generation TPUs, TPU 8t for training and TPU 8i for inference, on 22 April 2026."
+        status: supported
+        grade: E1
+        sources: [S014, S015]
+      - id: tpu-003
+        statement: "TPUs are offered to Google Cloud customers rather than sold as standalone PC components."
+        status: supported
+        grade: E1
+        sources: [S014]
+        note: "Cloud availability; no retail component channel was announced."
+
+  - id: lpu
+    name: "Language Processing Unit"
+    abbreviation: "LPU"
+    year: 2016
+    year_confidence: "medium"
+    lifecycle: absorbed
+    claims:
+      - id: lpu-001
+        statement: "Groq's LPU is an inference accelerator that emphasizes deterministic execution and on-chip SRAM."
+        status: supported
+        grade: E2
+        sources: [S019]
+        note: "Architecture details are vendor claims reported by trade press."
+      - id: lpu-002
+        statement: "Nvidia licensed Groq's inference technology non-exclusively on 24 December 2025, hired Jonathan Ross and Sunny Madra, and reportedly paid about $20 billion."
+        status: supported
+        grade: E2
+        sources: [S016, S017, S018]
+        note: "The parties disclosed the license and hiring; the price is press-reported, not disclosed."
+      - id: lpu-003
+        statement: "The transcript's statement that Nvidia paid 'about $20' for Groq's technology is off by roughly three orders of magnitude; the reported figure is about $20 billion."
+        status: refuted
+        grade: E2
+        sources: [S018]
+        note: "Unit/scale error in popular narration; retained as a conflict-register entry."
+
+  - id: mcu
+    name: "Microcontroller Unit"
+    abbreviation: "MCU"
+    year: 1971
+    year_confidence: "medium"
+    lifecycle: embedded
+    claims:
+      - id: mcu-001
+        statement: "An MCU integrates one or more processor cores, memory, and programmable I/O peripherals on a single integrated circuit."
+        status: supported
+        grade: E3
+        sources: [S020]
+      - id: mcu-002
+        statement: "MCUs target embedded applications, in contrast to general-purpose microprocessors."
+        status: supported
+        grade: E3
+        sources: [S020]
+      - id: mcu-003
+        statement: "A modern car can contain dozens of MCUs."
+        status: unverified
+        grade: E0
+        sources: [S020]
+        note: "Industry estimate; not sampled from teardown data."
+
+  - id: isp
+    name: "Image Signal Processor"
+    abbreviation: "ISP"
+    year: 1990
+    year_confidence: "low"
+    lifecycle: integrated
+    claims:
+      - id: isp-001
+        statement: "An ISP/image processor is a specialized DSP or media processor for image processing in cameras and other devices."
+        status: supported
+        grade: E3
+        sources: [S021]
+      - id: isp-002
+        statement: "Image processors often use SIMD or MIMD parallelism."
+        status: supported
+        grade: E3
+        sources: [S021]
+      - id: isp-003
+        statement: "Two phones with the same camera sensor can produce different photos because of ISP and software differences."
+        status: unverified
+        grade: E0
+        sources: [S021]
+        note: "Plausible and widely reported, but not tested with a controlled image dataset in this audit."
+
+  - id: security
+    name: "Security Processor"
+    abbreviation: "TPM / Secure Enclave"
+    year: 2001
+    year_confidence: "low"
+    lifecycle: integrated
+    claims:
+      - id: sec-001
+        statement: "A TPM is a secure cryptoprocessor implementing ISO/IEC 11889, used for boot integrity and disk-encryption keys."
+        status: supported
+        grade: E3
+        sources: [S022]
+      - id: sec-002
+        statement: "Windows 11 requires TPM 2.0."
+        status: supported
+        grade: E1
+        sources: [S012]
+      - id: sec-003
+        statement: "Apple's Secure Enclave first appeared in the iPhone 5S in 2013."
+        status: unverified
+        grade: E0
+        sources: [S058]
+        note: "Widely reported; the fetched trusted-execution-environment extract does not confirm the device and date."
+
+  - id: asic
+    name: "Application-Specific Integrated Circuit"
+    abbreviation: "ASIC"
+    year: 1980
+    year_confidence: "medium"
+    lifecycle: commercial
+    claims:
+      - id: asic-001
+        statement: "An ASIC is an integrated circuit customized for a particular use rather than general-purpose use."
+        status: supported
+        grade: E3
+        sources: [S023]
+      - id: asic-002
+        statement: "Bitcoin mining migrated from CPUs to GPUs to ASICs, with ASIC miners appearing around 2013."
+        status: unverified
+        grade: E0
+        sources: [S056]
+        note: "The fetched Bitcoin extract does not contain mining-hardware history."
+      - id: asic-003
+        statement: "Modern leading-edge ASIC design can cost tens to hundreds of millions of dollars."
+        status: unverified
+        grade: E0
+        sources: [S023]
+        note: "Industry cost estimate; no primary cost breakdown was captured."
+
+  - id: fpga
+    name: "Field-Programmable Gate Array"
+    abbreviation: "FPGA"
+    year: 1985
+    year_confidence: "medium"
+    lifecycle: commercial
+    claims:
+      - id: fpga-001
+        statement: "An FPGA is a configurable integrated circuit that can be repeatedly programmed after manufacturing."
+        status: supported
+        grade: E3
+        sources: [S024]
+      - id: fpga-002
+        statement: "Xilinx is renowned for inventing the first commercially viable FPGA."
+        status: supported
+        grade: E3
+        sources: [S025]
+      - id: fpga-003
+        statement: "FPGAs are used in telecommunications, automotive, aerospace, industrial and R&D applications."
+        status: supported
+        grade: E3
+        sources: [S024]
+
+  - id: dpu
+    name: "Data Processing Unit"
+    abbreviation: "DPU"
+    year: 2019
+    year_confidence: "high"
+    lifecycle: integrated
+    claims:
+      - id: dpu-001
+        statement: "A DPU tightly integrates a general-purpose CPU with network-interface hardware; the category overlaps with SmartNICs and IPUs."
+        status: supported
+        grade: E3
+        sources: [S026]
+      - id: dpu-002
+        statement: "Nvidia acquired Mellanox for $6.9 billion in March 2019; the BlueField DPU line originated at Mellanox."
+        status: supported
+        grade: E3
+        sources: [S027]
+      - id: dpu-003
+        statement: "Amazon uses Nitro chips for a similar infrastructure-offload role."
+        status: unverified
+        grade: E0
+        sources: [S026]
+        note: "Not verified against AWS primary documentation in this snapshot."
+
+  - id: wse
+    name: "Wafer-Scale Engine"
+    abbreviation: "WSE"
+    year: 2019
+    year_confidence: "high"
+    lifecycle: commercial
+    claims:
+      - id: wse-001
+        statement: "Cerebras WSE-3 has 4 trillion transistors, 900,000 AI cores, 44 GB of on-chip memory, and 21 PB/s memory bandwidth."
+        status: supported
+        grade: E1
+        sources: [S029, S033]
+      - id: wse-002
+        statement: "Cerebras uses the entire wafer as one chip instead of cutting it into individual dies."
+        status: supported
+        grade: E1
+        sources: [S047, S029]
+      - id: wse-003
+        statement: "OpenAI signed a multi-year deal valued at more than $20 billion for Cerebras compute in January 2026."
+        status: supported
+        grade: E2
+        sources: [S030, S029]
+      - id: wse-004
+        statement: "Cerebras priced its IPO at $185 per share on 13 May 2026 and began trading as CBRS on 14 May 2026."
+        status: supported
+        grade: E1
+        sources: [S028, S032]
+
+  - id: neuromorphic
+    name: "Neuromorphic Processor"
+    abbreviation: "NPU (neuromorphic)"
+    year: 2014
+    year_confidence: "medium"
+    lifecycle: research
+    claims:
+      - id: nm-001
+        statement: "Neuromorphic computing uses artificial neurons and brain-inspired, event-driven computation."
+        status: supported
+        grade: E3
+        sources: [S035]
+      - id: nm-002
+        statement: "IBM's TrueNorth chip (2014) contained 1 million artificial neurons."
+        status: unverified
+        grade: E0
+        sources: [S035]
+        note: "Widely cited; not captured from a primary IBM source in this snapshot."
+      - id: nm-003
+        statement: "Intel's Hala Point (17 April 2024) packages 1,152 Loihi 2 processors with 1.15 billion neurons, 20 petaops, and a 2,600 W maximum."
+        status: supported
+        grade: E1
+        sources: [S034]
+
+  - id: photonic
+    name: "Photonic Processor"
+    abbreviation: "Photonic"
+    year: 2025
+    year_confidence: "medium"
+    lifecycle: research
+    claims:
+      - id: ph-001
+        statement: "Photonic or optical computing uses light waves for data processing, storage, or communication."
+        status: supported
+        grade: E3
+        sources: [S036]
+      - id: ph-002
+        statement: "Lightmatter published a Nature paper in April 2025 demonstrating a photonic processor running AI models, including Atari games."
+        status: supported
+        grade: E1
+        sources: [S037]
+      - id: ph-003
+        statement: "Photons are strong at transport and multiplication but weak at storage, so photonic systems remain hybrid."
+        status: unverified
+        grade: E0
+        sources: [S036]
+        note: "Analytical claim; not directly tested."
+
+  - id: qpu
+    name: "Quantum Processing Unit"
+    abbreviation: "QPU"
+    year: 2019
+    year_confidence: "low"
+    lifecycle: research
+    claims:
+      - id: q-001
+        statement: "Quantum computers process information using quantum states, exploiting superposition, interference, and entanglement."
+        status: supported
+        grade: E3
+        sources: [S039]
+      - id: q-002
+        statement: "Google's 105-qubit Willow chip completed a benchmark in under five minutes that would take a classical supercomputer an estimated 10^25 years."
+        status: supported
+        grade: E1
+        sources: [S038]
+        note: "Benchmark-specific claim; it does not imply general-purpose speedup."
+      - id: q-003
+        statement: "Quantum hardware is largely experimental and suitable only for specialized tasks."
+        status: supported
+        grade: E3
+        sources: [S039]
+      - id: q-004
+        statement: "IBM and Google target reliable error-corrected quantum computers around 2029."
+        status: unverified
+        grade: E0
+        sources: [S039]
+        note: "Roadmap claim; not captured from a primary source in this snapshot."
+
+  - id: tsu
+    name: "Thermodynamic Sampling Unit"
+    abbreviation: "TSU"
+    year: 2026
+    year_confidence: "high"
+    lifecycle: emerging
+    claims:
+      - id: tsu-001
+        statement: "Extropic's Z1 has 269,568 probabilistic bits across eight cores, >50 MHz sampling, <1 W, and a die under 12 mm per side."
+        status: supported
+        grade: E1
+        sources: [S040]
+      - id: tsu-002
+        statement: "Extropic's ~10,000x energy-efficiency claim derives from simulations and system-level modeling of small benchmarks, not production Z1 measurements."
+        status: supported
+        grade: E2
+        sources: [S040, S041]
+        note: "The company's own page describes simulating a small piece of Z1; the independent analysis calls for production measurements."
+      - id: tsu-003
+        statement: "Z1 systems (M.2 sticks, PCIe cards, clusters) are planned for early access in 2027; the chip taped out in 2026."
+        status: supported
+        grade: E1
+        sources: [S040]
+
+  - id: biological
+    name: "Biological Processing Unit"
+    abbreviation: "Wetware"
+    year: 2022
+    year_confidence: "high"
+    lifecycle: research
+    claims:
+      - id: bio-001
+        statement: "Cortical Labs demonstrated that neurons on microelectrode arrays can learn to play Pong (Neuron, 2022)."
+        status: supported
+        grade: E1
+        sources: [S042]
+      - id: bio-002
+        statement: "The CL1 costs about $35,000; each unit can house about 800,000 neurons; the 2026 Doom demo used about 200,000 neurons."
+        status: supported
+        grade: E2
+        sources: [S043, S044, S045, S046]
+        note: "The 200,000 figure refers to the Doom demo, not the CL1's full capacity."
+      - id: bio-003
+        statement: "CL1 neurons require life support and can remain viable for up to about six months under ideal conditions."
+        status: supported
+        grade: E2
+        sources: [S043, S045]
+      - id: bio-004
+        statement: "Biological computing raises ethical questions about awareness and consent."
+        status: unverified
+        grade: E0
+        sources: [S046]
+        note: "Normative and ethical claim; not empirically testable in this audit."

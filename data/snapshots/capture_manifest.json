@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-11-04T11:07:25+00:00",
+  "files": {
+    "openalex_counts.json": {
+      "bytes": 23242,
+      "sha256": "7512dfd09dfc97195cfdb8dbeae3e59a01c541e3c915d50ebbb52df52931ff95"
+    },
+    "wikimedia_pageviews.json": {
+      "bytes": 23856,
+      "sha256": "e45e5c6dca17c0adc983b15bb539a4eab2fe4fcc13b3df8cdc7e5ffa25bd051c"
+    },
+    "yahoo_prices.json": {
+      "bytes": 17085,
+      "sha256": "c641f5623c8382056826c77961ce304cb6922e96caef5b69ef05d56054121d12"
+    }
+  }
+}

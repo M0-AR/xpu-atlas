@@ -1,0 +1,41 @@
+name: Claim correction
+description: Challenge a claim, status, grade, or source.
+title: "[claim] "
+labels: ["claim"]
+body:
+  - type: input
+    id: claim-id
+    attributes:
+      label: Claim ID
+      placeholder: "e.g. npu-003"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the ledger currently says
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What it should say, and why
+      description: Include the public source, date, and the exact passage you rely on.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Proposed status
+      options:
+        - supported
+        - unverified
+        - conflicting
+        - refuted
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: What else might change?
+      description: Note any figure, headline number, or downstream claim that could move.

@@ -1,0 +1,11 @@
+The paper text in docs/PAPER.md, the claim ledger in data/claims.yaml, the
+snapshots in data/snapshots/, and the generated tables and figures are
+licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, provided you
+give appropriate credit, provide a link to the license, and indicate if
+changes were made.
+
+Code in src/, tests/, and scripts/ is licensed under the MIT License; see
+LICENSE.
