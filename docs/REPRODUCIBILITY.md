@@ -14,7 +14,8 @@ will vary on other hardware; the analysis pipeline will not.
 
 ```bash
 make install     # install dependencies and the package
-make all         # claims + analyze + figures + report + paper-check, then tests
+make all         # claims + analyze + figures + report + sim + preview + paper-check, then tests
+make sim         # design-space screen only
 make bench       # refresh host CPU benchmarks (changes committed results)
 make test        # pytest only
 make paper-check # README/result consistency only
@@ -57,15 +58,21 @@ update.
 | `results/summary.json` | `python -m xpu_atlas.analyze` |
 | `results/bench.json`, `bench.csv` | `make bench` (explicit; hardware-dependent) |
 | `figures/fig1..fig6` | `python -m xpu_atlas.figures` |
+| `results/simulation.json`, `results/simulation.csv` | `python -m sim.run` |
+| `figures/fig7_design_space.png` | `python -m sim.run` |
 | `docs/EVIDENCE.md`, `docs/RESULTS.md` | `python -m xpu_atlas.report` |
+| `docs/SIMULATION.md` | `python -m sim.run` |
 
 ## Failure modes
 
 - **Missing `results/evidence_audit.json`:** run `make claims` before
   `make analyze`.
-- **Missing figures or docs:** run `make figures report`.
+- **Missing figures or docs:** run `make figures report sim`.
 - **Paper check fails:** a headline number changed without a README update.
   Regenerate the results and update the README, or investigate the change.
+- **Simulation report missing:** run `make sim` before `make paper-check`.
+  The design-space screen is analytical, so changing a utilization or overhead
+  multiplier changes the Pareto ordering.
 - **Benchmark variance:** the benchmark is host-dependent. The paper reports the
   committed run; reruns are expected to differ by a few percent.
 - **Live fetch rate limits:** OpenAlex and Wikimedia may return HTTP 429. The

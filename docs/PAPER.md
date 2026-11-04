@@ -28,7 +28,7 @@ This paper asks what happens when such a narrative is treated as a research obje
 - **RQ2 (patterns):** Which patterns emerge when the taxonomy is joined to publication, attention and market data?
 - **RQ3 (reproducibility):** Can the entire audit be rerun offline from frozen public data and a single command?
 
-The answers are organized as a claim ledger, a set of statistical tables, six figures and a reproducible pipeline. The contributions are:
+The answers are organized as a claim ledger, a set of statistical tables, seven figures and a reproducible pipeline. The contributions are:
 
 1. **A graded claim corpus.** Sixty-four claims across 20 paradigms, each with a status (supported, unverified, conflicting or refuted), a grade (E1 primary, E2 secondary, E3 tertiary, E0 unverified) and one or more source identifiers.
 2. **A live-data audit.** Exact-phrase and unquoted OpenAlex counts, Wikimedia pageviews and Yahoo Finance prices captured on 4 November 2026 and frozen with SHA256 hashes.
@@ -368,6 +368,16 @@ The thread-scaling result is equally important. At two threads the speedup is 0.
 
 The benchmark is deliberately small. It does not measure a TPU, GPU, QPU or neuromorphic chip, and it does not claim to. Its purpose is to anchor the paper's architectural language in a reproducible measurement that any reader can rerun on their own machine.
 
+### 5.7 Design-space simulation (exploratory)
+
+The evidence audit is retrospective. To make the atlas useful for forward-looking architecture questions, the repository also includes a small analytical design-space screen. It evaluates 13 candidate architectures across three workloads at a shared 5 nm / 1 GHz reference point: 39 experiments sampled from a 14,000-point structural design space. The model combines a roofline calculation with workload-to-structure utilization and overhead multipliers, then reports latency, throughput, energy, power, area and cost.
+
+![Figure 7](../figures/fig7_design_space.png)
+
+*Figure 7. Latency-energy Pareto frontiers for the 13 evaluated candidates across three workloads. The screen is analytical; it is not a silicon measurement.*
+
+The result is a hypothesis generator, not a prediction. No candidate wins on every workload: sparse event inference favors near-memory and event-driven designs, attention favors the NPU baseline, near-memory attention and a hybrid chiplet, and stochastic sampling rewards sampling-specific and in-memory designs. The photonic-stochastic candidate is energy-efficient but latency-heavy. The next gate is iso-accuracy validation, followed by RTL or FPGA prototyping; the generated report records the assumptions and limitations in [`SIMULATION.md`](SIMULATION.md).
+
 ---
 
 ## 6. Discussion
@@ -438,13 +448,15 @@ docker compose up --abort-on-container-exit
 | `results/analysis.json` | Full bibliometric, attention, market and benchmark analysis |
 | `results/summary.json` | Headline numbers used by the paper |
 | `results/bench.json` / `.csv` | Raw benchmark measurements |
-| `figures/fig1..fig6` | Publication figures |
+| `results/simulation.json` / `.csv` | Design-space payload and per-experiment table |
+| `figures/fig1..fig7` | Publication figures |
 | `docs/EVIDENCE.md` | Full claim ledger and source register |
 | `docs/RESULTS.md` | Generated tables for every analysis |
+| `docs/SIMULATION.md` | Generated design-space report |
 
 ### 8.3 Tests
 
-The test suite checks the ledger schema, the statistics (CAGR, drawdown, Wilson interval, chi-square), the snapshot integrity, the presence of generated outputs, and the paper's headline numbers. `make paper-check` is a lightweight guard against stale or unsupported numbers in the README.
+The test suite checks the ledger schema, the statistics (CAGR, drawdown, Wilson interval, chi-square), the snapshot integrity, the presence of generated outputs, the design-space model and Pareto helper, and the paper's headline numbers. `make paper-check` is a lightweight guard against stale or unsupported numbers in the README.
 
 ### 8.4 What is frozen and what is live
 
@@ -511,4 +523,4 @@ Where this paper makes a claim about a specific fact, the claim ID in `data/clai
 
 ## Change Log
 
-- **v0.1.0 (2026-11-04).** Initial claim ledger (64 claims, 20 paradigms, 58 sources), three frozen snapshots, evidence audit, bibliometric/attention/market analyses, local benchmarks, six figures and Docker pipeline.
+- **v0.1.0 (2026-11-04).** Initial claim ledger (64 claims, 20 paradigms, 58 sources), three frozen snapshots, evidence audit, bibliometric/attention/market analyses, local benchmarks, seven figures, an exploratory 39-experiment design-space screen, and a Docker pipeline.

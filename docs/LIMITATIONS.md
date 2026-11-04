@@ -79,8 +79,24 @@ file lists the main threats to validity.
 24. **Multiple comparisons.** No family-wise correction is applied across the
     tables. Individual p-values should be interpreted accordingly.
 
+## Simulation
+
+25. **Analytical only.** The design-space lab uses a roofline-style model with
+    workload-to-structure multipliers. It is not cycle-accurate and does not
+    model SRAM capacity, NoC contention, thermal effects, yield, packaging, or
+    compiler quality.
+26. **No accuracy gate.** The screen does not measure numerical accuracy or
+    iso-accuracy. A candidate that looks fast in the model may fail the first
+    real accuracy test.
+27. **Hand-pruned sample.** The 13 candidates are a small, judgmental sample of
+    the 14,000-point structural space. A different candidate list would change
+    the frontier.
+28. **Single-node cost.** Area and cost use one 5 nm reference node and a fixed
+    package cost. They are not quotes, and they do not include volume, yield, or
+    memory cost.
+
 ## Time
 
-25. **Snapshot date.** The version of record is 4 November 2026. Live data will
+29. **Snapshot date.** The version of record is 4 November 2026. Live data will
     differ. Replications should report the snapshot they used and the differences
     they observed.

@@ -256,6 +256,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   .steps,.trust{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:700px){
+  html{scroll-padding-top:132px}
   .wrap{padding:0 18px}
   .nav{flex-wrap:wrap;gap:10px;padding:10px 0}
   .nav-links{display:flex;order:3;width:100%;margin-left:0;padding-top:4px;border-top:1px solid var(--line)}
@@ -297,6 +298,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <a href="#quiz">Quiz</a>
       <a href="#use-cases">Use cases</a>
       <a href="#data">Data</a>
+      <a href="#simulation">Lab</a>
       <a href="#start">Start</a>
     </nav>
     <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
@@ -309,7 +311,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
     <div>
       <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Open research asset · version 0.1.0</div>
       <h1>The processor market, <em>mapped with evidence.</em></h1>
-      <p class="lede">A plain-English, fully sourced atlas of <strong>20 processing-unit paradigms</strong> — built from <strong>64 graded claims</strong>, <strong>58 sources</strong>, three frozen public datasets, six figures, and a one-command audit. See what is real, what is inflated, and where value is moving.</p>
+      <p class="lede">A plain-English, fully sourced atlas of <strong>20 processing-unit paradigms</strong> — built from <strong>64 graded claims</strong>, <strong>58 sources</strong>, three frozen public datasets, seven figures, a design-space lab, and a one-command audit. See what is real, what is inflated, and where value is moving.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#findings">Explore the six findings <span aria-hidden="true">→</span></a>
         <a class="btn btn-ghost" href="#quiz">Take the 5-minute quiz</a>
@@ -359,7 +361,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <div class="kpi"><b>58</b><span>public sources, graded E1–E3</span></div>
       <div class="kpi warn"><b>15</b><span>claims left visibly unverified</span></div>
       <div class="kpi"><b>3</b><span>frozen public datasets</span></div>
-      <div class="kpi"><b>6</b><span>figures + 1 interactive atlas</span></div>
+      <div class="kpi"><b>7</b><span>figures + 1 interactive atlas</span></div>
     </div>
   </div>
 </section>
@@ -536,7 +538,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
     </div>
     <div class="card" style="margin-top:16px">
       <h3>What it is not</h3>
-      <p>Not investment advice, not a causal model, not a live product database, and not a claim that one architecture “wins”. It is a descriptive, reproducible evidence base — with negative and unverified findings deliberately retained.</p>
+      <p>Not investment advice, not a causal model, not a live product database, and not a claim that one architecture “wins”. It is a descriptive, reproducible evidence base — with negative and unverified findings deliberately retained. The design-space lab is analytical screening, not silicon proof.</p>
     </div>
   </div>
 </section>
@@ -572,10 +574,24 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
     </div>
     <div class="trust" style="margin-top:16px">
       <div><b>64 claims</b><span>20 paradigms, 58 sources</span></div>
-      <div><b>23 tests</b><span>schema, statistics, snapshots, outputs, preview</span></div>
+      <div><b>28 tests</b><span>schema, statistics, snapshots, outputs, simulation, preview</span></div>
       <div><b>Docker</b><span>pinned Python 3.12 pipeline</span></div>
       <div><b>CI</b><span>rebuild and guard on every push</span></div>
     </div>
+  </div>
+</section>
+
+<section class="section" id="simulation">
+  <div class="wrap">
+    <div class="kicker">Forward-looking lab</div>
+    <h2>Screen architectures before you build them.</h2>
+    <p class="sub">The <code>sim/</code> lab evaluates <strong>39 analytical experiments</strong> across <strong>13 candidate architectures</strong> and three workloads, then reports latency–energy Pareto frontiers. It is a hypothesis generator, not silicon proof.</p>
+    <div class="grid-3">
+      <article class="card"><div class="num">39</div><h3>Experiments</h3><p>13 candidates × 3 workloads, sampled from a 14,000-point structural design space.</p></article>
+      <article class="card"><div class="num">7</div><h3>Metrics</h3><p>Latency, throughput, energy, power, area, cost, and efficiency — all under one reference node.</p></article>
+      <article class="card"><div class="num">0</div><h3>Silicon claims</h3><p>Analytical roofline only. Iso-accuracy, RTL, and FPGA validation are the next gates.</p></article>
+    </div>
+    <p class="note"><a href="docs/SIMULATION.md">Open the generated simulation report</a> · <a href="figures/fig7_design_space.png">Figure 7</a> · <code>make sim</code></p>
   </div>
 </section>
 
@@ -611,6 +627,7 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <a href="docs/PAPER.md">Full paper</a>
       <a href="docs/EVIDENCE.md">Evidence</a>
       <a href="docs/RESULTS.md">Results</a>
+      <a href="docs/SIMULATION.md">Simulation</a>
       <a href="data/claims.yaml">Ledger</a>
       <a href="#top">Back to top ↑</a>
     </div>
