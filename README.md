@@ -17,7 +17,6 @@ A plain-English, fully sourced atlas of 20 processing-unit paradigms — built f
 </p>
 
 <p align="center">
-  <a href="https://github.com/M0-AR/xpu-atlas/actions/workflows/ci.yml"><img alt="CI: passing" src="https://github.com/M0-AR/xpu-atlas/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/M0-AR/xpu-atlas/releases/tag/v0.1.0"><img alt="Release: v0.1.0" src="https://img.shields.io/badge/release-v0.1.0-14b8a6?style=flat-square"></a>
   <a href="https://m0-ar.github.io/xpu-atlas/"><img alt="Live site" src="https://img.shields.io/website?url=https%3A%2F%2Fm0-ar.github.io%2Fxpu-atlas%2F&style=flat-square&label=live%20site"></a>
   <img alt="Code: MIT" src="https://img.shields.io/badge/code-MIT-0f766e?style=flat-square">
@@ -521,7 +520,7 @@ docker run --rm ghcr.io/m0-ar/xpu-atlas:v0.1.0 python -m pytest -q
 docker run --rm ghcr.io/m0-ar/xpu-atlas:v0.1.0 make paper-check
 ```
 
-The image default command is `make all`; pass a command to run a narrower check. The package is public and can be pulled without a GitHub login. The release workflow runs the tests, builds the distributions, writes `SHA256SUMS`, attaches them to the release, and pushes the image with BuildKit SBOM and provenance. To reproduce the package locally:
+The image default command is `make all`; pass a command to run a narrower check. If the package was just created, open **Package settings → Change visibility → Public** once so anonymous pulls work; later pushes inherit that setting. The release workflow runs the tests, builds the distributions, writes `SHA256SUMS`, attaches them to the release, and pushes the image with BuildKit SBOM and provenance. To reproduce the package locally:
 
 ```bash
 make test
