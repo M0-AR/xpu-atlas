@@ -494,7 +494,7 @@ The committed benchmark was measured on an Intel Core i7-14700F with 28 logical 
 
 ## Releases and packages
 
-The first public release is **v0.1.0**. Every artifact below is built from the tagged commit by the release workflow, and every artifact can be traced back to the same source.
+The first public release is **v0.1.0**. Every artifact below is built from the tagged commit, and every artifact can be traced back to the same source. The release workflow in `.github/workflows/release.yml` reproduces the build; this first release was built and verified locally with the same commands.
 
 | Artifact | What it is | Where |
 |---|---|---|
