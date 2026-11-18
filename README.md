@@ -500,7 +500,7 @@ The first public release is **v0.1.0**. Every artifact below is built from the t
 |---|---|---|
 | **Source** | The tagged repository, including the frozen snapshots and generated results. | [v0.1.0 release](https://github.com/M0-AR/xpu-atlas/releases/tag/v0.1.0) |
 | **Wheel and sdist** | `xpu_atlas-0.1.0-py3-none-any.whl`, `xpu_atlas-0.1.0.tar.gz`, and `SHA256SUMS`. | Release assets |
-| **Container** | `ghcr.io/m0-ar/xpu-atlas:v0.1.0` and `:latest`, with SBOM and provenance attestations. | [GHCR package](https://github.com/M0-AR/xpu-atlas/pkgs/container/xpu-atlas) |
+| **Container** | `ghcr.io/m0-ar/xpu-atlas:v0.1.0` and `:latest`, with SBOM and provenance attestations. | [GHCR package](https://github.com/users/M0-AR/packages/container/package/xpu-atlas) |
 | **Static site** | The live atlas, the tabbed demo, and the 3D lab. | [Live site](https://m0-ar.github.io/xpu-atlas/) |
 
 **Install the wheel**
@@ -520,7 +520,7 @@ docker run --rm ghcr.io/m0-ar/xpu-atlas:v0.1.0 python -m pytest -q
 docker run --rm ghcr.io/m0-ar/xpu-atlas:v0.1.0 make paper-check
 ```
 
-The image default command is `make all`; pass a command to run a narrower check. If the package was just created, open **Package settings → Change visibility → Public** once so anonymous pulls work; later pushes inherit that setting. The release workflow runs the tests, builds the distributions, writes `SHA256SUMS`, attaches them to the release, and pushes the image with BuildKit SBOM and provenance. To reproduce the package locally:
+The image default command is `make all`; pass a command to run a narrower check. If the package was just created, open the [package page](https://github.com/users/M0-AR/packages/container/package/xpu-atlas), click **Package settings → Change visibility → Public** once so anonymous pulls work; later pushes inherit that setting. The release workflow runs the tests, builds the distributions, writes `SHA256SUMS`, attaches them to the release, and pushes the image with BuildKit SBOM and provenance. To reproduce the package locally:
 
 ```bash
 make test
