@@ -42,16 +42,26 @@ def test_preview_bundle_and_sections():
         "quiz-form",
         "path-label",
         "theme-toggle",
-        "demo-tabs",
-        "demo-viewport",
-        "demo-launch-btn",
+        "studio-nav",
+        "sig-range",
+        "stress-big",
+        "con-svg",
+        "micro-search",
+        "path-goals",
+        "g-stage",
+        "web-svg",
         "lab-canvas",
         "lab-start-btn",
         "lab-answers",
         "lab-voice",
     ):
         assert f'id="{control}"' in text
-    assert "?embed=1" in text
+    for instrument in ("signal", "stress", "constellation", "microscope", "pathfinder", "gauntlet", "web"):
+        assert f'id="tab-{instrument}"' in text
+        assert f'id="panel-{instrument}"' in text
+    assert text.count('role="tab"') == 7
+    assert "<iframe" not in text
+    assert "?embed=1" not in text
     assert "prefers-reduced-motion" in text
     assert (ROOT / "assets" / "vendor" / "three.module.min.js").exists()
     assert (ROOT / "assets" / "vendor" / "three.core.min.js").exists()

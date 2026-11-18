@@ -31,7 +31,7 @@ A plain-English, fully sourced atlas of 20 processing-unit paradigms — built f
 
 <p align="center">
   <a href="https://m0-ar.github.io/xpu-atlas/">
-    <img src="assets/xpu-atlas-demo.gif" alt="Animated tour of XPU-Atlas: the live tabbed demo, the 20-paradigm atlas, the 64-claim explorer, the quiz, and the Atlas Mind 3D learning lab" width="100%">
+    <img src="assets/xpu-atlas-demo.gif" alt="Animated tour of XPU-Atlas: the seven-instrument evidence studio, the 20-paradigm atlas, the 64-claim explorer, the quiz, and the Atlas Mind 3D learning lab" width="100%">
   </a>
 </p>
 
@@ -103,8 +103,8 @@ The repo is built around one rule: **a claim without a source is a hypothesis, n
 
 | Asset | What it gives you | Where |
 |---|---|---|
-| **Interactive atlas** | A responsive, accessible web page with charts, a 20-paradigm map, a 64-claim explorer, a learning path, a 10-question quiz, a live tabbed demo, and a 3D learning lab. | [Live atlas](https://m0-ar.github.io/xpu-atlas/) · [`preview.html`](https://m0-ar.github.io/xpu-atlas/preview.html) · [`docs/preview.html`](https://m0-ar.github.io/xpu-atlas/docs/preview.html) |
-| **Live tabbed demo** | A real product tour that loads the actual page in lazy iframes: Home, Findings, Atlas, Claims, Learn, Quiz, and 3D Lab. | [Live demo](#live-demo) · [`preview.html#demo`](https://m0-ar.github.io/xpu-atlas/preview.html#demo) |
+| **Interactive atlas** | A responsive, accessible web page with charts, a 20-paradigm map, a 64-claim explorer, a learning path, a 10-question quiz, a seven-instrument evidence studio, and a 3D learning lab. | [Live atlas](https://m0-ar.github.io/xpu-atlas/) · [`preview.html`](https://m0-ar.github.io/xpu-atlas/preview.html) · [`docs/preview.html`](https://m0-ar.github.io/xpu-atlas/docs/preview.html) |
+| **Evidence studio** | Seven original, data-bound instruments — Signal, Stress test, Constellation, Microscope, Pathfinder, Gauntlet, and Source web — that read the same committed claim bundle. No iframes, no screenshots. | [Live demo](#live-demo) · [`preview.html#demo`](https://m0-ar.github.io/xpu-atlas/preview.html#demo) |
 | **3D learning lab** | A 20-concept game that grows a 3D network as you answer, narrates each idea, and keeps progress in your browser. | [The 3D learning lab](#the-3d-learning-lab) · [`preview.html#lab`](https://m0-ar.github.io/xpu-atlas/preview.html#lab) |
 | **Graded claim ledger** | 64 claims across 20 paradigms, each with a status, grade, sources, and note. | [`data/claims.yaml`](data/claims.yaml) |
 | **Evidence register** | Every source with publisher, type, grade, URL, and retrieval date. | [`docs/EVIDENCE.md`](docs/EVIDENCE.md) |
@@ -299,7 +299,7 @@ The interactive page is a single static HTML file with no external dependencies.
 | View | What to do |
 |---|---|
 | **Home** | See the headline signal board and the six findings. |
-| **Live demo** | Switch between real embedded product screens; each tab loads the actual page, not a picture. |
+| **Evidence studio** | Scrub the evidence by year, stress it under stricter source rules, trace paradigms and sources, inspect a claim receipt, follow a learning route, run a timed drill, or map provenance. |
 | **Atlas** | Filter 20 paradigms by lifecycle; click any card for year, claim count, support rate, and evidence mix. |
 | **Claims** | Search all 64 claims; filter by status or grade; see the source IDs. |
 | **Learning path** | Work through four levels from newcomer to practitioner; progress is saved in your browser. |
@@ -318,25 +318,35 @@ The interactive page is a single static HTML file with no external dependencies.
 
 ### See it move
 
-- **Animated tour (10 s):** [`assets/xpu-atlas-demo.gif`](assets/xpu-atlas-demo.gif) — recorded from the live page; it shows the tabbed demo, the 3D lab, and a correct answer lighting a node.
-- **Full-resolution video (21 s):** [`assets/xpu-atlas-demo.mp4`](assets/xpu-atlas-demo.mp4)
+- **Animated tour (10 s):** [`assets/xpu-atlas-demo.gif`](assets/xpu-atlas-demo.gif) — recorded from the live page; it shows the seven-instrument studio, the 3D lab, and a correct answer lighting a node.
+- **Full-resolution video (27 s):** [`assets/xpu-atlas-demo.mp4`](assets/xpu-atlas-demo.mp4)
 - **Social preview:** [`assets/social-preview.png`](assets/social-preview.png)
 
 ---
 
 ## Live demo
 
-The live demo is the product, not a video of the product. It is a tab bar over an iframe: **Home**, **Findings**, **Atlas**, **Claims**, **Learn**, **Quiz**, and **3D Lab**. Selecting a tab loads `preview.html?embed=1#<section>` into the frame. The frame contains the same HTML, the same `assets/atlas-data.js` bundle, the same charts, filters, quiz, and 3D lab that ship in this repository. There is no second implementation to drift.
+The live demo is the product: one static page, one committed evidence bundle, seven original instruments. There are no iframes, no screenshots, and no second implementation to drift.
 
-- **Lazy by design.** Only the active tab loads. The first paint stays light, and each screen is fetched when you ask for it.
-- **Embed mode.** `?embed=1` hides the site header, the demo itself, and the footer, then scrolls to the requested section. That is how a tab shows a clean product screen without a second page.
-- **Keyboard first.** The tab bar follows the ARIA tabs pattern. Left and Right move between tabs, Home and End jump to the ends, and the active tab is announced.
-- **Deep links.** Every tab is a URL: `#demo` for the demo, `#lab` for the game, `#findings` for the evidence. The “Open full screen” link leaves the frame.
-- **Works offline.** The page is static; no API key, database, or build server is required.
+| Instrument | What you can do |
+|---|---|
+| **Signal** | Drag the year from 1971 to 2026 and watch the paradigm count, claim count, support rate, and evidence mix assemble. |
+| **Stress test** | Hold the claim set fixed and tighten the source bar: primary evidence only, at least two sources, or no encyclopedias. |
+| **Constellation** | Read all 20 paradigms as a radial timeline; filter by lifecycle and open any node's receipt. |
+| **Microscope** | Search the 64 claims, filter by status or grade, and read every captured source for one claim. |
+| **Pathfinder** | Pick a destination — map, audit, teach, or build — and work a five-stop route that remembers your progress. |
+| **Gauntlet** | Run eight data-derived questions at twelve seconds each; the clock pauses when you leave the panel. |
+| **Source web** | See the ten most-used sources and 27 linked claims; select either side to light shared provenance. |
 
-![XPU-Atlas live demo with a Home, Findings, Atlas, Claims, Learn, Quiz, and 3D Lab tab bar above a real embedded page](assets/screenshots/preview-demo.png)
+- **Native by construction.** Every panel is DOM and SVG rendered from `assets/atlas-data.js`. The page works offline; no API key, database, or build server is required.
+- **Keyboard first.** The studio follows the ARIA tabs pattern. Left and Right move between tabs, Home and End jump to the ends, and the active tab is announced. Constellation nodes and source-web nodes are focusable.
+- **Cross-links keep context.** A dropped claim in Stress test opens in Microscope; a Constellation node jumps to the full atlas; a source-web claim opens its receipt.
+- **Deterministic.** Filters and drills use the committed 64-claim ledger, so the same inputs produce the same views.
+- **Deep links.** `#demo` lands on the studio, `#lab` on the game, `#findings` on the evidence, and `#explorer` on the claim ledger.
 
-**Try it:** [Live demo](https://m0-ar.github.io/xpu-atlas/preview.html#demo) · **Open a tab directly:** [Findings](https://m0-ar.github.io/xpu-atlas/preview.html?embed=1#findings).
+![XPU-Atlas evidence studio showing the Signal tab, seven-instrument tab bar, year scrubber, and evidence mix at 2026](assets/screenshots/preview-demo.png)
+
+**Try it:** [Live demo](https://m0-ar.github.io/xpu-atlas/preview.html#demo) · **Inspect the evidence:** [64-claim ledger](data/claims.yaml).
 
 ---
 
@@ -387,9 +397,9 @@ The game is a memory aid. It does not change the ledger, the support rate, or th
 | **Tests** | Schema, statistics, snapshots, outputs, design-space model, and paper consistency. | Catches stale or unsupported numbers. |
 | **CI** | Rebuilds and tests on every push. | Keeps the public artifact honest. |
 | **Working paper** | Full methods, results, discussion, limitations, and references. | A citable technical artifact. |
-| **Live tabbed demo** | Loads the real page into a lazy iframe for Home, Findings, Atlas, Claims, Learn, Quiz, and 3D Lab. | A visitor can test the product without an install; one implementation, no mockups. |
+| **Evidence studio** | Seven data-bound instruments — Signal, Stress test, Constellation, Microscope, Pathfinder, Gauntlet, and Source web — rendered natively from the committed claim bundle. | A visitor can test the product without an install; one implementation, no iframes. |
 | **3D learning lab** | A 20-concept game that grows a 3D network, narrates each concept, and logs progress. | Turns the atlas into a memory aid that is correlated with the evidence. |
-| **Interactive preview** | A polished, responsive page with charts, atlas, explorer, learning path, quiz, live demo, and 3D lab. | Business-friendly storytelling with receipts. |
+| **Interactive preview** | A polished, responsive page with charts, atlas, explorer, learning path, quiz, seven-instrument studio, and 3D lab. | Business-friendly storytelling with receipts. |
 | **Release and container** | v0.1.0 wheel, sdist, `SHA256SUMS`, and a GHCR image with SBOM and provenance. | A reproducible artifact you can install, run, and verify. |
 | **Citation and license** | BibTeX, CITATION.cff, MIT code, CC-BY-4.0 data. | Safe reuse and attribution. |
 
@@ -501,7 +511,7 @@ The first public release is **v0.1.0**. Every artifact below is built from the t
 | **Source** | The tagged repository, including the frozen snapshots and generated results. | [v0.1.0 release](https://github.com/M0-AR/xpu-atlas/releases/tag/v0.1.0) |
 | **Wheel and sdist** | `xpu_atlas-0.1.0-py3-none-any.whl`, `xpu_atlas-0.1.0.tar.gz`, and `SHA256SUMS`. | Release assets |
 | **Container** | `ghcr.io/m0-ar/xpu-atlas:v0.1.0` and `:latest`, with SBOM and provenance attestations. | [GHCR package](https://github.com/users/M0-AR/packages/container/package/xpu-atlas) |
-| **Static site** | The live atlas, the tabbed demo, and the 3D lab. | [Live site](https://m0-ar.github.io/xpu-atlas/) |
+| **Static site** | The live atlas, the seven-instrument evidence studio, and the 3D lab. | [Live site](https://m0-ar.github.io/xpu-atlas/) |
 
 **Install the wheel**
 
@@ -537,7 +547,7 @@ docker build -t xpu-atlas:0.1.0 .
 
 **Live site:** <https://m0-ar.github.io/xpu-atlas/>
 
-The landing page includes two interactive products that are easy to miss in a static README: the [live tabbed demo](https://m0-ar.github.io/xpu-atlas/preview.html#demo) and the [3D learning lab](https://m0-ar.github.io/xpu-atlas/preview.html#lab). Both are part of the same static page, and both work without a server.
+The landing page includes two interactive products that are easy to miss in a static README: the [seven-instrument evidence studio](https://m0-ar.github.io/xpu-atlas/preview.html#demo) and the [3D learning lab](https://m0-ar.github.io/xpu-atlas/preview.html#lab). Both are part of the same static page, and both work without a server.
 
 The repository is configured for **Branch: `main`**, **Folder: `/ (root)`**. Three URLs are intentionally kept in sync:
 
@@ -564,7 +574,7 @@ The repository is configured for **Branch: `main`**, **Folder: `/ (root)`**. Thr
 ```text
 xpu-atlas/
 ├── README.md                  ← you are here: brief + beginner guide + demo + release guide
-├── preview.html               ← live atlas, tabbed demo, and 3D learning lab
+├── preview.html               ← live atlas, evidence studio, and 3D learning lab
 ├── index.html                 ← GitHub Pages root copy
 ├── .nojekyll                  ← serve static files unchanged
 ├── assets/
@@ -611,7 +621,7 @@ xpu-atlas/
 
 ## Quality and verification
 
-- **28 tests** cover the ledger schema, statistics, snapshot hashes, generated outputs, the design-space model and Pareto helper, the paper guard, and the browser preview — including the live-demo tab bar, embed mode, 3D lab controls, root/docs mirrors, and local asset references.
+- **28 tests** cover the ledger schema, statistics, snapshot hashes, generated outputs, the design-space model and Pareto helper, the paper guard, and the browser preview — including the seven-instrument studio, tab keyboard behavior, the no-iframe invariant, 3D lab controls, root/docs mirrors, and local asset references.
 - **`make paper-check`** verifies that the README contains the generated headline numbers and does not contain forbidden overclaims.
 - **Snapshot integrity** is checked by recomputing SHA256 hashes against the manifest.
 - **Docker** runs the same pipeline in a pinned Python 3.12 image.

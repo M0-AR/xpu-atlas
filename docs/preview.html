@@ -283,41 +283,269 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   .era{height:160px}
   .micro{display:none}
 }
-/* Live demo */
-.demo-shell{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 88%,black));border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow)}
-.demo-tabs{display:flex;gap:6px;overflow-x:auto;padding:5px;background:var(--surface2);border:1px solid var(--line);border-radius:13px;margin-bottom:12px;scrollbar-width:none}
-.demo-tabs::-webkit-scrollbar{display:none}
-.demo-tab{appearance:none;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:800;white-space:nowrap;cursor:pointer}
-.demo-tab:hover{color:var(--text);background:var(--surface)}
-.demo-tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#041012}
-.demo-browser{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:#041012;box-shadow:0 20px 60px rgba(0,0,0,.35)}
-.demo-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--surface2);border-bottom:1px solid var(--line)}
-.demo-dots{display:flex;gap:5px;flex:0 0 auto}
-.demo-dots i{width:9px;height:9px;border-radius:50%;background:var(--faint);opacity:.55}
-.demo-dots i:nth-child(1){background:#fb7185}
-.demo-dots i:nth-child(2){background:#fbbf24}
-.demo-dots i:nth-child(3){background:#5eead4}
-.demo-url{flex:1;min-width:0;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.demo-bar a{font-size:11px;font-weight:850;white-space:nowrap}
-.demo-viewport{position:relative;aspect-ratio:16/10;background:var(--bg2);overflow:hidden}
-.demo-poster{position:absolute;inset:0}
-.demo-poster img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.6;filter:saturate(.9)}
-.demo-launch{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(4,16,18,.1),rgba(4,16,18,.86));text-align:center;padding:22px;z-index:2}
-.demo-launch[hidden]{display:none}
-.demo-launch > div{max-width:430px}
-.demo-launch h3{font-size:clamp(1.25rem,2.2vw,1.8rem);letter-spacing:-.035em;margin:0 0 6px}
-.demo-launch p{color:var(--muted);font-size:12px;margin:0 0 14px}
-.demo-launch .tiny{margin:10px 0 0;color:var(--faint);font-size:10px}
-.demo-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;opacity:0;transition:opacity .35s ease}
-.demo-iframe.ready{opacity:1}
-.demo-viewport.loaded .demo-poster,.demo-viewport.loaded .demo-launch{display:none}
-.demo-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;margin-top:10px;color:var(--muted);font-size:12px}
-.demo-caption strong{color:var(--text)}
-.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:8px;font-size:11px;color:var(--faint)}
-.embed .site-header,.embed #demo,.embed .footer,.embed .skip,.embed .progress{display:none!important}
-html.embed{scroll-padding-top:0!important}
-.embed .section{scroll-margin-top:0}
-.embed body{background:var(--bg)}
+/* Studio — seven original, data-bound instruments */
+.studio{position:relative;background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 86%,black));border:1px solid var(--line2);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.studio-head{position:relative;padding:16px 16px 0;border-bottom:1px solid var(--line);background:linear-gradient(180deg,color-mix(in srgb,var(--surface2) 80%,transparent),transparent)}
+.studio-head:before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:30px 30px;opacity:.16;mask-image:linear-gradient(180deg,#000,transparent 92%);pointer-events:none}
+.studio-brand{position:relative;display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:11px;font-weight:850;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.studio-pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 16%,transparent);animation:studioPulse 2.4s ease-in-out infinite}
+@keyframes studioPulse{0%,100%{opacity:1;box-shadow:0 0 0 4px color-mix(in srgb,var(--teal) 16%,transparent)}50%{opacity:.6;box-shadow:0 0 0 8px transparent}}
+.studio-dataset{margin-left:auto;color:var(--faint);font-size:10px;letter-spacing:.05em;text-transform:none;font-weight:650}
+.studio-dataset code{font-family:var(--mono);font-size:9px;color:var(--teal)}
+.studio-nav{position:relative;display:flex;gap:5px;overflow-x:auto;padding:12px 0 10px;scrollbar-width:none}
+.studio-nav::-webkit-scrollbar{display:none}
+.studio-tab{appearance:none;display:inline-flex;align-items:center;gap:7px;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;padding:8px 11px;font-size:12px;font-weight:800;white-space:nowrap;cursor:pointer}
+.studio-tab b{font-family:var(--mono);font-size:9px;color:var(--faint);font-weight:700}
+.studio-tab:hover{color:var(--text);background:var(--surface)}
+.studio-tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#041012}
+.studio-tab[aria-selected="true"] b{color:#041012;opacity:.65}
+.studio-body{padding:20px;background:radial-gradient(900px 360px at 82% -10%,rgba(94,234,212,.06),transparent 60%)}
+.studio-panel{animation:studioIn .28s ease both}
+.studio-panel[hidden]{display:none}
+@keyframes studioIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.instrument-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:16px}
+.instrument-head h3{font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.12;letter-spacing:-.04em;margin:0 0 5px}
+.instrument-head p{color:var(--muted);font-size:12px;line-height:1.55;margin:0;max-width:60ch}
+.inst-label{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.instrument-grid{display:grid;grid-template-columns:minmax(0,1.38fr) minmax(250px,.62fr);gap:18px;align-items:start}
+.instrument-main{min-width:0}
+.instrument-side{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:15px;min-width:0}
+.panel-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:850;margin-bottom:9px}
+.studio-btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:36px;padding:0 13px;border:1px solid var(--line2);background:var(--surface);color:var(--text);border-radius:9px;font-size:11px;font-weight:850;cursor:pointer;text-decoration:none}
+.studio-btn:hover{border-color:var(--teal);background:var(--surface2)}
+.studio-btn.primary{background:var(--teal);border-color:var(--teal);color:#041012}
+.studio-btn.primary:hover{background:var(--amber);border-color:var(--amber)}
+.studio-btn[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#041012}
+.link-btn{appearance:none;border:0;background:none;color:var(--faint);font-size:10px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+.link-btn:hover{color:var(--teal)}
+.note-sm{font-size:10px;color:var(--faint);line-height:1.5;margin:10px 0 0}
+/* Signal */
+.sig-year{text-align:right;flex:0 0 auto}
+.sig-year b{display:block;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;letter-spacing:-.07em;font-variant-numeric:tabular-nums}
+.sig-year span{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:800}
+.sig-slider{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.sig-slider .grow{flex:1;min-width:220px}
+.sig-slider label{display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:850;margin-bottom:6px}
+.sig-slider input[type=range]{width:100%;margin:0;accent-color:var(--teal);cursor:pointer}
+.sig-axis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:var(--faint);margin-top:2px}
+.sig-track{position:relative;height:92px;margin:10px 0 16px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--surface2),var(--surface));overflow:hidden}
+.sig-track:before{content:"";position:absolute;left:10px;right:10px;top:50%;height:1px;background:var(--line2)}
+.sig-track:after{content:"introduction year →";position:absolute;left:10px;bottom:5px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.sig-dot{position:absolute;z-index:2;width:11px;height:11px;border-radius:50%;border:2px solid var(--surface);background:var(--c);cursor:pointer;transform:translate(-50%,-50%);transition:transform .15s ease,box-shadow .15s ease;padding:0}
+.sig-dot:hover,.sig-dot:focus-visible{transform:translate(-50%,-50%) scale(1.55);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 28%,transparent)}
+.sig-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.sig-kpi{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:10px 11px}
+.sig-kpi b{display:block;font-size:1.45rem;letter-spacing:-.045em;line-height:1.1;font-variant-numeric:tabular-nums}
+.sig-kpi b small{font-size:10px;color:var(--faint);font-weight:700;letter-spacing:.02em}
+.sig-kpi span{display:block;font-size:9px;line-height:1.3;color:var(--faint);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+.sig-stack{display:flex;height:26px;border-radius:7px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.sig-stack span{height:100%;min-width:0;transition:width .35s ease}
+.sig-legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:9px}
+.sig-legend span{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted)}
+.sig-legend b{margin-left:auto;color:var(--text);font-variant-numeric:tabular-nums}
+.sig-detail{margin-top:14px;padding:12px 13px;border:1px solid var(--line);border-left:2px solid var(--teal);border-radius:0 10px 10px 0;background:var(--surface2);font-size:11px;line-height:1.55;color:var(--muted)}
+.sig-detail strong{color:var(--text)}
+/* Stress */
+.stress-controls{display:grid;gap:7px;margin-bottom:10px}
+.switch{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 11px;cursor:pointer}
+.switch:hover{border-color:var(--line2)}
+.switch input{margin-top:2px;accent-color:var(--teal);width:15px;height:15px;flex:0 0 auto}
+.switch b{display:block;font-size:11px;line-height:1.3}
+.switch small{display:block;font-size:10px;color:var(--faint);line-height:1.4;margin-top:2px}
+.stress-score{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;align-items:center;margin:14px 0;padding:14px;border:1px solid var(--line2);border-radius:12px;background:var(--surface)}
+.stress-score .big{font-size:clamp(2rem,4vw,2.8rem);line-height:1;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.stress-score .big small{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:800;margin-top:4px}
+.stress-meter{height:11px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);overflow:hidden}
+.stress-meter span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose));transition:width .3s ease}
+.stress-side-stat b{display:block;font-size:1.4rem;letter-spacing:-.04em;line-height:1.1}
+.stress-side-stat span{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:800}
+.stress-verdict{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-bottom:12px}
+.stress-verdict b{font-size:13px;letter-spacing:-.02em}
+.stress-list{display:grid;gap:5px;max-height:232px;overflow:auto;padding-right:4px}
+.stress-item{appearance:none;display:grid;grid-template-columns:minmax(0,1fr) auto 12px;gap:8px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 9px;color:var(--text);cursor:pointer;font-size:10px}
+.stress-item:hover{border-color:var(--teal);background:var(--surface2)}
+.stress-item b{color:var(--teal);font-size:10px;margin-right:4px}
+.stress-item span:nth-child(2){color:var(--faint);font-size:9px;text-align:right}
+.stress-item span:last-child{color:var(--teal);text-align:right}
+/* Constellation */
+.con-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px}
+.con-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);gap:16px}
+.con-stage{border:1px solid var(--line);border-radius:16px;background:radial-gradient(circle at 50% 48%,color-mix(in srgb,var(--teal) 5%,var(--surface2)),var(--bg2) 72%);overflow:hidden}
+#con-svg{display:block;width:100%;height:auto}
+.con-ring{fill:none;stroke:var(--line);stroke-dasharray:3 5}
+.con-ring-label{fill:var(--faint);font-size:7px;letter-spacing:.04em;text-transform:uppercase;text-anchor:end}
+.con-tick{stroke:var(--line2);stroke-width:1}
+.con-tick-label{fill:var(--faint);font-size:7px;font-family:var(--mono)}
+.con-path{fill:none;stroke:var(--line2);stroke-width:1;stroke-dasharray:2 4;opacity:.75}
+.con-node{cursor:pointer;outline:none}
+.con-node .halo{fill:var(--c);opacity:.13;transition:opacity .2s ease,stroke .2s ease}
+.con-node .main{fill:var(--c);stroke:var(--surface);stroke-width:1.5;transition:r .2s ease,stroke .2s ease}
+.con-node text{fill:var(--text);font-size:8px;font-weight:800;text-anchor:middle;letter-spacing:-.01em;paint-order:stroke;stroke:var(--bg2);stroke-width:2.6px;stroke-linejoin:round}
+.con-node:hover .halo,.con-node:focus-visible .halo,.con-node.is-active .halo{opacity:.24;stroke:var(--amber);stroke-width:2}
+.con-node:hover .main,.con-node:focus-visible .main,.con-node.is-active .main{stroke:var(--amber);stroke-width:2.2}
+.con-node.is-dim{opacity:.16}
+.con-detail{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:280px}
+.con-badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;font-weight:800;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 38%,transparent);background:color-mix(in srgb,var(--c) 9%,transparent);padding:3px 8px;border-radius:999px;margin-bottom:8px}
+.con-detail h3{font-size:1.35rem;letter-spacing:-.04em;line-height:1.1;margin:0 0 3px}
+.con-detail p{font-size:11px;color:var(--muted);margin:0}
+.con-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:12px 0}
+.con-mini div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
+.con-mini b{display:block;font-size:1rem;letter-spacing:-.03em}
+.con-mini span{font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.con-grades{display:grid;gap:4px;margin:10px 0 12px}
+.con-grade{display:grid;grid-template-columns:24px 1fr 18px;gap:6px;align-items:center;font-size:9px;color:var(--muted)}
+.con-grade i{display:block;height:5px;border-radius:99px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.con-grade i span{display:block;height:100%;background:var(--teal)}
+/* Microscope */
+.micro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:14px;align-items:start}
+.micro-pane{min-width:0}
+.micro-tools{display:grid;grid-template-columns:1.4fr .75fr .6fr;gap:6px;margin-bottom:8px}
+.micro-tools input,.micro-tools select{width:100%;background:var(--surface);border:1px solid var(--line2);color:var(--text);border-radius:8px;padding:8px 9px;font-size:11px}
+.micro-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap}
+.micro-top .note-sm{margin:0}
+.micro-top div{display:flex;gap:6px}
+.micro-rows{display:grid;gap:4px;max-height:470px;overflow:auto;padding-right:4px}
+.micro-row{appearance:none;display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:8px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 8px;color:var(--text);cursor:pointer}
+.micro-row:hover{border-color:var(--line2);background:var(--surface2)}
+.micro-row.is-active{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 6%,var(--surface))}
+.micro-id{font-family:var(--mono);font-size:9px;color:var(--faint);white-space:nowrap}
+.micro-stmt{font-size:10px;line-height:1.4;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.micro-badges{display:flex;gap:3px;flex-wrap:wrap;justify-content:flex-end}
+.micro-detail{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:320px}
+.micro-detail h3{font-size:1.05rem;line-height:1.35;letter-spacing:-.02em;margin:0 0 8px}
+.micro-meta{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px}
+.micro-thesis{font-size:11px;line-height:1.6;color:var(--muted);border-left:2px solid var(--teal);padding-left:10px;margin:9px 0}
+.micro-thesis b{color:var(--text)}
+.source-list{display:grid;gap:5px;margin:8px 0 12px}
+.source-card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
+.source-card .top{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.source-card strong{font-size:10px;line-height:1.35}
+.source-card small{display:block;font-size:9px;color:var(--faint);margin-top:2px;line-height:1.4}
+.source-card .pill{font-size:8px}
+.micro-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+/* Pathfinder */
+.goal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}
+.goal-card{appearance:none;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:10px;color:var(--text);cursor:pointer}
+.goal-card:hover{border-color:var(--line2);background:var(--surface2)}
+.goal-card[aria-pressed="true"]{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 8%,var(--surface))}
+.goal-card .icon{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;background:color-mix(in srgb,var(--teal) 11%,transparent);color:var(--teal);font-size:13px;margin-bottom:6px}
+.goal-card b{display:block;font-size:11px;line-height:1.3;letter-spacing:-.01em}
+.goal-card small{display:block;font-size:9px;color:var(--faint);line-height:1.4;margin-top:2px}
+.route{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:14px}
+.route-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-bottom:8px}
+.route-head h3{font-size:1.2rem;line-height:1.15;letter-spacing:-.035em;margin:0 0 3px}
+.route-head p{font-size:11px;color:var(--muted);margin:0;max-width:70ch}
+.route-progress{height:7px;border-radius:99px;background:var(--surface);border:1px solid var(--line);overflow:hidden;margin:8px 0 12px}
+.route-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--teal2),var(--teal));transition:width .25s ease}
+.route-step{display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:9px;align-items:start;padding:9px 0;border-top:1px solid var(--line)}
+.route-step input{margin-top:3px;accent-color:var(--teal);width:15px;height:15px}
+.route-step label{cursor:pointer;min-width:0}
+.route-step b{display:block;font-size:11px;line-height:1.35}
+.route-step small{display:block;font-size:9px;color:var(--faint);line-height:1.5;margin-top:1px}
+.route-step .go{font-size:9px;font-weight:850;white-space:nowrap;text-decoration:none;color:var(--teal);padding-top:2px}
+.route-step .go:hover{color:var(--amber)}
+.route-step.done b{color:var(--faint);text-decoration:line-through}
+.route-step.done small{opacity:.6}
+.route-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:10px;color:var(--faint)}
+/* Gauntlet */
+.gauntlet-shell{border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,var(--surface2),var(--surface));overflow:hidden}
+.g-hud{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:14px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 50%,transparent)}
+.g-stat span{display:block;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:850}
+.g-stat b{display:block;font-size:1.1rem;line-height:1.1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.g-time{min-width:0}
+.g-time .row{display:flex;justify-content:space-between;font-size:9px;color:var(--faint);margin-bottom:3px}
+.g-time .row b{color:var(--text);font-variant-numeric:tabular-nums}
+.g-timebar{height:5px;border-radius:99px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.g-timebar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .1s linear}
+.g-stage{min-height:320px;padding:18px;display:flex;flex-direction:column;justify-content:center}
+.g-start{text-align:center;max-width:520px;margin:0 auto}
+.g-big{font-size:4.8rem;line-height:.9;letter-spacing:-.08em;font-weight:900;color:var(--teal)}
+.g-big span{font-size:1.1rem;letter-spacing:0;color:var(--faint);font-weight:700}
+.g-start h3{font-size:1.5rem;letter-spacing:-.04em;margin:8px 0 4px}
+.g-start p{font-size:11px;color:var(--muted);margin:0 auto 12px;max-width:44ch;line-height:1.5}
+.g-start .studio-btn{margin-top:10px}
+.g-check{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);cursor:pointer}
+.g-check input{accent-color:var(--teal)}
+.g-qnum{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:5px}
+.g-question{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.35;letter-spacing:-.025em;margin:0 0 12px;max-width:70ch}
+.g-options{display:grid;gap:5px;max-width:760px}
+.g-opt{appearance:none;display:flex;align-items:baseline;gap:8px;text-align:left;background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:9px 10px;color:var(--text);font-size:11px;cursor:pointer}
+.g-opt:hover:not(:disabled){border-color:var(--teal);background:var(--surface2)}
+.g-opt b{font-family:var(--mono);font-size:9px;color:var(--faint);flex:0 0 auto}
+.g-opt.correct{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 11%,var(--surface))}
+.g-opt.wrong{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 9%,var(--surface))}
+.g-opt:disabled{cursor:default}
+.g-feedback{margin-top:10px;font-size:10px;line-height:1.55;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--teal);border-radius:0 8px 8px 0;padding:8px 10px;max-width:760px}
+.g-feedback strong{color:var(--text)}
+.g-end{text-align:center;max-width:560px;margin:0 auto}
+.g-end .score{font-size:3.4rem;line-height:1;letter-spacing:-.07em;font-weight:900}
+.g-end .score small{font-size:1rem;color:var(--faint);letter-spacing:0}
+.g-end h3{font-size:1.4rem;letter-spacing:-.04em;margin:4px 0 3px}
+.g-end p{font-size:11px;color:var(--muted);margin:0 0 10px}
+.g-missed{text-align:left;display:grid;gap:5px;margin:10px 0;max-height:180px;overflow:auto}
+.g-missed div{font-size:9px;color:var(--muted);border-top:1px solid var(--line);padding-top:5px}
+.g-missed b{color:var(--text);display:block;font-size:10px;margin-bottom:1px}
+.g-end .studio-btn{margin:3px}
+/* Source web */
+.web-toolbar{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px}
+.web-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:14px;align-items:start}
+.web-stage{border:1px solid var(--line);border-radius:16px;background:radial-gradient(circle at 40% 50%,color-mix(in srgb,var(--blue) 5%,var(--surface2)),var(--bg2) 75%);overflow:hidden}
+#web-svg{display:block;width:100%;height:auto}
+.web-edge{fill:none;stroke:var(--line2);stroke-width:1;opacity:.55}
+.web-source,.web-claim{cursor:pointer;outline:none}
+.web-source rect{fill:var(--surface);stroke:var(--line2);transition:stroke .18s ease,fill .18s ease}
+.web-source:hover rect,.web-source:focus-visible rect,.web-source.is-active rect{stroke:var(--amber);fill:var(--surface2)}
+.web-claim rect{fill:var(--surface);stroke:var(--line2);transition:stroke .18s ease,fill .18s ease}
+.web-claim:hover rect,.web-claim:focus-visible rect,.web-claim.is-active rect{stroke:var(--amber);fill:var(--surface2)}
+.web-source text,.web-claim text{fill:var(--muted);font-size:8.5px;font-family:var(--sans)}
+.web-source .grade{font-family:var(--mono);font-size:7.5px;font-weight:800}
+.web-claim .dot{stroke:var(--surface);stroke-width:1}
+.web-svg.is-focused .web-edge:not(.is-lit),.web-svg.is-focused .web-node:not(.is-lit){opacity:.12}
+.web-svg.is-focused .web-edge.is-lit{stroke:var(--teal);opacity:.8;stroke-width:1.5}
+.web-svg.is-focused .web-node.is-lit{opacity:1}
+.web-legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:8px;font-size:9px;color:var(--faint)}
+.web-legend span{display:inline-flex;align-items:center;gap:5px}
+.web-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.web-detail{background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:16px;min-height:280px}
+.web-detail h3{font-size:1.05rem;line-height:1.35;letter-spacing:-.02em;margin:0 0 4px}
+.web-detail p{font-size:10px;line-height:1.55;color:var(--muted);margin:0}
+.web-detail .web-claims{display:grid;gap:4px;margin:9px 0 10px;max-height:230px;overflow:auto;padding-right:3px}
+.web-claim-btn{appearance:none;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 7px;color:var(--muted);font-size:9px;line-height:1.4;cursor:pointer}
+.web-claim-btn:hover{border-color:var(--teal);color:var(--text)}
+.web-text{margin-top:10px;font-size:10px;color:var(--faint)}
+.web-text summary{cursor:pointer;color:var(--muted)}
+.web-text ul{columns:2;gap:18px;padding-left:18px;margin:7px 0}
+.web-text li{break-inside:avoid;margin-bottom:3px}
+@media (max-width:980px){
+  .instrument-grid,.con-grid,.micro-grid,.web-grid{grid-template-columns:1fr}
+  .instrument-side{order:-1}
+  .goal-grid{grid-template-columns:1fr 1fr}
+  .g-hud{grid-template-columns:repeat(3,1fr)}
+  .g-time{grid-column:1/-1}
+}
+@media (max-width:700px){
+  .studio-body{padding:14px}
+  .studio-head{padding:13px 13px 0}
+  .studio-dataset{display:none}
+  .studio-tab{padding:7px 9px;font-size:11px}
+  .studio-tab b{display:none}
+  .instrument-head{display:block}
+  .sig-year{text-align:left;margin-top:8px}
+  .sig-year b{font-size:2.6rem}
+  .sig-kpis{grid-template-columns:1fr 1fr}
+  .stress-score{grid-template-columns:1fr}
+  .goal-grid{grid-template-columns:1fr}
+  .micro-tools{grid-template-columns:1fr}
+  .micro-row{grid-template-columns:52px minmax(0,1fr)}
+  .micro-badges{grid-column:2;justify-content:flex-start}
+  .web-stage,.con-stage{overflow-x:auto}
+  #web-svg{min-width:680px}
+  #con-svg{min-width:680px}
+  .web-text ul{columns:1}
+  .g-stage{padding:14px}
+  .g-big{font-size:3.6rem}
+  .con-detail,.micro-detail,.web-detail{min-height:0}
+}
 /* 3D Atlas Mind */
 .lab-shell{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:16px;align-items:stretch}
 .lab-stage{position:relative;min-height:530px;border:1px solid var(--line2);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#0e2d36,#041012 72%);box-shadow:var(--shadow)}
@@ -364,9 +592,6 @@ html.embed{scroll-padding-top:0!important}
   .lab-panel{min-height:0}
 }
 @media (max-width:700px){
-  .demo-viewport{aspect-ratio:4/5}
-  .demo-caption{display:block}
-  .demo-caption span{display:block;margin-top:3px}
   .lab-stage{min-height:360px}
   .lab-hint{display:none}
   .lab-fallback{grid-template-columns:repeat(3,1fr);padding-top:48px}
@@ -432,40 +657,150 @@ html.embed{scroll-padding-top:0!important}
 
 <section class="section" id="demo">
   <div class="wrap">
-    <div class="kicker">Live, not a mockup</div>
-    <h2>Click the product. It is the product.</h2>
-    <p class="sub">Every tab below loads the real XPU-Atlas page in an iframe — the same HTML, data, charts, filters, quiz, and 3D lab that ship in this repository. No screenshots pretending to be software.</p>
-    <div class="demo-shell">
-      <div class="demo-tabs" id="demo-tabs" role="tablist" aria-label="Product screens">
-        <button class="demo-tab" id="demo-tab-home" type="button" role="tab" aria-selected="true" aria-controls="demo-viewport" data-screen="home">Home</button>
-        <button class="demo-tab" id="demo-tab-findings" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="findings">Findings</button>
-        <button class="demo-tab" id="demo-tab-atlas" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="atlas">Atlas</button>
-        <button class="demo-tab" id="demo-tab-explorer" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="explorer">Claims</button>
-        <button class="demo-tab" id="demo-tab-learn" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="learn">Learn</button>
-        <button class="demo-tab" id="demo-tab-quiz" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="quiz">Quiz</button>
-        <button class="demo-tab" id="demo-tab-lab" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="lab">3D Lab</button>
-      </div>
-      <div class="demo-browser">
-        <div class="demo-bar">
-          <span class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <div class="demo-url" id="demo-url" aria-label="Page address">m0-ar.github.io/xpu-atlas/</div>
-          <a id="demo-open" href="../preview.html#top" target="_blank" rel="noopener">Open full screen ↗</a>
+    <div class="kicker">Seven instruments · one dataset</div>
+    <h2>The atlas is a control room.</h2>
+    <p class="sub">No screenshots. No iframes. Seven original instruments read the same committed evidence bundle — scrub it, stress it, trace it, and test yourself against it.</p>
+    <div class="studio" id="studio">
+      <div class="studio-head">
+        <div class="studio-brand"><span class="studio-pulse" aria-hidden="true"></span> XPU / Signal desk <span class="studio-dataset">live from <code>assets/atlas-data.js</code></span></div>
+        <div class="studio-nav" id="studio-nav" role="tablist" aria-label="Atlas instruments">
+          <button class="studio-tab" id="tab-signal" type="button" role="tab" aria-selected="true" aria-controls="panel-signal" tabindex="0" data-panel="signal"><b>01</b> Signal</button>
+          <button class="studio-tab" id="tab-stress" type="button" role="tab" aria-selected="false" aria-controls="panel-stress" tabindex="-1" data-panel="stress"><b>02</b> Stress test</button>
+          <button class="studio-tab" id="tab-constellation" type="button" role="tab" aria-selected="false" aria-controls="panel-constellation" tabindex="-1" data-panel="constellation"><b>03</b> Constellation</button>
+          <button class="studio-tab" id="tab-microscope" type="button" role="tab" aria-selected="false" aria-controls="panel-microscope" tabindex="-1" data-panel="microscope"><b>04</b> Microscope</button>
+          <button class="studio-tab" id="tab-pathfinder" type="button" role="tab" aria-selected="false" aria-controls="panel-pathfinder" tabindex="-1" data-panel="pathfinder"><b>05</b> Pathfinder</button>
+          <button class="studio-tab" id="tab-gauntlet" type="button" role="tab" aria-selected="false" aria-controls="panel-gauntlet" tabindex="-1" data-panel="gauntlet"><b>06</b> Gauntlet</button>
+          <button class="studio-tab" id="tab-web" type="button" role="tab" aria-selected="false" aria-controls="panel-web" tabindex="-1" data-panel="web"><b>07</b> Source web</button>
         </div>
-        <div class="demo-viewport" id="demo-viewport" role="tabpanel" aria-labelledby="demo-tab-home" tabindex="0">
-          <div class="demo-poster" aria-hidden="true"><img id="demo-poster-img" src="../assets/screenshots/preview-hero.png" alt=""></div>
-          <div class="demo-launch" id="demo-launch">
-            <div>
-              <h3 id="demo-launch-title">See the real thing</h3>
-              <p>This frame runs the actual static site. Tabs switch the real page, not a picture of it.</p>
-              <button class="btn btn-primary" id="demo-launch-btn" type="button">Launch interactive demo</button>
-              <p class="tiny">Same HTML · same data · same JavaScript · no server required</p>
+      </div>
+      <div class="studio-body">
+        <div class="studio-panel" id="panel-signal" role="tabpanel" aria-labelledby="tab-signal" tabindex="0">
+          <div class="instrument-head">
+            <div><div class="inst-label">01 / Signal</div><h3>Watch the field assemble.</h3><p>Drag the year. Count only the paradigms introduced by then, and see what the evidence mix looked like at that moment.</p></div>
+            <div class="sig-year"><b id="sig-year">2026</b><span>year</span></div>
+          </div>
+          <div class="instrument-grid">
+            <div class="instrument-main">
+              <div class="sig-slider">
+                <div class="grow"><label for="sig-range"><span>Introduction timeline</span><span id="sig-cohort-label">All 20 paradigms</span></label><input id="sig-range" type="range" min="1971" max="2026" step="1" value="2026"><div class="sig-axis"><span>1971</span><span>2026</span></div></div>
+                <div><button class="studio-btn primary" id="sig-play" type="button" aria-pressed="false">Play</button> <button class="studio-btn" id="sig-reset" type="button">Reset</button></div>
+              </div>
+              <div class="sig-track" id="sig-track" role="group" aria-label="Paradigms by introduction year"></div>
+              <div class="sig-kpis" id="sig-kpis"></div>
+              <div class="sig-detail" id="sig-detail" aria-live="polite"></div>
+              <p class="note-sm">The timeline is an introduction cohort, not a claim about when an idea became important. Claims are counted only when their paradigm is already in the cohort.</p>
             </div>
+            <aside class="instrument-side">
+              <div class="panel-label">Evidence mix</div>
+              <div class="sig-stack" id="sig-stack"></div>
+              <div class="sig-legend" id="sig-legend"></div>
+              <p class="note-sm" id="sig-side-note">Grade mix among claims attached to the cohort.</p>
+            </aside>
           </div>
         </div>
+
+        <div class="studio-panel" id="panel-stress" role="tabpanel" aria-labelledby="tab-stress" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">02 / Stress test</div><h3>How much support survives a stricter lens?</h3><p>The published baseline is 73.4% supported. Hold the claim set fixed, raise the evidence bar, and watch what drops out.</p></div>
+          </div>
+          <div class="instrument-grid">
+            <div class="instrument-main">
+              <div class="stress-controls" id="stress-toggles">
+                <label class="switch"><input type="checkbox" data-lens="primary" checked><span><b>Primary sources only</b><small>Require at least one E1 source.</small></span></label>
+                <label class="switch"><input type="checkbox" data-lens="multi"><span><b>At least two captured sources</b><small>Remove single-source support.</small></span></label>
+                <label class="switch"><input type="checkbox" data-lens="nonenc"><span><b>No encyclopedia-only support</b><small>Require at least one non-encyclopedic source.</small></span></label>
+              </div>
+              <button class="link-btn" id="stress-baseline" type="button">Reset to the published baseline</button>
+              <div class="stress-score">
+                <div><div class="big" id="stress-big">25.0%</div><small id="stress-fraction">16 of 64 claims</small></div>
+                <div><div class="stress-meter"><span id="stress-meter-fill"></span></div><p class="note-sm" id="stress-meter-label">Supported share under this lens.</p></div>
+              </div>
+              <div class="stress-verdict" id="stress-verdict"></div>
+              <div class="panel-label">Supported claims that fall out</div>
+              <div class="stress-list" id="stress-list"></div>
+            </div>
+            <aside class="instrument-side">
+              <div class="panel-label">Retention</div>
+              <div class="stress-side-stat"><b id="stress-retained">34%</b><span>of the 47 supported claims retained</span></div>
+              <div class="stress-side-stat" style="margin-top:12px"><b id="stress-drop">31</b><span>supported claims drop out</span></div>
+              <p class="note-sm"><strong>What this does:</strong> holds the published claim set fixed and changes only the evidence bar. It is a conditional view, not a replacement headline.</p>
+              <p class="note-sm"><strong>What it does not do:</strong> it does not re-grade claims or imply that filtered-out claims are false. It shows how much of the support depends on the kind of source you are willing to accept.</p>
+            </aside>
+          </div>
+        </div>
+
+        <div class="studio-panel" id="panel-constellation" role="tabpanel" aria-labelledby="tab-constellation" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">03 / Constellation</div><h3>Twenty paradigms, one sky.</h3><p>Angle is introduction year. Ring is lifecycle lane. Node size is the number of claims attached. Hover for a name; select a node for the receipt.</p></div>
+          </div>
+          <div class="filters" id="con-filters" aria-label="Filter constellation by lifecycle"></div>
+          <div class="con-grid">
+            <div class="con-stage"><svg id="con-svg" viewBox="0 0 760 520" role="img" aria-label="Radial constellation of twenty paradigms arranged by introduction year and lifecycle lane"></svg></div>
+            <aside class="con-detail" id="con-detail" aria-live="polite"></aside>
+          </div>
+          <p class="note-sm">Rings run from general-purpose core to emerging frontier. The ordering is a reading aid, not a score or a claim about progress.</p>
+        </div>
+
+        <div class="studio-panel" id="panel-microscope" role="tabpanel" aria-labelledby="tab-microscope" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">04 / Microscope</div><h3>One claim. Every receipt.</h3><p>Search the 64 claims, then read the statement, the grade, the note, and every captured source without leaving the panel.</p></div>
+          </div>
+          <div class="micro-grid">
+            <div class="micro-pane">
+              <div class="micro-tools">
+                <input id="micro-search" type="search" placeholder="Search statement, acronym, or claim ID" aria-label="Search claims">
+                <select id="micro-status" aria-label="Filter by status"><option value="all">All statuses</option><option value="supported">Supported</option><option value="unverified">Unverified</option><option value="conflicting">Conflicting</option><option value="refuted">Refuted</option></select>
+                <select id="micro-grade" aria-label="Filter by grade"><option value="all">All grades</option><option value="E1">E1</option><option value="E2">E2</option><option value="E3">E3</option><option value="E0">E0</option></select>
+              </div>
+              <div class="micro-top"><span class="note-sm" id="micro-count"></span><div><button class="studio-btn" id="micro-random" type="button">Random</button><button class="studio-btn" id="micro-gap" type="button">Next gap</button></div></div>
+              <div class="micro-rows" id="micro-rows" role="group" aria-label="Claim results"></div>
+            </div>
+            <aside class="micro-detail" id="micro-detail" aria-live="polite"></aside>
+          </div>
+        </div>
+
+        <div class="studio-panel" id="panel-pathfinder" role="tabpanel" aria-labelledby="tab-pathfinder" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">05 / Pathfinder</div><h3>Choose a destination. Get a route.</h3><p>Four goals, four evidence paths. Check off each stop as you go; the route remembers where you left it.</p></div>
+          </div>
+          <div class="goal-grid" id="path-goals" aria-label="Choose a goal"></div>
+          <div class="route" id="path-output"></div>
+        </div>
+
+        <div class="studio-panel" id="panel-gauntlet" role="tabpanel" aria-labelledby="tab-gauntlet" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">06 / Gauntlet</div><h3>The twelve-second drill.</h3><p>Eight questions. Twelve seconds each. The clock pauses if you leave the panel, but it does not forgive a guess.</p></div>
+          </div>
+          <div class="gauntlet-shell">
+            <div class="g-hud">
+              <div class="g-stat"><span>Score</span><b id="g-score">0</b></div>
+              <div class="g-stat"><span>Streak</span><b id="g-streak">0</b></div>
+              <div class="g-stat"><span>Question</span><b id="g-count">–</b></div>
+              <div class="g-time"><div class="row"><span>Clock</span><b id="g-time">12.0s</b></div><div class="g-timebar"><i id="g-timebar"></i></div></div>
+            </div>
+            <div class="g-stage" id="g-stage"></div>
+            <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 14px;border-top:1px solid var(--line);font-size:9px;color:var(--faint)"><span id="g-best">Best streak: 0</span><span>Same ledger, different pressure.</span></div>
+          </div>
+        </div>
+
+        <div class="studio-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web" tabindex="0" hidden>
+          <div class="instrument-head">
+            <div><div class="inst-label">07 / Source web</div><h3>Which sources carry the story?</h3><p>The ten most-used sources and the claims they support. Select a source to light its claims; select a claim to see its full provenance.</p></div>
+          </div>
+          <div class="web-toolbar"><div class="filters" id="web-filters" aria-label="Filter source web"></div><span class="note-sm" id="web-note"></span></div>
+          <div class="web-grid">
+            <div class="web-stage"><svg id="web-svg" viewBox="0 0 780 520" role="img" aria-label="Bipartite map of the ten most-used sources and their claims"></svg></div>
+            <aside class="web-detail" id="web-detail" aria-live="polite"></aside>
+          </div>
+          <div class="web-legend" aria-label="Legend">
+            <span><i style="background:var(--teal)"></i>E1 primary</span><span><i style="background:var(--blue)"></i>E2 secondary</span><span><i style="background:var(--faint)"></i>E3 encyclopedia</span><span><i style="background:var(--rose)"></i>E0 unverified</span>
+            <span><i style="background:var(--teal)"></i>supported</span><span><i style="background:var(--amber)"></i>unverified</span><span><i style="background:var(--violet)"></i>conflicting</span><span><i style="background:var(--rose)"></i>refuted</span>
+          </div>
+          <details class="web-text"><summary>Text version of the source map</summary><div id="web-text"></div></details>
+        </div>
       </div>
-      <div class="demo-caption" id="demo-caption"><span><strong>Home.</strong> The 10-second pitch: 20 paradigms, 64 claims, 58 sources.</span><span>Loaded only when you ask for it.</span></div>
-      <div class="demo-foot"><a href="../index.html">Browse all pages ↗</a><span>Keyboard: use ← → on the tab bar. The frame scrolls independently.</span></div>
     </div>
+    <div class="note" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>Every instrument runs locally from the committed bundle. No network calls, no embeds, no screenshots.</span><a href="#explorer">Prefer the full claim ledger? ↓</a></div>
   </div>
 </section>
 
@@ -814,8 +1149,6 @@ html.embed{scroll-padding-top:0!important}
   const gradeClass = g => g==="E1"?"ok":g==="E0"?"bad":"neutral";
   const statusClass = s => s==="supported"?"ok":s==="unverified"?"warn":s==="refuted"?"bad":"warn";
 
-  const params = new URLSearchParams(location.search);
-  if(params.has("embed")) document.documentElement.classList.add("embed");
   // Theme
   const root = document.documentElement;
   const saved = localStorage.getItem("xpu-theme");
@@ -999,92 +1332,564 @@ html.embed{scroll-padding-top:0!important}
   updatePath();
 
 
-  // Live demo tabs (real iframes, loaded only on demand)
+  // Studio — seven original, data-bound instruments
   const assetBase = /\/docs\//.test(location.pathname) ? "../" : "./";
-  const DEMO_SCREENS = {
-    home: {id:"home", label:"Home", hash:"top", poster:"assets/screenshots/preview-hero.png", alt:"The XPU-Atlas landing screen with headline numbers and navigation", caption:"<strong>Home.</strong> The 10-second pitch: 20 paradigms, 64 claims, 58 sources."},
-    findings: {id:"findings", label:"Findings", hash:"findings", poster:"assets/screenshots/preview-findings.png", alt:"The six-findings screen with charts for inflation, evidence, lifecycle, attention, markets, and benchmarks", caption:"<strong>Findings.</strong> Six charts generated from the committed data — hover and inspect."},
-    atlas: {id:"atlas", label:"Atlas", hash:"atlas", poster:"assets/screenshots/preview-atlas.png", alt:"The interactive atlas grid of twenty processing-unit paradigms", caption:"<strong>Atlas.</strong> Filter the 20 paradigms and open any evidence card."},
-    explorer: {id:"explorer", label:"Claims", hash:"explorer", poster:"assets/screenshots/preview-explorer.png", alt:"The claim explorer with search, status, and evidence-grade filters", caption:"<strong>Claims.</strong> Search 64 claims by status, grade, and paradigm."},
-    learn: {id:"learn", label:"Learn", hash:"learn", poster:"assets/screenshots/preview-learn.png", alt:"The beginner learning path from acronyms to evidence grades", caption:"<strong>Learn.</strong> The beginner path from acronyms to evidence grades."},
-    quiz: {id:"quiz", label:"Quiz", hash:"quiz", poster:"assets/screenshots/preview-quiz.png", alt:"The ten-question XPU-Atlas quiz with explanations", caption:"<strong>Quiz.</strong> Ten questions with explanations and a final score."},
-    lab: {id:"lab", label:"3D Lab", hash:"lab", poster:"assets/screenshots/preview-lab.png", alt:"The Atlas Mind 3D learning lab with a glowing concept network", caption:"<strong>3D Lab.</strong> Build a network of 20 concepts; voice narration included."}
-  };
-  Object.values(DEMO_SCREENS).forEach(screen => { screen.poster = assetBase + screen.poster; });
-  const demoTabs = $$("#demo-tabs [role=tab]");
-  const demoViewport = $("#demo-viewport");
-  const demoPoster = $("#demo-poster-img");
-  const demoLaunch = $("#demo-launch");
-  const demoLaunchTitle = $("#demo-launch-title");
-  const demoUrl = $("#demo-url");
-  const demoCaption = $("#demo-caption");
-  const demoOpen = $("#demo-open");
-  const demoFrameHost = demoViewport;
-  let activeScreen = DEMO_SCREENS.home;
-  let demoFrame = null;
+  (() => {
+    const reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const scrollToStudio = () => { const el = $("#studio"); if(el) el.scrollIntoView({behavior: reduced ? "auto" : "smooth", block: "start"}); };
+    const claimPid = c => {
+      const p = D.paradigms.find(x => x.name === c.paradigm) || D.paradigms.find(x => x.abbr === c.abbr);
+      return p ? p.id : "";
+    };
+    const claimsFor = p => D.claims.filter(c => claimPid(c) === p.id);
+    const hasE1 = c => c.sources.some(s => D.sources[s] && D.sources[s].grade === "E1");
+    const hasNonEnc = c => c.sources.some(s => D.sources[s] && D.sources[s].type !== "encyclopedia");
+    const gradeColor = g => g === "E1" ? "var(--teal)" : g === "E2" ? "var(--blue)" : g === "E3" ? "var(--faint)" : "var(--rose)";
+    const statusColor = s => s === "supported" ? "var(--teal)" : s === "unverified" ? "var(--amber)" : s === "conflicting" ? "var(--violet)" : "var(--rose)";
+    const clip = (s, n) => String(s).length > n ? String(s).slice(0, n - 1).trim() + "…" : String(s);
+    const byId = id => D.claims.find(c => c.id === id);
 
-  function selectDemoScreen(screen){
-    activeScreen = screen;
-    demoTabs.forEach(tab => {
-      const on = tab.dataset.screen === screen.id;
-      tab.setAttribute("aria-selected", String(on));
-      tab.tabIndex = on ? 0 : -1;
-      if(on) demoViewport.setAttribute("aria-labelledby", tab.id);
-    });
-    demoPoster.src = screen.poster;
-    demoPoster.alt = screen.alt;
-    demoUrl.textContent = "m0-ar.github.io/xpu-atlas/" + (screen.hash === "top" ? "" : "#" + screen.hash);
-    demoCaption.innerHTML = "<span>" + screen.caption + "</span><span>Loaded only when you ask for it.</span>";
-    demoOpen.href = "preview.html#" + screen.hash;
-    demoLaunchTitle.textContent = "Open " + screen.label;
-  }
+    // ---- 01 Signal -------------------------------------------------------
+    const sigMin = Math.min(...D.paradigms.map(p => p.year));
+    const sigMax = Math.max(...D.paradigms.map(p => p.year));
+    let sigYear = sigMax, sigTimer = null;
+    const sigRange = $("#sig-range");
+    sigRange.min = sigMin; sigRange.max = sigMax; sigRange.value = sigMax;
+    const sigSorted = D.paradigms.slice().sort((a,b) => a.year - b.year || a.abbr.localeCompare(b.abbr));
+    const sigGroups = {};
+    sigSorted.forEach(p => { (sigGroups[p.year] = sigGroups[p.year] || []).push(p); });
+    $("#sig-track").innerHTML = Object.entries(sigGroups).map(([year, items]) => items.map((p, i) => {
+      const left = 4 + ((p.year - sigMin) / (sigMax - sigMin)) * 92;
+      const dy = (i - (items.length - 1) / 2) * 15;
+      return `<button class="sig-dot" type="button" style="left:${left.toFixed(2)}%;top:calc(50% + ${dy}px);--c:${lifeColors[p.lifecycle]}" data-id="${esc(p.id)}" data-year="${p.year}" title="${esc(p.abbr)} · ${p.year}" aria-label="${esc(p.abbr)}, ${esc(p.name)}, ${p.year}"></button>`;
+    }).join("")).join("");
 
-  function loadDemoScreen(screen){
-    demoLaunch.hidden = true;
-    demoViewport.classList.remove("loaded");
-    demoViewport.setAttribute("aria-busy", "true");
-    if(demoFrame){ demoFrame.remove(); demoFrame = null; }
-    const frame = document.createElement("iframe");
-    frame.className = "demo-iframe";
-    frame.title = "Live XPU-Atlas " + screen.label + " screen";
-    frame.loading = "lazy";
-    frame.src = "preview.html?embed=1#" + screen.hash;
-    frame.addEventListener("load", () => {
-      frame.classList.add("ready");
-      demoViewport.classList.add("loaded");
-      demoViewport.setAttribute("aria-busy", "false");
+    function stopSignal(){
+      if(sigTimer){ clearInterval(sigTimer); sigTimer = null; }
+      const b = $("#sig-play");
+      if(b){ b.textContent = "Play"; b.setAttribute("aria-pressed", "false"); }
+    }
+    function updateSignal(year, focusId){
+      sigYear = Math.max(sigMin, Math.min(sigMax, Math.round(year)));
+      const cohort = D.paradigms.filter(p => p.year <= sigYear);
+      const ids = new Set(cohort.map(p => p.id));
+      const claims = D.claims.filter(c => ids.has(claimPid(c)));
+      const supported = claims.filter(c => c.status === "supported");
+      const e1 = claims.filter(hasE1);
+      const grades = {E1:0, E2:0, E3:0, E0:0};
+      claims.forEach(c => { if(grades[c.grade] !== undefined) grades[c.grade]++; });
+      $("#sig-year").textContent = sigYear;
+      sigRange.value = sigYear;
+      sigRange.setAttribute("aria-valuetext", `${sigYear}: ${cohort.length} paradigms, ${claims.length} claims`);
+      $("#sig-cohort-label").textContent = `${cohort.length} of ${D.paradigms.length} paradigms`;
+      $("#sig-kpis").innerHTML = `
+        <div class="sig-kpi"><b>${cohort.length}<small>/${D.paradigms.length}</small></b><span>paradigms</span></div>
+        <div class="sig-kpi"><b>${claims.length}<small>/${D.claims.length}</small></b><span>claims</span></div>
+        <div class="sig-kpi"><b>${claims.length ? pct(supported.length / claims.length, 1) : "–"}</b><span>supported share</span></div>
+        <div class="sig-kpi"><b>${claims.length ? pct(e1.length / claims.length, 1) : "–"}</b><span>E1-backed</span></div>`;
+      $("#sig-stack").innerHTML = claims.length ? Object.entries(grades).map(([g, n]) =>
+        `<span style="width:${(n / claims.length * 100).toFixed(2)}%;background:${gradeColor(g)}" title="${g}: ${n}"></span>`
+      ).join("") : `<span style="width:100%;background:var(--line)"></span>`;
+      $("#sig-legend").innerHTML = Object.entries(grades).map(([g, n]) =>
+        `<span><i class="sw" style="background:${gradeColor(g)}"></i>${g}<b>${n}</b></span>`
+      ).join("");
+      $("#sig-side-note").textContent = claims.length ? `${claims.length} claims in the cohort. Hover a segment for the count.` : "No claims in this cohort yet.";
+      const p = focusId ? D.paradigms.find(x => x.id === focusId) : cohort.slice().sort((a,b) => b.year - a.year || a.abbr.localeCompare(b.abbr))[0];
+      $("#sig-detail").innerHTML = p
+        ? `<strong>${esc(p.abbr)}</strong> · ${esc(p.name)} entered in <strong>${p.year}</strong> (${esc(p.lifecycle)}). ${p.supported} of ${p.claims} claims are supported; ${p.primary} rest on primary evidence.`
+        : `No paradigms are in the cohort yet. Move the slider to begin.`;
+    }
+    function startSignal(){
+      if(sigYear >= sigMax) updateSignal(sigMin);
+      const b = $("#sig-play");
+      b.textContent = "Pause"; b.setAttribute("aria-pressed", "true");
+      sigTimer = setInterval(() => {
+        if(sigYear >= sigMax){ stopSignal(); return; }
+        updateSignal(sigYear + 1);
+      }, reduced ? 220 : 70);
+    }
+    $("#sig-range").addEventListener("input", () => { stopSignal(); updateSignal(Number(sigRange.value)); });
+    $("#sig-track").addEventListener("click", e => {
+      const b = e.target.closest("button[data-id]"); if(!b) return;
+      stopSignal(); updateSignal(Number(b.dataset.year), b.dataset.id);
     });
-    frame.addEventListener("error", () => {
-      demoViewport.setAttribute("aria-busy", "false");
-      demoLaunch.hidden = false;
-      demoLaunchTitle.textContent = "The live frame did not load";
-    });
-    demoFrameHost.appendChild(frame);
-    demoFrame = frame;
-  }
+    $("#sig-play").addEventListener("click", () => sigTimer ? stopSignal() : startSignal());
+    $("#sig-reset").addEventListener("click", () => { stopSignal(); updateSignal(sigMax); });
+    updateSignal(sigMax);
 
-  demoTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const screen = DEMO_SCREENS[tab.dataset.screen];
-      if(!screen) return;
-        selectDemoScreen(screen);
-      loadDemoScreen(screen);
+    // ---- 02 Stress test --------------------------------------------------
+    const stressBoxes = $$("#stress-toggles input");
+    const stressState = {primary:true, multi:false, nonenc:false};
+    function stressPass(c){
+      if(stressState.primary && !hasE1(c)) return false;
+      if(stressState.multi && c.sources.length < 2) return false;
+      if(stressState.nonenc && !hasNonEnc(c)) return false;
+      return true;
+    }
+    function stressReason(c){
+      const r = [];
+      if(stressState.primary && !hasE1(c)) r.push("no E1");
+      if(stressState.multi && c.sources.length < 2) r.push("single source");
+      if(stressState.nonenc && !hasNonEnc(c)) r.push("encyclopedia only");
+      return r.join(" · ") || "filtered";
+    }
+    function renderStress(){
+      stressBoxes.forEach(b => { b.checked = !!stressState[b.dataset.lens]; });
+      const supported = D.claims.filter(c => c.status === "supported");
+      const kept = supported.filter(stressPass);
+      const dropped = supported.filter(c => !stressPass(c));
+      const rate = kept.length / D.claims.length;
+      const retention = kept.length / supported.length;
+      const fragility = Math.round((1 - retention) * 100);
+      $("#stress-big").textContent = pct(rate, 1);
+      $("#stress-fraction").textContent = `${kept.length} of ${D.claims.length} claims`;
+      $("#stress-retained").textContent = pct(retention, 0);
+      $("#stress-drop").textContent = String(dropped.length);
+      $("#stress-meter-fill").style.width = fragility + "%";
+      $("#stress-meter-label").textContent = `Fragility ${fragility}/100 — ${fragility <= 20 ? "robust" : fragility <= 50 ? "sensitive" : "thin"} under this lens.`;
+      const active = stressState.primary || stressState.multi || stressState.nonenc;
+      $("#stress-verdict").innerHTML = active
+        ? `<b>${pct(rate, 1)} supported</b> under this lens. The published baseline is 73.4%. <span>${dropped.length} supported claims fall out.</span>`
+        : `<b>Published baseline.</b> 47 of 64 claims are supported (73.4%). No additional lens applied.`;
+      $("#stress-list").innerHTML = dropped.length ? dropped.slice(0, 6).map(c =>
+        `<button class="stress-item" type="button" data-id="${esc(c.id)}"><span><b>${esc(c.abbr)}</b>${esc(c.id)}</span><span>${esc(stressReason(c))}</span><span aria-hidden="true">→</span></button>`
+      ).join("") : `<p class="note-sm">No supported claims drop out under this lens. That is the published baseline.</p>`;
+    }
+    stressBoxes.forEach(b => b.addEventListener("change", () => { stressState[b.dataset.lens] = b.checked; renderStress(); }));
+    $("#stress-baseline").addEventListener("click", () => { stressState.primary = false; stressState.multi = false; stressState.nonenc = false; renderStress(); });
+    $("#stress-list").addEventListener("click", e => {
+      const b = e.target.closest("[data-id]"); if(!b) return;
+      selectMicroClaim(b.dataset.id); goPanel("microscope");
     });
-  });
-  $("#demo-tabs").addEventListener("keydown", event => {
-    const index = demoTabs.indexOf(document.activeElement);
-    if(index < 0) return;
-    let next = null;
-    if(event.key === "ArrowRight") next = (index + 1) % demoTabs.length;
-    else if(event.key === "ArrowLeft") next = (index - 1 + demoTabs.length) % demoTabs.length;
-    else if(event.key === "Home") next = 0;
-    else if(event.key === "End") next = demoTabs.length - 1;
-    if(next === null) return;
-    event.preventDefault();
-    demoTabs[next].focus();
-  });
-  $("#demo-launch-btn").addEventListener("click", () => loadDemoScreen(activeScreen));
-  selectDemoScreen(DEMO_SCREENS.home);
+    $("#stress-verdict").setAttribute("aria-live", "polite");
+    renderStress();
+
+    // ---- 03 Constellation ------------------------------------------------
+    const CON = {w:760, h:520, cx:380, cy:260, outer:232};
+    const CON_RINGS = ["general-purpose","embedded","integrated","commercial","absorbed","research","emerging"];
+    const ringIndex = Object.fromEntries(CON_RINGS.map((l, i) => [l, i]));
+    const ringRadius = i => 68 + i * 25;
+    const conMin = Math.min(...D.paradigms.map(p => p.year));
+    const conMax = Math.max(...D.paradigms.map(p => p.year));
+    const conAngle = y => -Math.PI / 2 + ((y - conMin) / (conMax - conMin)) * Math.PI * 2;
+    const conPos = p => {
+      const a = conAngle(p.year), r = ringRadius(ringIndex[p.lifecycle] ?? 3);
+      return {x: CON.cx + Math.cos(a) * r, y: CON.cy + Math.sin(a) * r};
+    };
+    const shortAbbr = p => p.abbr.includes("/") ? p.abbr.split("/")[0].trim() : p.abbr.includes("(") ? p.abbr.split("(")[0].trim() + "*" : p.abbr;
+    const conState = {filter:"all", selected:null};
+    function renderConDetail(){
+      const p = D.paradigms.find(x => x.id === conState.selected) || D.paradigms[0];
+      const max = Math.max(1, ...Object.values(p.grades));
+      const bars = ["E1","E2","E3","E0"].map(g => {
+        const n = p.grades[g] || 0;
+        return `<div class="con-grade"><span>${g}</span><i><span style="width:${(n / max * 100).toFixed(1)}%"></span></i><b>${n}</b></div>`;
+      }).join("");
+      $("#con-detail").innerHTML = `<div class="con-badge" style="--c:${lifeColors[p.lifecycle] || "var(--teal)"}">${esc(p.lifecycle)}</div><h3>${esc(p.abbr)}</h3><p>${esc(p.name)} · introduced ${p.year}</p><div class="con-mini"><div><b>${p.claims}</b><span>claims</span></div><div><b>${p.supported}</b><span>supported</span></div><div><b>${p.primary}</b><span>primary E1</span></div><div><b>${pct(p.support_rate, 0)}</b><span>support rate</span></div></div><div class="con-grades">${bars}</div><button class="studio-btn" type="button" id="con-atlas">Open in the atlas ↓</button>`;
+      $("#con-atlas").addEventListener("click", () => {
+        const all = $('#atlas-filters [data-life="all"]'); if(all) all.click();
+        const card = document.querySelector(`#atlas-grid .atlas-card[data-id="${p.id}"]`);
+        if(card) card.click(); else showDetail(p.id);
+        document.getElementById("atlas").scrollIntoView({behavior: reduced ? "auto" : "smooth", block:"start"});
+      });
+    }
+    function renderCon(){
+      const items = D.paradigms.filter(p => conState.filter === "all" || p.lifecycle === conState.filter);
+      if(!items.some(p => p.id === conState.selected)) conState.selected = items[0] ? items[0].id : null;
+      let svg = "";
+      CON_RINGS.forEach((label, i) => {
+        const r = ringRadius(i);
+        svg += `<circle class="con-ring" cx="${CON.cx}" cy="${CON.cy}" r="${r}"></circle>`;
+        svg += `<text class="con-ring-label" x="${CON.cx - r - 5}" y="${CON.cy + 2}">${esc(label)}</text>`;
+      });
+      [1971,1980,1990,2000,2010,2020,2026].forEach(y => {
+        const a = conAngle(y), c = Math.cos(a), s = Math.sin(a);
+        const x1 = CON.cx + c * (CON.outer - 6), y1 = CON.cy + s * (CON.outer - 6);
+        const x2 = CON.cx + c * CON.outer, y2 = CON.cy + s * CON.outer;
+        const tx = CON.cx + c * (CON.outer + 9), ty = CON.cy + s * (CON.outer + 9);
+        const anchor = c > .25 ? "start" : c < -.25 ? "end" : "middle";
+        svg += `<line class="con-tick" x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}"></line>`;
+        svg += `<text class="con-tick-label" x="${tx.toFixed(1)}" y="${(ty + 2.5).toFixed(1)}" text-anchor="${anchor}">${y}</text>`;
+      });
+      const ordered = items.slice().sort((a,b) => a.year - b.year || a.abbr.localeCompare(b.abbr));
+      if(ordered.length > 1){
+        svg += `<path class="con-path" d="${ordered.map((p, i) => { const q = conPos(p); return (i ? "L" : "M") + q.x.toFixed(1) + " " + q.y.toFixed(1); }).join(" ")}"></path>`;
+      }
+      ordered.forEach(p => {
+        const q = conPos(p);
+        const r = 6 + p.claims * 1.5;
+        const on = p.id === conState.selected;
+        svg += `<g class="con-node${on ? " is-active" : ""}" tabindex="0" role="button" data-id="${esc(p.id)}" style="--c:${lifeColors[p.lifecycle]}" aria-label="${esc(p.abbr)}, ${esc(p.name)}, introduced ${p.year}, ${esc(p.lifecycle)}, ${p.claims} claims, ${pct(p.support_rate, 0)} supported"><title>${esc(p.abbr)} — ${esc(p.name)} (${p.year}) · ${p.claims} claims</title><circle class="halo" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${(r + 7).toFixed(1)}"></circle><circle class="main" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${r.toFixed(1)}"></circle><text x="${q.x.toFixed(1)}" y="${(q.y + r + 10).toFixed(1)}">${esc(shortAbbr(p))}</text></g>`;
+      });
+      $("#con-svg").innerHTML = svg;
+      renderConDetail();
+    }
+    $("#con-filters").innerHTML = ["all", ...lifeOrder].map((l, i) =>
+      `<button class="chip" type="button" data-life="${l}" aria-pressed="${i === 0}">${l === "all" ? `All ${D.paradigms.length}` : l}</button>`
+    ).join("");
+    $("#con-filters").addEventListener("click", e => {
+      const b = e.target.closest("[data-life]"); if(!b) return;
+      conState.filter = b.dataset.life; conState.selected = null;
+      $$("#con-filters .chip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+      renderCon();
+    });
+    function selectCon(id, focus){
+      conState.selected = id; renderCon();
+      if(focus) requestAnimationFrame(() => { const n = document.querySelector(`#con-svg .con-node[data-id="${id}"]`); if(n) n.focus(); });
+    }
+    $("#con-svg").addEventListener("click", e => { const g = e.target.closest(".con-node"); if(g) selectCon(g.dataset.id); });
+    $("#con-svg").addEventListener("keydown", e => {
+      if(e.key !== "Enter" && e.key !== " ") return;
+      const g = e.target.closest(".con-node"); if(!g) return;
+      e.preventDefault(); selectCon(g.dataset.id, true);
+    });
+    conState.selected = D.paradigms[0].id;
+    renderCon();
+
+    // ---- 04 Microscope ---------------------------------------------------
+    const microState = {q:"", status:"all", grade:"all", selected:D.claims[0].id};
+    function microFiltered(){
+      const q = microState.q.trim().toLowerCase();
+      return D.claims.filter(c => (microState.status === "all" || c.status === microState.status) && (microState.grade === "all" || c.grade === microState.grade) && (!q || (c.statement + " " + c.abbr + " " + c.paradigm + " " + c.id).toLowerCase().includes(q)));
+    }
+    function renderMicroDetail(){
+      const c = byId(microState.selected);
+      if(!c){ $("#micro-detail").innerHTML = `<p class="note-sm">No claim selected.</p>`; return; }
+      const sources = c.sources.map(sid => {
+        const s = D.sources[sid];
+        if(!s) return `<div class="source-card"><strong>${esc(sid)}</strong><small>Source record missing.</small></div>`;
+        return `<div class="source-card"><div class="top"><strong>${esc(s.title)}</strong><span class="pill ${gradeClass(s.grade)}">${esc(s.grade)}</span></div><small>${esc(s.publisher)} · ${esc(s.type)} · ${esc(sid)}</small></div>`;
+      }).join("");
+      $("#micro-detail").innerHTML = `<div class="inst-label">Claim receipt · ${esc(c.id)}</div><div class="micro-meta"><span class="pill ${statusClass(c.status)}">${esc(c.status)}</span><span class="pill ${gradeClass(c.grade)}">${esc(c.grade)}</span><span class="pill neutral">${esc(c.abbr)}</span><span class="pill neutral">${c.year}</span></div><h3>${esc(c.statement)}</h3><p class="micro-thesis"><b>Why this grade:</b> ${esc(c.note || "No note recorded.")}</p><div class="panel-label">Captured sources (${c.sources.length})</div><div class="source-list">${sources}</div><div class="micro-actions"><a class="studio-btn" href="#explorer" id="micro-ledger">Open in the ledger ↓</a><button class="studio-btn" type="button" id="micro-copy">Copy claim ID</button></div>`;
+      $("#micro-ledger").addEventListener("click", e => {
+        e.preventDefault();
+        const s = $("#claim-search"); s.value = c.id; s.dispatchEvent(new Event("input", {bubbles:true}));
+        document.getElementById("explorer").scrollIntoView({behavior: reduced ? "auto" : "smooth", block:"start"});
+      });
+      $("#micro-copy").addEventListener("click", async () => {
+        try{ await navigator.clipboard.writeText(c.id); $("#micro-copy").textContent = "Copied"; }
+        catch(err){ $("#micro-copy").textContent = c.id; }
+      });
+    }
+    function renderMicro(){
+      const items = microFiltered();
+      if(items.length && !items.some(c => c.id === microState.selected)) microState.selected = items[0].id;
+      if(!items.length) microState.selected = null;
+      $("#micro-count").textContent = `${items.length} of ${D.claims.length} claims`;
+      $("#micro-rows").innerHTML = items.length ? items.map(c =>
+        `<button class="micro-row${c.id === microState.selected ? " is-active" : ""}" type="button" data-id="${esc(c.id)}" aria-pressed="${c.id === microState.selected}"><span class="micro-id">${esc(c.id)}</span><span class="micro-stmt">${esc(c.statement)}</span><span class="micro-badges"><span class="pill ${statusClass(c.status)}">${esc(c.status)}</span><span class="pill ${gradeClass(c.grade)}">${esc(c.grade)}</span></span></button>`
+      ).join("") : `<p class="note-sm">No claims match those filters.</p>`;
+      renderMicroDetail();
+    }
+    function selectMicroClaim(id){
+      microState.q = ""; microState.status = "all"; microState.grade = "all"; microState.selected = id;
+      $("#micro-search").value = ""; $("#micro-status").value = "all"; $("#micro-grade").value = "all";
+      renderMicro();
+    }
+    $("#micro-search").addEventListener("input", () => { microState.q = $("#micro-search").value; renderMicro(); });
+    $("#micro-status").addEventListener("change", () => { microState.status = $("#micro-status").value; renderMicro(); });
+    $("#micro-grade").addEventListener("change", () => { microState.grade = $("#micro-grade").value; renderMicro(); });
+    $("#micro-rows").addEventListener("click", e => {
+      const b = e.target.closest("[data-id]"); if(!b) return;
+      microState.selected = b.dataset.id;
+      $$("#micro-rows .micro-row").forEach(x => { const on = x === b; x.classList.toggle("is-active", on); x.setAttribute("aria-pressed", String(on)); });
+      renderMicroDetail();
+    });
+    $("#micro-random").addEventListener("click", () => {
+      const items = microFiltered(); if(!items.length) return;
+      microState.selected = items[Math.floor(Math.random() * items.length)].id; renderMicro();
+    });
+    $("#micro-gap").addEventListener("click", () => {
+      const start = D.claims.findIndex(c => c.id === microState.selected);
+      for(let k = 1; k <= D.claims.length; k++){
+        const c = D.claims[(start + k) % D.claims.length];
+        if(c.status !== "supported"){ selectMicroClaim(c.id); return; }
+      }
+    });
+    renderMicro();
+
+    // ---- 05 Pathfinder ---------------------------------------------------
+    const ROUTES = [
+      {id:"map", icon:"◎", label:"Map the field", blurb:"The 60-second version.", promise:"Explain why 73.4% support is not 73.4% primary evidence.", steps:[
+        {title:"Read the abstract", why:"The one-paragraph version, with the six numbers that matter", time:"2 min", href:"#top"},
+        {title:"Run the Stress Test", why:"See what survives when you demand primary evidence", time:"4 min", href:"#demo", panel:"stress"},
+        {title:"Scan the six findings", why:"Each finding has a chart and a caveat", time:"8 min", href:"#findings"},
+        {title:"Open one claim in the Microscope", why:"Read the statement, grade, and every captured source", time:"3 min", href:"#demo", panel:"microscope"},
+        {title:"Take the Gauntlet", why:"Eight questions; the explanation is the lesson", time:"3 min", href:"#demo", panel:"gauntlet"}
+      ]},
+      {id:"audit", icon:"⌕", label:"Audit a claim", blurb:"For a vendor, a paper, or a pitch.", promise:"Leave with a claim-level audit you can defend in a meeting.", steps:[
+        {title:"Find the claim", why:"Search by vendor, acronym, or claim ID", time:"2 min", href:"#demo", panel:"microscope"},
+        {title:"Read the receipt", why:"Check the grade, the note, and whether the sources are primary", time:"3 min", href:"#demo", panel:"microscope"},
+        {title:"Stress the evidence base", why:"Remove encyclopedia-only and single-source support", time:"4 min", href:"#demo", panel:"stress"},
+        {title:"Trace the source web", why:"See which sources carry more than one claim", time:"4 min", href:"#demo", panel:"web"},
+        {title:"Write the falsifier", why:"Name the result that would change your mind", time:"5 min", href:"#method"}
+      ]},
+      {id:"teach", icon:"✎", label:"Teach a room", blurb:"A 35-minute lesson plan.", promise:"A lesson that survives a skeptical room.", steps:[
+        {title:"Start with the beginner guide", why:"Acronyms, then the one-sentence model", time:"6 min", href:"#learn"},
+        {title:"Show the constellation", why:"Let the room click the sky and inspect a paradigm", time:"6 min", href:"#demo", panel:"constellation"},
+        {title:"Run the Gauntlet together", why:"Project it; ask for a show of hands before each answer", time:"8 min", href:"#demo", panel:"gauntlet"},
+        {title:"Assign the calm quiz", why:"Ten questions with explanations, no timer", time:"10 min", href:"#quiz"},
+        {title:"Close with the limits", why:"The atlas is descriptive, not causal", time:"3 min", href:"#method"}
+      ]},
+      {id:"build", icon:"⚙", label:"Choose a component", blurb:"For an architecture decision.", promise:"A shortlist with the evidence grade attached to every claim.", steps:[
+        {title:"Pick the job, not the acronym", why:"Start from the workload and the constraint", time:"3 min", href:"#atlas"},
+        {title:"Compare evidence, not vibes", why:"Open the ledger and filter to E1", time:"5 min", href:"#explorer"},
+        {title:"Check the market context", why:"Read the market and benchmark findings with their caveats", time:"5 min", href:"#findings"},
+        {title:"Run the simulation", why:"Change the assumptions and watch the output", time:"5 min", href:"#simulation"},
+        {title:"Read the reproduction path", why:"Every number is regenerable from committed inputs", time:"4 min", href:"#data"}
+      ]}
+    ];
+    let pathState;
+    try{ pathState = JSON.parse(localStorage.getItem("xpu-route") || "{}"); }catch(err){ pathState = {}; }
+    pathState = {goal: pathState.goal || "map", done: pathState.done || {}};
+    const savePath = () => { try{ localStorage.setItem("xpu-route", JSON.stringify(pathState)); }catch(err){} };
+    function renderPathGoals(){
+      $("#path-goals").innerHTML = ROUTES.map(r =>
+        `<button class="goal-card" type="button" data-goal="${r.id}" aria-pressed="${pathState.goal === r.id}"><span class="icon" aria-hidden="true">${r.icon}</span><b>${esc(r.label)}</b><small>${esc(r.blurb)}</small></button>`
+      ).join("");
+    }
+    function renderPath(){
+      const route = ROUTES.find(r => r.id === pathState.goal) || ROUTES[0];
+      const done = pathState.done[route.id] || [];
+      const count = done.length;
+      $("#path-output").innerHTML = `<div class="route-head"><div><div class="inst-label">Route / ${esc(route.label)}</div><h3>${esc(route.promise)}</h3><p>${esc(route.blurb)} Choose a different destination above at any time.</p></div><button class="link-btn" type="button" id="route-reset">Reset route</button></div><div class="route-progress" aria-hidden="true"><span style="width:${(count / route.steps.length * 100).toFixed(1)}%"></span></div><div class="route-steps">${route.steps.map((s, i) => {
+        const on = done.includes(i);
+        return `<div class="route-step${on ? " done" : ""}"><input type="checkbox" id="route-${i}" data-step="${i}" ${on ? "checked" : ""}><label for="route-${i}"><b>${i + 1}. ${esc(s.title)}</b><small>${esc(s.why)} · ${esc(s.time)}</small></label><a class="go" href="../${s.href}"${s.panel ? ` data-goto-panel="${s.panel}"` : ""}>Go →</a></div>`;
+      }).join("")}</div><div class="route-foot"><span>${count} of ${route.steps.length} stops complete</span><span>Progress is stored in this browser only.</span></div>`;
+    }
+    $("#path-goals").addEventListener("click", e => {
+      const b = e.target.closest("[data-goal]"); if(!b) return;
+      pathState.goal = b.dataset.goal;
+      $$("#path-goals .goal-card").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+      renderPath();
+    });
+    $("#path-output").addEventListener("change", e => {
+      const box = e.target.closest("input[data-step]"); if(!box) return;
+      const route = ROUTES.find(r => r.id === pathState.goal) || ROUTES[0];
+      const done = $$("#path-output input[data-step]").filter(x => x.checked).map(x => Number(x.dataset.step));
+      pathState.done[route.id] = done; savePath();
+      box.closest(".route-step").classList.toggle("done", box.checked);
+      const bar = $("#path-output .route-progress span");
+      if(bar) bar.style.width = (done.length / route.steps.length * 100).toFixed(1) + "%";
+      const foot = $("#path-output .route-foot span");
+      if(foot) foot.textContent = `${done.length} of ${route.steps.length} stops complete`;
+    });
+    $("#path-output").addEventListener("click", e => {
+      if(e.target.closest("#route-reset")){
+        const route = ROUTES.find(r => r.id === pathState.goal) || ROUTES[0];
+        delete pathState.done[route.id]; savePath(); renderPath(); return;
+      }
+      const go = e.target.closest("[data-goto-panel]");
+      if(go) activatePanel(go.dataset.gotoPanel);
+    });
+    renderPathGoals(); renderPath();
+
+    // ---- 06 Gauntlet -----------------------------------------------------
+    const G = {qs:[], idx:0, score:0, streak:0, best:Number(localStorage.getItem("xpu-gauntlet-best") || 0), answered:false, active:false, practice:false, time:12, timer:null, missed:[], visible:false, run:0};
+    const shuffle = a => { const b = a.slice(); for(let i = b.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
+    const makeQ = (prompt, correct, distractors, why) => { const a = shuffle([correct, ...distractors]); return {q:prompt, a, correct:a.indexOf(correct), why}; };
+    function buildGauntlet(){
+      const supported = D.claims.filter(c => c.status === "supported").length;
+      const lifeCounts = {}; D.paradigms.forEach(p => lifeCounts[p.lifecycle] = (lifeCounts[p.lifecycle] || 0) + 1);
+      const topLife = Object.entries(lifeCounts).sort((a,b) => b[1] - a[1])[0][0];
+      const lifeDistractors = Object.keys(lifeCounts).filter(x => x !== topLife).slice(0, 3);
+      const yearCounts = {}; D.paradigms.forEach(p => yearCounts[p.year] = (yearCounts[p.year] || 0) + 1);
+      const topYear = Object.entries(yearCounts).sort((a,b) => b[1] - a[1])[0][0];
+      const yearDistractors = Object.keys(yearCounts).filter(y => y !== topYear).slice(0, 3);
+      const mkts = D.markets.filter(m => typeof m.cagr === "number").slice().sort((a,b) => b.cagr - a.cagr);
+      const topMkt = mkts[0].label;
+      const mktDistractors = mkts.slice(1, 4).map(m => m.label);
+      const term = D.terms[0];
+      return [
+        makeQ("How many processing paradigms are mapped in the atlas?", String(D.paradigms.length), ["16","24","58"], `The atlas maps ${D.paradigms.length} paradigms, from CPU (1971) to TSU (2026).`),
+        makeQ(`How many of the ${D.claims.length} claims are supported by a captured source?`, String(supported), [String(D.claims.length), "15", "32"], `${supported} of ${D.claims.length} claims are supported (73.4%, 95% CI 61.5–82.7%).`),
+        makeQ("Which lifecycle lane has the most paradigms?", topLife, lifeDistractors, `${topLife} has ${lifeCounts[topLife]} paradigms; lifecycle is a reading aid, not a quality score.`),
+        makeQ("Which term has the highest OpenAlex lexical inflation?", `${term.label} (${fmt(term.inflation, 0)}x)`, D.terms.slice(1, 4).map(t => `${t.label} (${fmt(t.inflation, 0)}x)`), `${term.label} returns ${fmt(term.inflation, 0)}x more unquoted than exact-phrase works.`),
+        makeQ(`What share of the ${D.claims.length} claims is supported?`, D.headline.verification_rate, ["50.0%","95.0%","100%"], `47 of 64 claims are supported (${D.headline.verification_rate}; 95% CI ${D.headline.verification_ci}).`),
+        makeQ("What does an E1 grade mean?", "A primary source", ["A news summary","An encyclopedia","An unverified claim"], "E1 means a primary source: official release, filing, peer-reviewed paper, standard, or API dataset."),
+        makeQ("Which market group has the highest equal-weight CAGR?", topMkt, mktDistractors, `${topMkt} tops the group at ${signed(mkts[0].cagr, 1)}; market data is reported separately from technical claims.`),
+        makeQ("Which year introduced the most paradigms?", String(topYear), yearDistractors.map(String), `${topYear} introduced ${yearCounts[topYear]} paradigms in this ledger.`)
+      ];
+    }
+    function stopG(){ if(G.timer){ clearInterval(G.timer); G.timer = null; } }
+    function startGTimer(){
+      stopG();
+      G.timer = setInterval(() => {
+        if(!G.active || G.answered){ stopG(); return; }
+        G.time = Math.max(0, G.time - 0.1);
+        $("#g-time").textContent = G.time.toFixed(1) + "s";
+        $("#g-timebar").style.width = (G.time / 12 * 100) + "%";
+        if(G.time <= 0){ stopG(); gAnswer(-1); }
+      }, 100);
+    }
+    function pauseGauntlet(){ stopG(); }
+    function resumeGauntlet(){ if(G.active && !G.answered && !G.practice && G.visible) startGTimer(); }
+    function gRenderStart(){
+      G.active = false; G.answered = false; stopG();
+      $("#g-score").textContent = "0"; $("#g-streak").textContent = "0"; $("#g-count").textContent = "–";
+      $("#g-time").textContent = "12.0s"; $("#g-timebar").style.width = "100%";
+      $("#g-stage").innerHTML = `<div class="g-start"><div class="g-big">12<span>s</span></div><h3>The twelve-second drill.</h3><p>Eight questions from the ledger. One point per correct answer; the clock resets each question.</p><label class="g-check"><input id="g-practice" type="checkbox"${G.practice ? " checked" : ""}> Practice mode — no clock</label><div><button class="studio-btn primary" id="g-start" type="button">Start the Gauntlet</button></div><p class="note-sm">Best streak: ${G.best}. The clock pauses if you switch instruments.</p></div>`;
+      $("#g-start").addEventListener("click", () => { G.practice = $("#g-practice").checked; gStart(); });
+    }
+    function gStart(){
+      G.run++; stopG();
+      G.qs = buildGauntlet(); G.idx = 0; G.score = 0; G.streak = 0; G.missed = []; G.active = true; G.answered = false;
+      G.visible = !$("#panel-gauntlet").hidden; G.practice = $("#g-practice") ? $("#g-practice").checked : G.practice;
+      $("#g-score").textContent = "0"; $("#g-streak").textContent = "0"; $("#g-best").textContent = `Best streak: ${G.best}`;
+      gNext();
+    }
+    function gNext(){
+      stopG();
+      if(G.idx >= G.qs.length){ gEnd(); return; }
+      G.answered = false; G.time = 12;
+      const q = G.qs[G.idx];
+      $("#g-count").textContent = `${G.idx + 1}/${G.qs.length}`;
+      $("#g-time").textContent = G.practice ? "practice" : "12.0s";
+      $("#g-timebar").style.width = "100%";
+      $("#g-stage").innerHTML = `<div class="g-qnum">Question ${G.idx + 1} · ${G.practice ? "practice" : "12 seconds"}</div><h3 class="g-question">${esc(q.q)}</h3><div class="g-options">${q.a.map((a, i) => `<button class="g-opt" type="button" data-i="${i}"><b>${String.fromCharCode(65 + i)}</b><span>${esc(a)}</span></button>`).join("")}</div><div id="g-feedback"></div>`;
+      $$("#g-stage .g-opt").forEach(b => b.addEventListener("click", () => gAnswer(Number(b.dataset.i))));
+      if(!G.practice && G.visible) startGTimer(); else G.paused = true;
+    }
+    function gAnswer(i){
+      if(!G.active || G.answered) return;
+      G.answered = true; stopG();
+      const q = G.qs[G.idx], ok = i === q.correct;
+      if(ok){ G.score++; G.streak++; G.best = Math.max(G.best, G.streak); try{ localStorage.setItem("xpu-gauntlet-best", String(G.best)); }catch(err){} }
+      else { G.streak = 0; G.missed.push({q:q.q, why:q.why}); }
+      $("#g-score").textContent = G.score; $("#g-streak").textContent = G.streak; $("#g-best").textContent = `Best streak: ${G.best}`;
+      $$("#g-stage .g-opt").forEach((b, j) => {
+        b.disabled = true;
+        b.classList.toggle("correct", j === q.correct);
+        b.classList.toggle("wrong", j === i && !ok);
+      });
+      const fb = $("#g-feedback");
+      if(fb){ fb.className = "g-feedback"; fb.setAttribute("role", "status"); fb.innerHTML = `<strong>${ok ? "Correct." : i < 0 ? "Time." : "Not quite."}</strong> ${esc(q.why)}`; }
+      const run = G.run;
+      setTimeout(() => { if(run !== G.run || !G.active) return; G.idx++; G.answered = false; gNext(); }, ok ? 900 : 1700);
+    }
+    function gEnd(){
+      G.active = false; stopG();
+      const total = G.qs.length, acc = Math.round(G.score / total * 100);
+      const title = G.score === total ? "Signal native" : G.score >= 6 ? "Pattern spotter" : G.score >= 4 ? "Acronym tourist" : "Start with the beginner guide";
+      $("#g-count").textContent = `${total}/${total}`; $("#g-time").textContent = "done"; $("#g-timebar").style.width = "0%";
+      $("#g-stage").innerHTML = `<div class="g-end"><div class="score">${G.score}<small>/${total}</small></div><h3>${title}</h3><p>${acc}% accuracy · best streak ${G.best}. ${G.score >= 6 ? "You can read the ledger under pressure." : "The explanations below are the fastest way back."}</p>${G.missed.length ? `<div class="g-missed">${G.missed.slice(0, 3).map(m => `<div><b>${esc(m.q)}</b>${esc(m.why)}</div>`).join("")}</div>` : `<p>Clean sweep. Try the full quiz with explanations next.</p>`}<div><button class="studio-btn primary" type="button" id="g-again">Run it back</button><a class="studio-btn" href="#quiz">Take the calm quiz ↓</a></div></div>`;
+      $("#g-again").addEventListener("click", gStart);
+    }
+    $("#g-best").textContent = `Best streak: ${G.best}`;
+    gRenderStart();
+
+    // ---- 07 Source web ---------------------------------------------------
+    const sourceCounts = {};
+    D.claims.forEach(c => c.sources.forEach(sid => { sourceCounts[sid] = (sourceCounts[sid] || 0) + 1; }));
+    const topSources = Object.entries(sourceCounts).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 10).map(([id, count]) => ({id, count, ...D.sources[id]}));
+    const webState = {filter:"all", source:topSources[0] ? topSources[0].id : null, claim:null};
+    function webClaims(){
+      const ids = new Set(topSources.map(s => s.id));
+      let items = D.claims.filter(c => c.sources.some(s => ids.has(s)));
+      if(webState.filter === "single") items = items.filter(c => c.sources.length === 1);
+      if(webState.filter === "supported") items = items.filter(c => c.status === "supported");
+      return items;
+    }
+    function renderWebDetail(){
+      if(webState.claim){
+        const c = byId(webState.claim); if(!c) return;
+        const sources = c.sources.map(sid => {
+          const s = D.sources[sid];
+          return s ? `<div class="source-card"><div class="top"><strong>${esc(s.title)}</strong><span class="pill ${gradeClass(s.grade)}">${esc(s.grade)}</span></div><small>${esc(s.publisher)} · ${esc(s.type)} · ${esc(sid)}</small></div>` : `<div class="source-card"><strong>${esc(sid)}</strong></div>`;
+        }).join("");
+        $("#web-detail").innerHTML = `<div class="inst-label">Claim receipt</div><div class="micro-meta"><span class="pill ${statusClass(c.status)}">${esc(c.status)}</span><span class="pill ${gradeClass(c.grade)}">${esc(c.grade)}</span><span class="pill neutral">${esc(c.abbr)}</span></div><h3>${esc(c.statement)}</h3><p>${esc(c.note || "No note recorded.")}</p><div class="panel-label">Sources</div><div class="source-list">${sources}</div><div class="micro-actions"><button class="studio-btn" type="button" id="web-inspect">Inspect in Microscope →</button></div>`;
+        $("#web-inspect").addEventListener("click", () => { selectMicroClaim(c.id); goPanel("microscope"); });
+        return;
+      }
+      const s = topSources.find(x => x.id === webState.source) || topSources[0];
+      if(!s) return;
+      const linked = webClaims().filter(c => c.sources.includes(s.id));
+      $("#web-detail").innerHTML = `<div class="inst-label">Source receipt</div><div class="micro-meta"><span class="pill ${gradeClass(s.grade)}">${esc(s.grade)}</span><span class="pill neutral">${esc(s.type)}</span><span class="pill neutral">${s.count} claims</span></div><h3>${esc(s.title)}</h3><p>${esc(s.publisher)} · ${esc(s.id)}</p><div class="panel-label">Claims in this view</div><div class="web-claims">${linked.length ? linked.map(c => `<button class="web-claim-btn" type="button" data-claim="${esc(c.id)}">${esc(c.id)} · ${esc(c.abbr)} — ${esc(clip(c.statement, 92))}</button>`).join("") : `<p class="note-sm">No claims in the current filter use this source.</p>`}</div><p class="note-sm">Highlighting shows shared provenance, not causation. Select a claim to read its full receipt.</p>`;
+    }
+    function renderWebGraph(){
+      const claims = webClaims();
+      if(webState.claim && !claims.some(c => c.id === webState.claim)) webState.claim = null;
+      if(!topSources.some(s => s.id === webState.source)) webState.source = topSources[0] ? topSources[0].id : null;
+      const sy = i => 40 + i * (440 / Math.max(1, topSources.length - 1));
+      const cy = i => 30 + i * (460 / Math.max(1, claims.length - 1));
+      let edges = "", sources = "", nodes = "";
+      topSources.forEach((s, si) => {
+        const y = sy(si), active = !webState.claim && webState.source === s.id;
+        sources += `<g class="web-source web-node${active ? " is-lit is-active" : ""}" data-source="${esc(s.id)}" tabindex="0" role="button" aria-label="Source ${esc(s.id)}: ${esc(s.title)}, ${s.grade}, ${s.count} claims"><rect x="8" y="${(y - 12).toFixed(1)}" width="232" height="24" rx="6"></rect><circle cx="250" cy="${(y).toFixed(1)}" r="6" fill="${gradeColor(s.grade)}"></circle><text x="16" y="${(y + 3).toFixed(1)}">${esc(clip(s.title, 29))}</text><text class="grade" x="232" y="${(y + 3).toFixed(1)}" text-anchor="end" fill="${gradeColor(s.grade)}">${esc(s.grade)}</text></g>`;
+      });
+      claims.forEach((c, ci) => {
+        const y = cy(ci), active = webState.claim === c.id;
+        const lit = webState.claim ? active : (webState.source && c.sources.includes(webState.source));
+        nodes += `<g class="web-claim web-node${lit ? " is-lit" : ""}${active ? " is-active" : ""}" data-claim="${esc(c.id)}" tabindex="0" role="button" aria-label="Claim ${esc(c.id)}: ${esc(c.statement)}"><rect x="585" y="${(y - 8).toFixed(1)}" width="185" height="16" rx="5"></rect><circle class="dot" cx="577" cy="${(y).toFixed(1)}" r="4.5" fill="${statusColor(c.status)}"></circle><text x="592" y="${(y + 3).toFixed(1)}">${esc(c.id)} · ${esc(clip(c.abbr, 18))}</text></g>`;
+        c.sources.forEach(sid => {
+          const si = topSources.findIndex(s => s.id === sid);
+          if(si < 0) return;
+          const litEdge = webState.claim ? active : (webState.source === sid);
+          edges += `<path class="web-edge${litEdge ? " is-lit" : ""}" d="M 258 ${sy(si).toFixed(1)} C 380 ${sy(si).toFixed(1)}, 450 ${y.toFixed(1)}, 570 ${y.toFixed(1)}"></path>`;
+        });
+      });
+      const focused = !!webState.claim || !!webState.source;
+      $("#web-svg").setAttribute("class", "web-svg" + (focused ? " is-focused" : ""));
+      $("#web-svg").innerHTML = edges + sources + nodes;
+      const single = D.claims.filter(c => c.sources.length === 1).length;
+      $("#web-note").textContent = `${claims.length} claims in view · ${topSources.length} sources · ${single} of ${D.claims.length} claims have a single captured source.`;
+    }
+    function renderWeb(){
+      renderWebGraph(); renderWebDetail();
+      $("#web-text").innerHTML = `<p>Top ${topSources.length} sources by claim coverage. The full ledger contains ${D.claims.length} claims and ${Object.keys(D.sources).length} sources.</p><ul>${topSources.map(s => `<li><b>${esc(s.id)}</b> ${esc(s.title)} — ${s.count} claims (${esc(s.grade)})</li>`).join("")}</ul>`;
+    }
+    $("#web-filters").innerHTML = [["all","All claims"],["single","Single-source"],["supported","Supported"]].map(f =>
+      `<button class="chip" type="button" data-filter="${f[0]}" aria-pressed="${webState.filter === f[0]}">${f[1]}</button>`
+    ).join("");
+    $("#web-filters").addEventListener("click", e => {
+      const b = e.target.closest("[data-filter]"); if(!b) return;
+      webState.filter = b.dataset.filter; webState.claim = null;
+      $$("#web-filters .chip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+      renderWeb();
+    });
+    $("#web-svg").addEventListener("click", e => {
+      const cl = e.target.closest("[data-claim]"); if(cl){ webState.claim = cl.dataset.claim; renderWebGraph(); renderWebDetail(); return; }
+      const so = e.target.closest("[data-source]"); if(so){ webState.claim = null; webState.source = so.dataset.source; renderWebGraph(); renderWebDetail(); }
+    });
+    $("#web-svg").addEventListener("keydown", e => {
+      if(e.key !== "Enter" && e.key !== " ") return;
+      const el = e.target.closest("[data-claim],[data-source]"); if(!el) return;
+      e.preventDefault(); el.dispatchEvent(new MouseEvent("click", {bubbles:true}));
+    });
+    $("#web-detail").addEventListener("click", e => {
+      const b = e.target.closest("[data-claim]"); if(!b) return;
+      webState.claim = b.dataset.claim; renderWebGraph(); renderWebDetail();
+    });
+    renderWeb();
+
+    // ---- Tabs ------------------------------------------------------------
+    const studioTabs = $$("#studio-nav [role=tab]");
+    const studioPanels = $$(".studio-panel");
+    function activatePanel(name, focusTab){
+      const tab = studioTabs.find(t => t.dataset.panel === name); if(!tab) return;
+      studioTabs.forEach(t => { const on = t === tab; t.setAttribute("aria-selected", String(on)); t.tabIndex = on ? 0 : -1; });
+      studioPanels.forEach(p => { p.hidden = p.id !== "panel-" + name; });
+      if(name !== "signal") stopSignal();
+      if(name === "gauntlet"){ G.visible = true; resumeGauntlet(); }
+      else { G.visible = false; pauseGauntlet(); }
+      const nav = $("#studio-nav"), nr = nav.getBoundingClientRect(), tr = tab.getBoundingClientRect();
+      if(tr.left < nr.left || tr.right > nr.right) nav.scrollBy({left: tr.left - nr.left - 8, behavior: "smooth"});
+      if(focusTab) tab.focus();
+    }
+    function goPanel(name){ activatePanel(name); scrollToStudio(); }
+    studioTabs.forEach(tab => tab.addEventListener("click", () => activatePanel(tab.dataset.panel)));
+    $("#studio-nav").addEventListener("keydown", e => {
+      const i = studioTabs.indexOf(document.activeElement); if(i < 0) return;
+      let next = null;
+      if(e.key === "ArrowRight") next = (i + 1) % studioTabs.length;
+      else if(e.key === "ArrowLeft") next = (i - 1 + studioTabs.length) % studioTabs.length;
+      else if(e.key === "Home") next = 0;
+      else if(e.key === "End") next = studioTabs.length - 1;
+      if(next === null) return;
+      e.preventDefault(); activatePanel(studioTabs[next].dataset.panel, true);
+    });
+    activatePanel("signal");
+  })();
 
   // Atlas Mind — a 3D concept game that builds a network as you learn
   const LAB_KEY = "xpu-lab";
@@ -1545,11 +2350,6 @@ html.embed{scroll-padding-top:0!important}
     try{ await navigator.clipboard.writeText(citation); $("#copy-status").textContent = "Citation copied to the clipboard."; }
     catch(err){ $("#copy-status").textContent = "Copy failed — the citation is in the README."; }
   });
-
-  if(params.has("embed") && location.hash.length > 1){
-    const target = document.getElementById(location.hash.slice(1));
-    if(target) setTimeout(() => target.scrollIntoView({block:"start"}), 120);
-  }
 
   // Scroll spy
   const links = $$(".nav-links a");
