@@ -276,6 +276,94 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   .era{height:160px}
   .micro{display:none}
 }
+/* Live demo */
+.demo-shell{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--surface) 88%,black));border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:var(--shadow)}
+.demo-tabs{display:flex;gap:6px;overflow-x:auto;padding:5px;background:var(--surface2);border:1px solid var(--line);border-radius:13px;margin-bottom:12px;scrollbar-width:none}
+.demo-tabs::-webkit-scrollbar{display:none}
+.demo-tab{appearance:none;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:9px;padding:8px 12px;font-size:12px;font-weight:800;white-space:nowrap;cursor:pointer}
+.demo-tab:hover{color:var(--text);background:var(--surface)}
+.demo-tab[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:#041012}
+.demo-browser{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:#041012;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.demo-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;background:var(--surface2);border-bottom:1px solid var(--line)}
+.demo-dots{display:flex;gap:5px;flex:0 0 auto}
+.demo-dots i{width:9px;height:9px;border-radius:50%;background:var(--faint);opacity:.55}
+.demo-dots i:nth-child(1){background:#fb7185}
+.demo-dots i:nth-child(2){background:#fbbf24}
+.demo-dots i:nth-child(3){background:#5eead4}
+.demo-url{flex:1;min-width:0;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar a{font-size:11px;font-weight:850;white-space:nowrap}
+.demo-viewport{position:relative;aspect-ratio:16/10;background:var(--bg2);overflow:hidden}
+.demo-poster{position:absolute;inset:0}
+.demo-poster img{width:100%;height:100%;object-fit:cover;object-position:top center;opacity:.6;filter:saturate(.9)}
+.demo-launch{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,rgba(4,16,18,.1),rgba(4,16,18,.86));text-align:center;padding:22px;z-index:2}
+.demo-launch[hidden]{display:none}
+.demo-launch > div{max-width:430px}
+.demo-launch h3{font-size:clamp(1.25rem,2.2vw,1.8rem);letter-spacing:-.035em;margin:0 0 6px}
+.demo-launch p{color:var(--muted);font-size:12px;margin:0 0 14px}
+.demo-launch .tiny{margin:10px 0 0;color:var(--faint);font-size:10px}
+.demo-iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;opacity:0;transition:opacity .35s ease}
+.demo-iframe.ready{opacity:1}
+.demo-viewport.loaded .demo-poster,.demo-viewport.loaded .demo-launch{display:none}
+.demo-caption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;margin-top:10px;color:var(--muted);font-size:12px}
+.demo-caption strong{color:var(--text)}
+.demo-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:8px;font-size:11px;color:var(--faint)}
+.embed .site-header,.embed #demo,.embed .footer,.embed .skip,.embed .progress{display:none!important}
+html.embed{scroll-padding-top:0!important}
+.embed .section{scroll-margin-top:0}
+.embed body{background:var(--bg)}
+/* 3D Atlas Mind */
+.lab-shell{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);gap:16px;align-items:stretch}
+.lab-stage{position:relative;min-height:530px;border:1px solid var(--line2);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 50% 45%,#0e2d36,#041012 72%);box-shadow:var(--shadow)}
+#lab-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+#lab-canvas:active{cursor:grabbing}
+.lab-stage.is-fallback #lab-canvas{display:none}
+.lab-fallback{position:absolute;inset:0;padding:54px 16px 18px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-content:center;overflow:auto}
+.lab-chip{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:8px 6px;text-align:center;font-size:10px;font-weight:850;color:var(--faint);transition:background .25s ease,color .25s ease,border-color .25s ease}
+.lab-chip.lit{background:color-mix(in srgb,var(--teal) 14%,var(--surface));border-color:color-mix(in srgb,var(--teal) 45%,var(--line));color:var(--teal)}
+.lab-overlay{position:absolute;inset:12px 12px auto;display:flex;justify-content:space-between;align-items:center;gap:8px;pointer-events:none;z-index:2}
+.lab-badge{font-size:10px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:rgba(4,16,18,.72);border:1px solid color-mix(in srgb,var(--teal) 30%,transparent);padding:6px 9px;border-radius:999px;backdrop-filter:blur(8px)}
+.lab-hint{font-size:10px;color:var(--faint);background:rgba(4,16,18,.62);border:1px solid var(--line);padding:6px 9px;border-radius:999px}
+.lab-start{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:10px;background:radial-gradient(circle at 50% 45%,rgba(13,42,51,.6),rgba(4,16,18,.94))}
+.lab-start[hidden]{display:none}
+.lab-start strong{font-size:clamp(1.7rem,3.2vw,2.6rem);letter-spacing:-.055em;line-height:1}
+.lab-start p{max-width:42ch;color:var(--muted);font-size:12px;margin:0 0 4px}
+.lab-panel{display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px;min-height:530px}
+.lab-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#lab-step{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:850}
+#lab-voice{appearance:none;border:1px solid var(--line2);background:var(--surface2);color:var(--muted);border-radius:999px;padding:5px 10px;font-size:10px;font-weight:800;cursor:pointer}
+#lab-voice[aria-pressed="true"]{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 40%,var(--line2))}
+.lab-question{font-size:clamp(1.1rem,1.7vw,1.4rem);font-weight:850;letter-spacing:-.03em;line-height:1.3;min-height:3.9em}
+.lab-answers{display:grid;gap:7px}
+.lab-answer{appearance:none;width:100%;text-align:left;background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:10px 11px;font-size:12px;font-weight:750;cursor:pointer;display:flex;align-items:baseline;gap:8px}
+.lab-answer:hover:not(:disabled){border-color:var(--line2);background:color-mix(in srgb,var(--teal) 6%,var(--surface2))}
+.lab-answer b{font-size:11px;letter-spacing:.02em}
+.lab-answer small{color:var(--faint);font-weight:650;font-size:10px}
+.lab-answer.correct{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 12%,var(--surface2))}
+.lab-answer.wrong{border-color:var(--rose);background:color-mix(in srgb,var(--rose) 10%,var(--surface2))}
+.lab-answer:disabled{cursor:default;opacity:.9}
+.lab-feedback{min-height:3.4em;font-size:11px;color:var(--muted);margin:0;line-height:1.5}
+.lab-feedback strong{color:var(--text)}
+.lab-log-wrap{border-top:1px solid var(--line);padding-top:9px;min-height:0;display:flex;flex-direction:column;flex:1}
+.lab-log-wrap h3{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 7px}
+#lab-log{list-style:none;margin:0;padding:0;overflow:auto;max-height:170px;display:grid;gap:4px}
+#lab-log li{font-size:11px;color:var(--muted);display:flex;gap:7px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:4px}
+#lab-log li b{color:var(--teal);font-size:10px;min-width:48px}
+#lab-log li span{color:var(--faint);font-size:9px}
+.lab-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:11px}
+.lab-actions button{appearance:none;border:0;background:none;color:var(--faint);font-size:10px;text-decoration:underline;cursor:pointer;padding:0}
+@media (max-width:980px){
+  .lab-shell{grid-template-columns:1fr}
+  .lab-stage{min-height:420px}
+  .lab-panel{min-height:0}
+}
+@media (max-width:700px){
+  .demo-viewport{aspect-ratio:4/5}
+  .demo-caption{display:block}
+  .demo-caption span{display:block;margin-top:3px}
+  .lab-stage{min-height:360px}
+  .lab-hint{display:none}
+  .lab-fallback{grid-template-columns:repeat(3,1fr);padding-top:48px}
+}
 </style>
 </head>
 <body>
@@ -290,12 +378,14 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <span>XPU-Atlas<small>Evidence atlas · 2026</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#demo">Live demo</a>
       <a href="#why">Why</a>
       <a href="#findings">Findings</a>
       <a href="#atlas">Atlas</a>
       <a href="#explorer">Claims</a>
       <a href="#learn">Learn</a>
       <a href="#quiz">Quiz</a>
+      <a href="#lab">3D Lab</a>
       <a href="#use-cases">Use cases</a>
       <a href="#data">Data</a>
       <a href="#simulation">Lab</a>
@@ -313,8 +403,8 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <h1>The processor market, <em>mapped with evidence.</em></h1>
       <p class="lede">A plain-English, fully sourced atlas of <strong>20 processing-unit paradigms</strong> — built from <strong>64 graded claims</strong>, <strong>58 sources</strong>, three frozen public datasets, seven figures, a design-space lab, and a one-command audit. See what is real, what is inflated, and where value is moving.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#findings">Explore the six findings <span aria-hidden="true">→</span></a>
-        <a class="btn btn-ghost" href="#quiz">Take the 5-minute quiz</a>
+        <a class="btn btn-primary" href="#demo">See the live product <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#findings">Explore the six findings</a>
       </div>
       <div class="micro">
         <span>No signup</span><span>No tracking</span><span>Works offline</span><span>MIT code · CC-BY-4.0 data</span>
@@ -330,6 +420,45 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
       <div class="signal"><span>Matmul speedup vs serial</span><b>11,918<small>x</small></b></div>
       <div class="signal-note"><span aria-hidden="true">◎</span><span>Every number on this page is generated from committed data. The full ledger, sources, and methods are linked at the bottom.</span></div>
     </aside>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="wrap">
+    <div class="kicker">Live, not a mockup</div>
+    <h2>Click the product. It is the product.</h2>
+    <p class="sub">Every tab below loads the real XPU-Atlas page in an iframe — the same HTML, data, charts, filters, quiz, and 3D lab that ship in this repository. No screenshots pretending to be software.</p>
+    <div class="demo-shell">
+      <div class="demo-tabs" id="demo-tabs" role="tablist" aria-label="Product screens">
+        <button class="demo-tab" id="demo-tab-home" type="button" role="tab" aria-selected="true" aria-controls="demo-viewport" data-screen="home">Home</button>
+        <button class="demo-tab" id="demo-tab-findings" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="findings">Findings</button>
+        <button class="demo-tab" id="demo-tab-atlas" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="atlas">Atlas</button>
+        <button class="demo-tab" id="demo-tab-explorer" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="explorer">Claims</button>
+        <button class="demo-tab" id="demo-tab-learn" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="learn">Learn</button>
+        <button class="demo-tab" id="demo-tab-quiz" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="quiz">Quiz</button>
+        <button class="demo-tab" id="demo-tab-lab" type="button" role="tab" aria-selected="false" aria-controls="demo-viewport" tabindex="-1" data-screen="lab">3D Lab</button>
+      </div>
+      <div class="demo-browser">
+        <div class="demo-bar">
+          <span class="demo-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <div class="demo-url" id="demo-url" aria-label="Page address">m0-ar.github.io/xpu-atlas/</div>
+          <a id="demo-open" href="../preview.html#top" target="_blank" rel="noopener">Open full screen ↗</a>
+        </div>
+        <div class="demo-viewport" id="demo-viewport" role="tabpanel" aria-labelledby="demo-tab-home" tabindex="0">
+          <div class="demo-poster" aria-hidden="true"><img id="demo-poster-img" src="../assets/screenshots/preview-hero.png" alt=""></div>
+          <div class="demo-launch" id="demo-launch">
+            <div>
+              <h3 id="demo-launch-title">See the real thing</h3>
+              <p>This frame runs the actual static site. Tabs switch the real page, not a picture of it.</p>
+              <button class="btn btn-primary" id="demo-launch-btn" type="button">Launch interactive demo</button>
+              <p class="tiny">Same HTML · same data · same JavaScript · no server required</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-caption" id="demo-caption"><span><strong>Home.</strong> The 10-second pitch: 20 paradigms, 64 claims, 58 sources.</span><span>Loaded only when you ask for it.</span></div>
+      <div class="demo-foot"><a href="../index.html">Browse all pages ↗</a><span>Keyboard: use ← → on the tab bar. The frame scrolls independently.</span></div>
+    </div>
   </div>
 </section>
 
@@ -523,6 +652,35 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   </div>
 </section>
 
+<section class="section" id="lab">
+  <div class="wrap">
+    <div class="kicker">3D learning lab</div>
+    <h2>Build the atlas in your head.</h2>
+    <p class="sub">A game, not a decoration. Every correct answer adds a processor to a live 3D network, connects it to what you already know, and speaks the concept aloud. The shape of the network is the shape of your understanding.</p>
+    <div class="lab-shell">
+      <div class="lab-stage" id="lab-stage">
+        <canvas id="lab-canvas" aria-hidden="true"></canvas>
+        <div class="lab-overlay" aria-hidden="true"><span class="lab-badge" id="lab-progress">0 / 20 concepts</span><span class="lab-hint">Drag to orbit · answers light the network</span></div>
+        <div class="lab-start" id="lab-start">
+          <strong>Atlas Mind</strong>
+          <p>Twenty concepts. One network. Answer a short clue, watch the node light up, and hear the idea in plain English. Progress is saved in this browser.</p>
+          <button class="btn btn-primary" id="lab-start-btn" type="button">Start the 3D network</button>
+          <button class="btn btn-ghost" id="lab-text-btn" type="button">Use the text version</button>
+        </div>
+      </div>
+      <div class="lab-panel">
+        <div class="lab-top"><span id="lab-step">Ready when you are</span><button id="lab-voice" type="button" aria-pressed="true">Voice: on</button></div>
+        <div class="lab-question" id="lab-question">Press start to build a network of twenty processing-unit concepts.</div>
+        <div class="lab-answers" id="lab-answers"></div>
+        <p class="lab-feedback" id="lab-feedback" role="status" aria-live="polite">Each answer is tied to the same ledger as the atlas. A wrong answer does not add a node; the concept comes back later.</p>
+        <div class="lab-log-wrap"><h3>Concept log</h3><ol id="lab-log" aria-live="polite"></ol></div>
+        <div class="lab-actions"><button id="lab-reset" type="button">Reset network</button><a href="#atlas">Open the full atlas ↗</a></div>
+      </div>
+    </div>
+    <p class="note">Node colour is the paradigm’s lifecycle and the centre is the evidence core. The 3D layer is optional and loads only after you press start. If WebGL is unavailable, the game switches to a text-and-grid version with the same questions and progress. Narration uses the browser’s speech synthesis and can be muted at any time.</p>
+  </div>
+</section>
+
 <section class="section" id="use-cases">
   <div class="wrap">
     <div class="kicker">Who it is for</div>
@@ -649,6 +807,8 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   const gradeClass = g => g==="E1"?"ok":g==="E0"?"bad":"neutral";
   const statusClass = s => s==="supported"?"ok":s==="unverified"?"warn":s==="refuted"?"bad":"warn";
 
+  const params = new URLSearchParams(location.search);
+  if(params.has("embed")) document.documentElement.classList.add("embed");
   // Theme
   const root = document.documentElement;
   const saved = localStorage.getItem("xpu-theme");
@@ -831,12 +991,558 @@ legend{font-size:19px;font-weight:850;letter-spacing:-.03em;line-height:1.25;mar
   pathInputs.forEach(i=>{ if(savedPath[i.dataset.path]) i.checked = true; i.addEventListener("change", updatePath); });
   updatePath();
 
+
+  // Live demo tabs (real iframes, loaded only on demand)
+  const assetBase = /\/docs\//.test(location.pathname) ? "../" : "./";
+  const DEMO_SCREENS = {
+    home: {id:"home", label:"Home", hash:"top", poster:"assets/screenshots/preview-hero.png", alt:"The XPU-Atlas landing screen with headline numbers and navigation", caption:"<strong>Home.</strong> The 10-second pitch: 20 paradigms, 64 claims, 58 sources."},
+    findings: {id:"findings", label:"Findings", hash:"findings", poster:"assets/screenshots/preview-findings.png", alt:"The six-findings screen with charts for inflation, evidence, lifecycle, attention, markets, and benchmarks", caption:"<strong>Findings.</strong> Six charts generated from the committed data — hover and inspect."},
+    atlas: {id:"atlas", label:"Atlas", hash:"atlas", poster:"assets/screenshots/preview-atlas.png", alt:"The interactive atlas grid of twenty processing-unit paradigms", caption:"<strong>Atlas.</strong> Filter the 20 paradigms and open any evidence card."},
+    explorer: {id:"explorer", label:"Claims", hash:"explorer", poster:"assets/screenshots/preview-explorer.png", alt:"The claim explorer with search, status, and evidence-grade filters", caption:"<strong>Claims.</strong> Search 64 claims by status, grade, and paradigm."},
+    learn: {id:"learn", label:"Learn", hash:"learn", poster:"assets/screenshots/preview-learn.png", alt:"The beginner learning path from acronyms to evidence grades", caption:"<strong>Learn.</strong> The beginner path from acronyms to evidence grades."},
+    quiz: {id:"quiz", label:"Quiz", hash:"quiz", poster:"assets/screenshots/preview-quiz.png", alt:"The ten-question XPU-Atlas quiz with explanations", caption:"<strong>Quiz.</strong> Ten questions with explanations and a final score."},
+    lab: {id:"lab", label:"3D Lab", hash:"lab", poster:"assets/screenshots/preview-lab.png", alt:"The Atlas Mind 3D learning lab with a glowing concept network", caption:"<strong>3D Lab.</strong> Build a network of 20 concepts; voice narration included."}
+  };
+  Object.values(DEMO_SCREENS).forEach(screen => { screen.poster = assetBase + screen.poster; });
+  const demoTabs = $$("#demo-tabs [role=tab]");
+  const demoViewport = $("#demo-viewport");
+  const demoPoster = $("#demo-poster-img");
+  const demoLaunch = $("#demo-launch");
+  const demoLaunchTitle = $("#demo-launch-title");
+  const demoUrl = $("#demo-url");
+  const demoCaption = $("#demo-caption");
+  const demoOpen = $("#demo-open");
+  const demoFrameHost = demoViewport;
+  let activeScreen = DEMO_SCREENS.home;
+  let demoFrame = null;
+
+  function selectDemoScreen(screen){
+    activeScreen = screen;
+    demoTabs.forEach(tab => {
+      const on = tab.dataset.screen === screen.id;
+      tab.setAttribute("aria-selected", String(on));
+      tab.tabIndex = on ? 0 : -1;
+      if(on) demoViewport.setAttribute("aria-labelledby", tab.id);
+    });
+    demoPoster.src = screen.poster;
+    demoPoster.alt = screen.alt;
+    demoUrl.textContent = "m0-ar.github.io/xpu-atlas/" + (screen.hash === "top" ? "" : "#" + screen.hash);
+    demoCaption.innerHTML = "<span>" + screen.caption + "</span><span>Loaded only when you ask for it.</span>";
+    demoOpen.href = "preview.html#" + screen.hash;
+    demoLaunchTitle.textContent = "Open " + screen.label;
+  }
+
+  function loadDemoScreen(screen){
+    demoLaunch.hidden = true;
+    demoViewport.classList.remove("loaded");
+    demoViewport.setAttribute("aria-busy", "true");
+    if(demoFrame){ demoFrame.remove(); demoFrame = null; }
+    const frame = document.createElement("iframe");
+    frame.className = "demo-iframe";
+    frame.title = "Live XPU-Atlas " + screen.label + " screen";
+    frame.loading = "lazy";
+    frame.src = "preview.html?embed=1#" + screen.hash;
+    frame.addEventListener("load", () => {
+      frame.classList.add("ready");
+      demoViewport.classList.add("loaded");
+      demoViewport.setAttribute("aria-busy", "false");
+    });
+    frame.addEventListener("error", () => {
+      demoViewport.setAttribute("aria-busy", "false");
+      demoLaunch.hidden = false;
+      demoLaunchTitle.textContent = "The live frame did not load";
+    });
+    demoFrameHost.appendChild(frame);
+    demoFrame = frame;
+  }
+
+  demoTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      const screen = DEMO_SCREENS[tab.dataset.screen];
+      if(!screen) return;
+        selectDemoScreen(screen);
+      loadDemoScreen(screen);
+    });
+  });
+  $("#demo-tabs").addEventListener("keydown", event => {
+    const index = demoTabs.indexOf(document.activeElement);
+    if(index < 0) return;
+    let next = null;
+    if(event.key === "ArrowRight") next = (index + 1) % demoTabs.length;
+    else if(event.key === "ArrowLeft") next = (index - 1 + demoTabs.length) % demoTabs.length;
+    else if(event.key === "Home") next = 0;
+    else if(event.key === "End") next = demoTabs.length - 1;
+    if(next === null) return;
+    event.preventDefault();
+    demoTabs[next].focus();
+  });
+  $("#demo-launch-btn").addEventListener("click", () => loadDemoScreen(activeScreen));
+  selectDemoScreen(DEMO_SCREENS.home);
+
+  // Atlas Mind — a 3D concept game that builds a network as you learn
+  const LAB_KEY = "xpu-lab";
+  const LAB_COLORS = {"general-purpose":"#5eead4", "absorbed":"#fbbf24", "integrated":"#7dd3fc", "commercial":"#a78bfa", "research":"#fb7185", "emerging":"#f472b6", "embedded":"#94a3b8"};
+  const LAB_ABBR = {security:"TPM", neuromorphic:"NEURO", photonic:"PHOTON", biological:"WET"};
+  const LAB_CLUES = {
+    cpu: "Which unit runs the operating system, compiler, and scheduler?",
+    gpu: "Which unit trains a 100-billion-parameter model with dense matrix multiplication?",
+    tpu: "Which unit is a cloud vendor's matrix engine for TensorFlow-style workloads?",
+    npu: "Which unit handles always-on wake-word detection in a battery-powered earbud?",
+    dpu: "Which unit moves 400 Gb/s of tenant traffic with encryption and telemetry inside a smart NIC?",
+    lpu: "Which label describes a language-model accelerator whose category was absorbed into broader AI chips?",
+    qpu: "Which unit samples a probability distribution for combinatorial optimisation and is still research-grade?",
+    photonic: "Which unit computes with light instead of electrons?",
+    neuromorphic: "Which unit uses an event-driven spiking architecture inspired by the brain?",
+    biological: "Which substrate uses living neurons or biological material?",
+    wse: "Which unit is one enormous chip spanning an entire silicon wafer?",
+    fpga: "Which unit offers logic you can reprogram after manufacturing?",
+    asic: "Which unit is fixed-function silicon built for one task and expensive to change?",
+    mcu: "Which unit is the tiny embedded computer inside a washing machine or sensor?",
+    isp: "Which unit turns raw sensor data into a usable camera image inside a phone?",
+    security: "Which unit stores keys and attests boot integrity in a dedicated hardware vault?",
+    ppu: "Which 2006 add-in card handled game physics and was absorbed into GPUs?",
+    spu: "Which vector coprocessor belonged to the Cell processor and was absorbed?",
+    apu: "Which unit fuses CPU and GPU on one die to share memory?",
+    tsu: "Which emerging unit samples thermodynamic states to solve optimisation problems?"
+  };
+  const LAB_SAY = {
+    cpu: "The general-purpose orchestrator. It runs the operating system, the compiler, and the scheduler; accelerators do not replace it.",
+    gpu: "A parallel throughput engine. Thousands of lanes make dense matrix multiplication fast; the local benchmark measured an eleven-thousand-nine-hundred-eighteen-times gap over serial Python.",
+    tpu: "A vendor-specific matrix engine. It is commercial and workload-specific, so a benchmark only means something next to the exact model and batch size.",
+    npu: "An integrated neural accelerator. It is small, efficient, and increasingly part of the system-on-chip rather than a standalone product.",
+    dpu: "A data-movement processor. It handles networking, storage, encryption, and telemetry inside the server fabric.",
+    lpu: "A language-oriented label. The category is absorbed: the idea survives inside broader AI accelerators, even when the acronym does not.",
+    qpu: "A quantum processing unit. It is research-grade, probabilistic, and not a drop-in replacement for a classical processor.",
+    photonic: "A light-based processor. Research-stage in 2025; the promise is bandwidth and energy, the constraint is manufacturability.",
+    neuromorphic: "An event-driven, brain-inspired architecture. It shines on sparse signals, not on dense matrix algebra.",
+    biological: "Wetware: living neurons as a substrate. Research only, with deep ethical and reproducibility questions.",
+    wse: "Wafer-scale integration. One huge chip spans a wafer to trade yield for massive on-chip communication.",
+    fpga: "Reconfigurable logic. It is flexible after manufacturing, which is valuable for prototyping and low-volume niches.",
+    asic: "Fixed-function silicon. It is efficient at volume and expensive to change, which is why definitions and roadmaps matter.",
+    mcu: "A microcontroller. It is the embedded computer inside sensors, appliances, and vehicles.",
+    isp: "An image signal processor. It turns raw sensor data into a usable picture, and it is now integrated into phone systems-on-chip.",
+    security: "A hardware root of trust. It stores keys and attests boot integrity; it is a security processor, not an AI accelerator.",
+    ppu: "A physics processing unit. The 2006 add-in card category was absorbed into GPUs; the label outlived the standalone chip.",
+    spu: "A synergistic processing unit. The Cell chip's vector coprocessor was absorbed; it is a cautionary tale about exotic programming models.",
+    apu: "An accelerated processing unit. CPU and GPU on one die share memory and power; integration, not replacement.",
+    tsu: "A thermodynamic sampling unit. It is emerging in 2026 and aims at optimisation by sampling physical states."
+  };
+
+  const labStage = $("#lab-stage");
+  const labCanvas = $("#lab-canvas");
+  const labStart = $("#lab-start");
+  const labQuestion = $("#lab-question");
+  const labAnswers = $("#lab-answers");
+  const labFeedback = $("#lab-feedback");
+  const labStep = $("#lab-step");
+  const labProgress = $("#lab-progress");
+  const labLog = $("#lab-log");
+  const labVoice = $("#lab-voice");
+  let labLit = [];
+  try {
+    const savedLab = JSON.parse(localStorage.getItem(LAB_KEY) || "[]");
+    if(Array.isArray(savedLab)) labLit = savedLab.filter(id => D.paradigms.some(p => p.id === id));
+  } catch (err) { labLit = []; }
+  let labLitSet = new Set(labLit);
+  let labPrev = labLit.length ? labLit[labLit.length - 1] : null;
+  let labCurrent = null;
+  let labLocked = true;
+  let labStarted = false;
+  let labVoiceOn = true;
+  let labTimer = 0;
+  let labThree = null;
+  let labNodes = new Map();
+  let labSynapses = [];
+  let labPulses = [];
+  let labVisible = true;
+  let labLast = 0;
+
+  function labChip(id){
+    const p = D.paradigms.find(x => x.id === id);
+    return LAB_ABBR[id] || (p ? p.abbr : id);
+  }
+
+  function speakLab(text){
+    if(!labVoiceOn || !("speechSynthesis" in window)) return;
+    try {
+      speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.98;
+      utterance.pitch = 0.95;
+      utterance.lang = "en-US";
+      const voices = speechSynthesis.getVoices();
+      const preferred = voices.find(v => v.lang && v.lang.startsWith("en") && /Google|Samantha|Daniel|Alex/.test(v.name)) || voices.find(v => v.lang && v.lang.startsWith("en"));
+      if(preferred) utterance.voice = preferred;
+      speechSynthesis.speak(utterance);
+    } catch (err) { /* speech is optional */ }
+  }
+
+  function renderLabLog(){
+    labLog.innerHTML = labLit.map(id => {
+      const p = D.paradigms.find(x => x.id === id);
+      if(!p) return "";
+      return '<li><b>' + esc(labChip(id)) + '</b><span>' + esc(p.name) + '</span><span>' + esc(p.lifecycle) + '</span></li>';
+    }).join("");
+  }
+
+  function renderLabProgress(){
+    labProgress.textContent = labLit.length + " / " + D.paradigms.length + " concepts";
+    const chips = $$("#lab-fallback .lab-chip");
+    chips.forEach(chip => chip.classList.toggle("lit", labLitSet.has(chip.dataset.id)));
+    if(labThree && labThree.progressDots){
+      labThree.progressDots.forEach((dot, index) => {
+        const lit = index < labLit.length;
+        dot.material.opacity = lit ? 0.9 : 0.12;
+        dot.material.color.set(lit ? 0x5eead4 : 0x2a4a52);
+      });
+    }
+  }
+
+  function renderLabFallback(){
+    if($("#lab-fallback")) return;
+    const grid = document.createElement("div");
+    grid.className = "lab-fallback";
+    grid.id = "lab-fallback";
+    grid.setAttribute("aria-hidden", "true");
+    grid.innerHTML = D.paradigms.map(p => '<div class="lab-chip' + (labLitSet.has(p.id) ? " lit" : "") + '" data-id="' + esc(p.id) + '">' + esc(labChip(p.id)) + '</div>').join("");
+    labStage.insertBefore(grid, labStart);
+  }
+
+  function useLabFallback(){
+    labStage.classList.add("is-fallback");
+    renderLabFallback();
+  }
+
+  function addLabPulse(id){
+    if(!labThree) return;
+    const node = labNodes.get(id);
+    if(!node) return;
+    const THREE = labThree.THREE;
+    const mesh = new THREE.Mesh(
+      new THREE.RingGeometry(0.2, 0.27, 36),
+      new THREE.MeshBasicMaterial({color: node.color, transparent:true, opacity:0.9, side:THREE.DoubleSide, depthWrite:false})
+    );
+    mesh.position.copy(node.pos);
+    labThree.root.add(mesh);
+    labPulses.push({mesh: mesh, t: 0});
+  }
+
+  function lightLabNode(id, animate){
+    const node = labNodes.get(id);
+    if(!node) return;
+    node.lit = true;
+    node.mesh.material.opacity = 1;
+    node.mesh.material.color.set(node.color);
+    node.halo.material.opacity = 0.16;
+    node.edge.material.opacity = 0.32;
+    node.label.material.opacity = 0.95;
+    if(animate) addLabPulse(id);
+  }
+
+  function addLabSynapse(a, b){
+    if(!labThree) return;
+    const A = labNodes.get(a), B = labNodes.get(b);
+    if(!A || !B) return;
+    const THREE = labThree.THREE;
+    const geometry = new THREE.BufferGeometry().setFromPoints([A.pos, B.pos]);
+    const material = new THREE.LineBasicMaterial({color:0x5eead4, transparent:true, opacity:0.26});
+    const line = new THREE.Line(geometry, material);
+    labThree.root.add(line);
+    labSynapses.push(line);
+  }
+
+  function buildLab3D(THREE){
+    const renderer = new THREE.WebGLRenderer({canvas:labCanvas, antialias:true, alpha:true, powerPreference:"high-performance"});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.setClearColor(0x000000, 0);
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x041012, 0.022);
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 0.4, 12.9);
+    camera.lookAt(0, 0, 0);
+    const rootGroup = new THREE.Group();
+    scene.add(rootGroup);
+
+    const starGeometry = new THREE.BufferGeometry();
+    const starPositions = new Float32Array(620 * 3);
+    for(let i = 0; i < 620; i++){
+      const r = 8 + Math.random() * 10;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(2 * Math.random() - 1);
+      starPositions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      starPositions[i * 3 + 1] = r * Math.cos(phi);
+      starPositions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
+    }
+    starGeometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
+    const stars = new THREE.Points(starGeometry, new THREE.PointsMaterial({color:0x7dd3fc, size:0.035, transparent:true, opacity:0.5}));
+    rootGroup.add(stars);
+
+    const coreGeometry = new THREE.IcosahedronGeometry(0.82, 1);
+    const core = new THREE.Mesh(coreGeometry, new THREE.MeshBasicMaterial({color:0x5eead4, wireframe:true, transparent:true, opacity:0.9}));
+    const coreGlow = new THREE.Mesh(new THREE.IcosahedronGeometry(1.28, 1), new THREE.MeshBasicMaterial({color:0x5eead4, wireframe:true, transparent:true, opacity:0.12}));
+    rootGroup.add(core, coreGlow);
+
+    const progressDots = [];
+    for(let i = 0; i < D.paradigms.length; i++){
+      const angle = (i / D.paradigms.length) * Math.PI * 2;
+      const dot = new THREE.Mesh(
+        new THREE.SphereGeometry(0.034, 8, 8),
+        new THREE.MeshBasicMaterial({color:0x5eead4, transparent:true, opacity:0.12})
+      );
+      dot.position.set(Math.cos(angle) * 1.65, Math.sin(angle) * 1.65, 0);
+      rootGroup.add(dot);
+      progressDots.push(dot);
+    }
+
+    const golden = Math.PI * (3 - Math.sqrt(5));
+    const nodeRadius = 3.95;
+    D.paradigms.forEach((p, index) => {
+      const y = 1 - (index / (D.paradigms.length - 1)) * 2;
+      const ring = Math.sqrt(1 - y * y);
+      const theta = golden * index;
+      const pos = new THREE.Vector3(Math.cos(theta) * ring * nodeRadius, y * nodeRadius, Math.sin(theta) * ring * nodeRadius);
+      const color = new THREE.Color(LAB_COLORS[p.lifecycle] || "#94a3b8");
+      const mesh = new THREE.Mesh(new THREE.SphereGeometry(0.145, 16, 16), new THREE.MeshBasicMaterial({color:color, transparent:true, opacity:0.22}));
+      mesh.position.copy(pos);
+      const halo = new THREE.Mesh(new THREE.SphereGeometry(0.3, 16, 16), new THREE.MeshBasicMaterial({color:color, transparent:true, opacity:0, depthWrite:false}));
+      halo.position.copy(pos);
+      const edge = new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), pos]), new THREE.LineBasicMaterial({color:color, transparent:true, opacity:0.06}));
+      const labelCanvas = document.createElement("canvas");
+      labelCanvas.width = 256; labelCanvas.height = 96;
+      const context = labelCanvas.getContext("2d");
+      context.font = "700 42px Inter, Arial, sans-serif";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillStyle = "#ecf7f7";
+      context.fillText(labChip(p.id), 128, 48);
+      const texture = new THREE.CanvasTexture(labelCanvas);
+      texture.colorSpace = THREE.SRGBColorSpace;
+      const label = new THREE.Sprite(new THREE.SpriteMaterial({map:texture, transparent:true, depthWrite:false, opacity:0.32}));
+      label.position.copy(pos).add(new THREE.Vector3(0, 0.34, 0));
+      label.scale.set(1.28, 0.48, 1);
+      rootGroup.add(mesh, halo, edge, label);
+      const seed = index * 1.7;
+      labNodes.set(p.id, {mesh:mesh, halo:halo, edge:edge, label:label, color:color, pos:pos, lit:false, seed:seed});
+    });
+
+    const resize = () => {
+      const w = labStage.clientWidth, h = labStage.clientHeight;
+      if(!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    };
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(labStage);
+    resize();
+    window.addEventListener("resize", resize, {passive:true});
+
+    let dragging = false, pointerX = 0, pointerY = 0;
+    const onDown = event => {
+      dragging = true; pointerX = event.clientX; pointerY = event.clientY;
+      try { labCanvas.setPointerCapture(event.pointerId); } catch (err) { /* ignore */ }
+    };
+    const onMove = event => {
+      if(!dragging) return;
+      rootGroup.rotation.y += (event.clientX - pointerX) * 0.005;
+      rootGroup.rotation.x = Math.max(-0.9, Math.min(0.9, rootGroup.rotation.x + (event.clientY - pointerY) * 0.0035));
+      pointerX = event.clientX; pointerY = event.clientY;
+    };
+    const onUp = event => {
+      dragging = false;
+      try { labCanvas.releasePointerCapture(event.pointerId); } catch (err) { /* ignore */ }
+    };
+    labCanvas.addEventListener("pointerdown", onDown);
+    labCanvas.addEventListener("pointermove", onMove);
+    labCanvas.addEventListener("pointerup", onUp);
+    labCanvas.addEventListener("pointercancel", onUp);
+
+    const visibility = new IntersectionObserver(entries => { labVisible = entries[0].isIntersecting; }, {threshold:0.05});
+    visibility.observe(labStage);
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function frame(now){
+      labThree.raf = requestAnimationFrame(frame);
+      const dt = Math.min((now - (labLast || now)) / 1000, 0.05);
+      labLast = now;
+      if(!labVisible || document.hidden) return;
+      if(!dragging && !reduceMotion) rootGroup.rotation.y += dt * 0.075;
+      core.rotation.x += dt * 0.14;
+      core.rotation.y += dt * 0.18;
+      coreGlow.rotation.x -= dt * 0.05;
+      coreGlow.rotation.y -= dt * 0.08;
+      core.scale.setScalar(1 + Math.sin(now * 0.0016) * 0.055);
+      labNodes.forEach(node => {
+        if(node.lit){
+          node.mesh.scale.setScalar(1 + Math.sin(now * 0.002 + node.seed) * 0.1);
+          node.halo.scale.setScalar(1 + Math.sin(now * 0.0014 + node.seed) * 0.25);
+        }
+      });
+      for(let i = labPulses.length - 1; i >= 0; i--){
+        const pulse = labPulses[i];
+        pulse.t += dt * 1.7;
+        pulse.mesh.scale.setScalar(1 + pulse.t * 5);
+        pulse.mesh.material.opacity = Math.max(0, 0.9 - pulse.t);
+        if(pulse.t > 1){
+          rootGroup.remove(pulse.mesh);
+          pulse.mesh.geometry.dispose();
+          pulse.mesh.material.dispose();
+          labPulses.splice(i, 1);
+        }
+      }
+      renderer.render(scene, camera);
+    }
+    labThree = {THREE:THREE, renderer:renderer, scene:scene, camera:camera, root:rootGroup, core:core, progressDots:progressDots, raf:0, resizeObserver:resizeObserver, visibility:visibility};
+    labThree.raf = requestAnimationFrame(frame);
+    labLit.forEach(id => lightLabNode(id, false));
+    renderLabProgress();
+  }
+
+  async function initLab3D(){
+    if(labThree) return;
+    const THREE = await import(assetBase + "assets/vendor/three.module.min.js");
+    if(!THREE || !THREE.WebGLRenderer) throw new Error("Three.js unavailable");
+    buildLab3D(THREE);
+  }
+
+  function clearLab3D(){
+    if(!labThree) return;
+    labSynapses.forEach(line => {
+      labThree.root.remove(line);
+      line.geometry.dispose();
+      line.material.dispose();
+    });
+    labSynapses = [];
+    labPulses.forEach(pulse => {
+      labThree.root.remove(pulse.mesh);
+      pulse.mesh.geometry.dispose();
+      pulse.mesh.material.dispose();
+    });
+    labPulses = [];
+    labNodes.forEach(node => {
+      node.lit = false;
+      node.mesh.material.opacity = 0.22;
+      node.halo.material.opacity = 0;
+      node.edge.material.opacity = 0.06;
+      node.label.material.opacity = 0.32;
+      node.mesh.scale.setScalar(1);
+    });
+  }
+
+  function chooseLabQuestion(){
+    clearTimeout(labTimer);
+    const remaining = D.paradigms.filter(p => !labLitSet.has(p.id));
+    if(!remaining.length){ finishLab(); return; }
+    const target = remaining[Math.floor(Math.random() * remaining.length)];
+    labCurrent = target;
+    labLocked = false;
+    labStep.textContent = "Concept " + (labLit.length + 1) + " of " + D.paradigms.length;
+    labQuestion.textContent = LAB_CLUES[target.id];
+    const distractors = D.paradigms.filter(p => p.id !== target.id).sort(() => Math.random() - 0.5).slice(0, 2);
+    const options = [target].concat(distractors).sort(() => Math.random() - 0.5);
+    labAnswers.innerHTML = options.map(p => '<button class="lab-answer" type="button" data-id="' + esc(p.id) + '"><b>' + esc(labChip(p.id)) + '</b><small>' + esc(p.name) + '</small></button>').join("");
+    labAnswers.querySelectorAll("button").forEach(button => button.addEventListener("click", () => answerLab(button.dataset.id)));
+    labFeedback.textContent = "Pick the unit that fits the workload. A wrong answer does not add a node; the concept comes back later.";
+  }
+
+  function answerLab(id){
+    if(labLocked || !labCurrent) return;
+    labLocked = true;
+    const target = labCurrent;
+    const correct = id === target.id;
+    const buttons = Array.from(labAnswers.querySelectorAll("button"));
+    buttons.forEach(button => {
+      button.disabled = true;
+      if(button.dataset.id === target.id) button.classList.add("correct");
+      if(button.dataset.id === id && !correct) button.classList.add("wrong");
+    });
+    if(correct){
+      labLit.push(target.id);
+      labLitSet.add(target.id);
+      try { localStorage.setItem(LAB_KEY, JSON.stringify(labLit)); } catch (err) { /* ignore */ }
+      const previous = labPrev;
+      labPrev = target.id;
+      lightLabNode(target.id, true);
+      if(previous && previous !== target.id) addLabSynapse(previous, target.id);
+      renderLabLog();
+      renderLabProgress();
+      labFeedback.innerHTML = "<strong>Correct — " + esc(labChip(target.id)) + " added.</strong> " + esc(LAB_SAY[target.id]);
+      speakLab(target.abbr + ". " + target.name + ". " + LAB_SAY[target.id]);
+      labTimer = setTimeout(() => { if(labStarted) chooseLabQuestion(); }, 1300);
+    } else {
+      const picked = D.paradigms.find(p => p.id === id);
+      labFeedback.innerHTML = "<strong>Not quite.</strong> That is " + esc(picked ? labChip(picked.id) : id) + ". The clue points to <strong>" + esc(labChip(target.id)) + "</strong> — " + esc(LAB_SAY[target.id]);
+      labTimer = setTimeout(() => { if(labStarted) chooseLabQuestion(); }, 2400);
+    }
+  }
+
+  function finishLab(){
+    labLocked = true;
+    labStep.textContent = "Network complete";
+    labProgress.textContent = D.paradigms.length + " / " + D.paradigms.length + " concepts";
+    labQuestion.textContent = "All twenty concepts are connected. You can now read the atlas like a map.";
+    labAnswers.innerHTML = '<a class="btn btn-primary" href="#quiz">Test yourself</a><a class="btn btn-ghost" href="#findings">Review the findings</a>';
+    labFeedback.textContent = "Network complete: " + labLit.length + " of " + D.paradigms.length + " concepts. Reset to replay.";
+    speakLab("Network complete. You built all twenty concepts. You can now read the atlas like a map.");
+  }
+
+  function resetLab(){
+    clearTimeout(labTimer);
+    try { localStorage.removeItem(LAB_KEY); } catch (err) { /* ignore */ }
+    labLit = [];
+    labLitSet = new Set();
+    labPrev = null;
+    labCurrent = null;
+    clearLab3D();
+    renderLabLog();
+    renderLabProgress();
+    if(!labStarted){
+      labStep.textContent = "Ready when you are";
+      labQuestion.textContent = "Press start to build a network of twenty processing-unit concepts.";
+      labAnswers.innerHTML = "";
+      labFeedback.textContent = "Network cleared. Press start when you are ready.";
+      return;
+    }
+    chooseLabQuestion();
+  }
+
+  $("#lab-start-btn").addEventListener("click", () => {
+    labStarted = true;
+    labStart.hidden = true;
+    chooseLabQuestion();
+    initLab3D().catch(error => {
+      console.warn("Atlas Mind 3D layer unavailable:", error);
+      useLabFallback();
+      labFeedback.textContent = "The 3D layer could not start in this browser. Text mode is active — every question still works.";
+    });
+  });
+  $("#lab-text-btn").addEventListener("click", () => {
+    labStarted = true;
+    labStart.hidden = true;
+    useLabFallback();
+    chooseLabQuestion();
+  });
+  labVoice.addEventListener("click", () => {
+    labVoiceOn = !labVoiceOn;
+    labVoice.setAttribute("aria-pressed", String(labVoiceOn));
+    labVoice.textContent = "Voice: " + (labVoiceOn ? "on" : "off");
+    if(!labVoiceOn && "speechSynthesis" in window) speechSynthesis.cancel();
+  });
+  $("#lab-reset").addEventListener("click", resetLab);
+  renderLabLog();
+  renderLabProgress();
+
   // Citation
   const citation = `@misc{xpuatlas2026,\n  title   = {XPU-Atlas: A Reproducible Evidence Audit of Twenty Processing-Unit Paradigms, 1971-2026},\n  author  = {{XPU-Atlas Project}},\n  year    = {2026},\n  version = {0.1.0}\n}`;
   $("#copy-cite").addEventListener("click", async () => {
     try{ await navigator.clipboard.writeText(citation); $("#copy-status").textContent = "Citation copied to the clipboard."; }
     catch(err){ $("#copy-status").textContent = "Copy failed — the citation is in the README."; }
   });
+
+  if(params.has("embed") && location.hash.length > 1){
+    const target = document.getElementById(location.hash.slice(1));
+    if(target) setTimeout(() => target.scrollIntoView({block:"start"}), 120);
+  }
 
   // Scroll spy
   const links = $$(".nav-links a");

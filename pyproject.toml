@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,7 +8,16 @@ version = "0.1.0"
 description = "A verification-first, live-data evidence audit of twenty processing-unit paradigms (1971-2026)"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE", "LICENSE-DATA"]
+keywords = ["accelerator", "evidence", "reproducibility", "semiconductor", "xpu"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+]
 authors = [{ name = "XPU-Atlas Contributors" }]
 dependencies = [
   "numpy>=2.0",
@@ -26,3 +35,9 @@ where = ["src"]
 pythonpath = ["src", "."]
 testpaths = ["tests"]
 addopts = "-q"
+
+[project.urls]
+Homepage = "https://m0-ar.github.io/xpu-atlas/"
+Repository = "https://github.com/M0-AR/xpu-atlas"
+Issues = "https://github.com/M0-AR/xpu-atlas/issues"
+Changelog = "https://github.com/M0-AR/xpu-atlas/releases"

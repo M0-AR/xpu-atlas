@@ -1,5 +1,11 @@
 FROM python:3.12-slim
 
+LABEL org.opencontainers.image.title="XPU-Atlas" \
+      org.opencontainers.image.description="A reproducible evidence atlas of twenty processing-unit paradigms" \
+      org.opencontainers.image.source="https://github.com/M0-AR/xpu-atlas" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.version="0.1.0"
+
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     MPLBACKEND=Agg \

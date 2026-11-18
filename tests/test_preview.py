@@ -34,10 +34,27 @@ def test_preview_bundle_and_sections():
     bundle = DATA.read_text(encoding="utf-8")
     assert "window.XPU_DATA" in bundle
     text = PREVIEW.read_text(encoding="utf-8")
-    for section in ("findings", "atlas", "explorer", "learn", "quiz"):
+    for section in ("demo", "findings", "atlas", "explorer", "learn", "quiz", "lab"):
         assert f'id="{section}"' in text
-    for control in ("claim-search", "claim-rows", "quiz-form", "path-label", "theme-toggle"):
+    for control in (
+        "claim-search",
+        "claim-rows",
+        "quiz-form",
+        "path-label",
+        "theme-toggle",
+        "demo-tabs",
+        "demo-viewport",
+        "demo-launch-btn",
+        "lab-canvas",
+        "lab-start-btn",
+        "lab-answers",
+        "lab-voice",
+    ):
         assert f'id="{control}"' in text
+    assert "?embed=1" in text
+    assert "prefers-reduced-motion" in text
+    assert (ROOT / "assets" / "vendor" / "three.module.min.js").exists()
+    assert (ROOT / "assets" / "vendor" / "three.core.min.js").exists()
 
 
 def test_preview_has_no_local_or_placeholder_urls():
